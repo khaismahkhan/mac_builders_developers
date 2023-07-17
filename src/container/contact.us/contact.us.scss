@@ -1,0 +1,29 @@
+#contact-us {
+    .connectImage {
+      background-image: url(../../../public/assets/images/touch.jpg);
+      height: 600px;
+      width: 100%;
+      background-size: 100% 100%, contain;
+      background-position: center;
+    }
+    .appointmentImage {
+        background-image: url(../../../public/assets/images/appointment.svg);
+      height: 800px;
+      width: 100%;
+      background-size: 100% 100%, contain;
+      background-position: center;
+    }
+    @media screen and (max-width: 760px) {
+      .connectImage {
+        height: 350px;
+      }
+      .appointmentImage {
+        height: 350px;
+      }
+      .mb-padding {
+        height: 30vh;
+      }
+    }
+  }
+  
+  

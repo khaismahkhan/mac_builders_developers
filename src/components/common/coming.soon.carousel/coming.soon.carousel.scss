@@ -1,0 +1,26 @@
+#swiper-carousel {
+  .circle {
+    height: 230px;
+    width: 230px;
+    border-radius: 100%;
+    background-position: center;
+    // &:hover{
+    //   scale: 1.1;
+    // }
+    text-align: center;
+  }
+  .txt {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+  @media screen and (max-width: 760px) {
+    .circle {
+      height: 180px;
+      width: 180px;
+    }
+    .txt {
+      font-size: 18px;
+    }
+  }
+}

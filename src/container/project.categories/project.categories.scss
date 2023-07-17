@@ -1,0 +1,20 @@
+.box {
+  height: 420px;
+  width: 680px;
+  border-radius: 16px;
+}
+
+.rightBox {
+  color: white;
+  border-radius: 16px;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+margin: 20px;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+}

@@ -1,0 +1,29 @@
+#header {
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 12px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .messenger {
+    position: fixed;
+    bottom: 20px;
+    left: 12px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .social-logo {
+    height: 55px;
+    width: 55px;
+  }
+  @media screen and (max-width: 500px) {
+    .social-logo {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+.header {
+  z-index: 10000;
+}

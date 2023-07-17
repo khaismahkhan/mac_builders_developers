@@ -1,0 +1,12 @@
+.cover{
+  background: linear-gradient(#42454a,#555a5e,#707175,#b1aea9,#42454a,#555a5e,#707175,#b1aea9,);
+  height: 100vh;
+  // width: 100vw;
+}
+.cover-page {
+  height: 100vh;
+  // width: 100vw;
+  background-image: url(../../../../../public/assets/images/desktop.png);
+  background-size: 100% 100%, contain;
+  background-position: center;
+}
