@@ -4,10 +4,25 @@ import "./coming.soon.carousel.scss";
 
 const ComingSoonCarousel = (props) => {
   const comingItems = [
-    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#131313", color: "#bb8a30" },
-    { name: "ZOHRA RESIDENCY", image: "sherwani.jpeg", bg: "#055bb8", color: "white" },
-    { name: "AL MUSTAFA PRIME", image: "kk.jpg", bg: "#ebebeb", color: "#101010" },
-    { name: "NK BRIDGE VIEW", image: "kk.jpg", bg: "#fdc11e", color: "#101010" },
+    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
+    {
+      name: "ZOHRA RESIDENCY",
+      image: "sherwani.jpeg",
+      bg: "#cadb3d",
+      color: "white",
+    },
+    {
+      name: "AL MUSTAFA PRIME",
+      image: "kk.jpg",
+      bg: "#ebebeb",
+      color: "#101010",
+    },
+    {
+      name: "NK BRIDGE VIEW",
+      image: "kk.jpg",
+      bg: "#fdc11e",
+      color: "#101010",
+    },
     { name: "SARA BLESSING", image: "kk.jpg", bg: "#d62196", color: "white" },
   ];
   const breakpoints = {
@@ -30,7 +45,7 @@ const ComingSoonCarousel = (props) => {
   return (
     <div id="swiper-carousel">
       <div className="d-flex justify-content-between mr-5 ml-5">
-      {comingItems.map((item, index) => (
+        {comingItems.map((item, index) => (
           <div
             className="d-flex justify-content-center align-items-center paper-root circle cursor-pointer p-2"
             style={{ background: item.bg }}
@@ -43,7 +58,7 @@ const ComingSoonCarousel = (props) => {
               {item.name}
             </Typography>
           </div>
-      ))}
+        ))}
       </div>
     </div>
   );

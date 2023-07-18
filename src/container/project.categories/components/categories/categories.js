@@ -1,7 +1,9 @@
 import { Typography, Button } from "@mui/material";
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const Categories = (props) => {
+  const { project } = useParams();
   const {
     reverse,
     bg,
@@ -12,6 +14,11 @@ const Categories = (props) => {
     possession,
     type,
     bed,
+    star,
+    allocation,
+    yearly,
+    ya,
+    ma,
   } = props;
 
   return (
@@ -34,31 +41,66 @@ const Categories = (props) => {
           <div className="text-center w-90">
             <div className="d-flex justify-content-between m-1">
               <Typography variant="h6" color="secondary">
-                On Booking 40%
+                {project === "NKRESIDENCY"
+                  ? "On Booking 40%"
+                  : "On Booking 10%"}
               </Typography>
               <Typography variant="h6" color="secondary">
                 Rs. {booking}/=
               </Typography>
             </div>
+            {allocation && (
+              <div className="d-flex justify-content-between m-1">
+                <Typography variant="h6" color="secondary">
+                  On Allocation 10%
+                </Typography>
+                <Typography variant="h6" color="secondary">
+                  Rs. {allocation}/=
+                </Typography>
+              </div>
+            )}
+            {star && (
+              <div className="d-flex justify-content-between m-1">
+                <Typography variant="h6" color="secondary">
+                  On Star of Working 10%
+                </Typography>
+                <Typography variant="h6" color="secondary">
+                  Rs. {star}/=
+                </Typography>
+              </div>
+            )}
             <div className="d-flex justify-content-between m-1">
               <Typography variant="h6" color="secondary">
-                Monthly Installment 15 X 400,000
+                Monthly Installment
+                {project === "NKRESIDENCY" ? " 15 X 400,000" : ` 36 X ${ma}`}
               </Typography>
               <Typography variant="h6" color="secondary">
                 Rs. {monthly}/=
               </Typography>
             </div>
+            {quarterly && (
+              <div className="d-flex justify-content-between m-1">
+                <Typography variant="h6" color="secondary">
+                  Quarterly Installment 05 X 500,000
+                </Typography>
+                <Typography variant="h6" color="secondary">
+                  Rs. {quarterly}/=
+                </Typography>
+              </div>
+            )}
+            {yearly && (
+              <div className="d-flex justify-content-between m-1">
+                <Typography variant="h6" color="secondary">
+                  Yearly Installment 06 X {ya}
+                </Typography>
+                <Typography variant="h6" color="secondary">
+                  Rs. {yearly}/=
+                </Typography>
+              </div>
+            )}
             <div className="d-flex justify-content-between m-1">
               <Typography variant="h6" color="secondary">
-                Quarterly Installment 05 X 500,000
-              </Typography>
-              <Typography variant="h6" color="secondary">
-                Rs. {quarterly}/=
-              </Typography>
-            </div>
-            <div className="d-flex justify-content-between m-1">
-              <Typography variant="h6" color="secondary">
-                ON Possession
+                On Possession
               </Typography>
               <Typography variant="h6" color="secondary">
                 Rs. {possession}/=
@@ -66,7 +108,7 @@ const Categories = (props) => {
             </div>
           </div>
           <div>
-            <Button>Select</Button>
+            <Button onClick={() => props.handleClick(type)}>Select</Button>
           </div>
         </div>
       </div>

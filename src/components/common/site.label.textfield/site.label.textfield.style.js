@@ -16,8 +16,9 @@ export const useStyles = makeStyles((theme) => ({
     paddingRight: '3.5px'
   },
   input: {
-    height: 0,
-    textOverflow: "ellipsis"
+    height: 5,
+    textOverflow: "ellipsis",
+
   },
   disabled: {
     color: "#000000",

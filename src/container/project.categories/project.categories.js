@@ -5,11 +5,22 @@ import "./project.categories.scss";
 import Heading from "../../components/common/heading/heading";
 import Wrapper from "../../components/common/wrapper/wrapper";
 import { useParams } from "react-router-dom";
+import Dialog from "./components/dialog/dialog";
+import { useState } from "react";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
 
-  const categories = [
+  const [state, setState] = useState({
+    project: project,
+    plan: "",
+    name: "",
+    email: "",
+    phone: "",
+    isDialogOpen: false,
+  });
+
+  const nkCategories = [
     {
       type: "A1",
       bed: "3 BED DD",
@@ -78,6 +89,69 @@ const ProjectCategories = (props) => {
     },
   ];
 
+  const saraCategories = [
+    {
+      type: "A1",
+      bed: "3 BED DD",
+      price: "23,000,000",
+      booking: "2,300,000",
+      allocation: "2,300,000",
+      star: "2,300,000",
+      monthly: "10,800,000",
+      ma: "300,000",
+      yearly: "3,000,000",
+      ya: "500,000",
+      possession: "2,300,000",
+      reverse: true,
+      bg: "#ff5556",
+    },
+    {
+      type: "A",
+      bed: "3 BED DD",
+      price: "21,500,000",
+      booking: "2,150,000",
+      allocation: "2,150,000",
+      star: "2,150,000",
+      monthly: "9,900,000",
+      ma: "275,000",
+      yearly: "3,000,000",
+      ya: "500,000",
+      possession: "2,150,000",
+      reverse: false,
+      bg: "#bcf955",
+    },
+    {
+      type: "B1",
+      bed: "2 BED DD",
+      price: "16,000,000",
+      booking: "1,600,000",
+      allocation: "1,600,000",
+      star: "1,600,000",
+      monthly: "7,200,000",
+      ma: "200,000",
+      yearly: "1,800,000",
+      ya: "300,000",
+      possession: "2,200,000",
+      reverse: true,
+      bg: "#f8bc0c",
+    },
+    {
+      type: "B",
+      bed: "2 BED DD",
+      price: "15,000,000",
+      booking: "1,500,000",
+      allocation: "1,500,000",
+      star: "1,500,000",
+      monthly: "6,300,000",
+      ma: "175,000",
+      yearly: "1,650,000",
+      ya: "275,000",
+      possession: "2,550,000",
+      reverse: false,
+      bg: "#07ce58",
+    },
+  ];
+
   const nkImages = [
     { img: "nk icon.jpeg" },
     { img: "nk 1.jpeg" },
@@ -85,8 +159,45 @@ const ProjectCategories = (props) => {
     { img: "nk 3.jpeg" },
     { img: "nk 4.jpeg" },
   ];
+
+  const handleChange = (name, value) => {
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+
+  const handleClick = (type) => {
+    setState({
+      ...state,
+      plan: type,
+      isDialogOpen: true,
+    });
+  };
+  const onClose = () => {
+    setState({
+      ...state,
+      name: "",
+      email: "",
+      phone: "",
+      isDialogOpen: false,
+    });
+  };
+
+  const handleSubmit = () => {
+    console.log(state);
+  };
+
   return (
     <div>
+      <Dialog
+        {...state}
+        {...props}
+        handleChange={handleChange}
+        open={state.isDialogOpen}
+        handleSubmit={handleSubmit}
+        onClose={onClose}
+      />
       <Wrapper />
 
       <div className="m-5">
@@ -139,9 +250,23 @@ const ProjectCategories = (props) => {
             <Typography className="heading mt-5 mb-3 text-center" variant="h4">
               CATEGORIES AVAILABLE
             </Typography>
-            {categories.map((category, index) => (
-              <Categories {...category} key={index} />
-            ))}
+            {project === "NKRESIDENCY"
+              ? nkCategories.map((category, index) => (
+                  <Categories
+                    {...category}
+                    key={index}
+                    {...state}
+                    handleClick={handleClick}
+                  />
+                ))
+              : saraCategories.map((category, index) => (
+                  <Categories
+                    {...category}
+                    key={index}
+                    {...state}
+                    handleClick={handleClick}
+                  />
+                ))}
           </>
         ) : (
           <div className="d-flex justify-content-center flex-wrap mt-5">

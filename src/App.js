@@ -13,7 +13,7 @@ import Home from './container/home/home';
 import ContactUs from './container/contact.us/contact.us';
 import AboutUs from './container/about.us/about.us';
 import ProjectCategories from './container/project.categories/project.categories';
-import Header from "./container/header/header";
+import AppNavBar from "./container/app.navbar/app.navbar";
 import Footer from "./container/footer/footer";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <ThemeProvider theme={appTheme}>
           <CssBaseline />
           <Router>
-          {/* <Header/> */}
+          <AppNavBar/>
             <div>
               <Routes>
                 <Route path="/" element={<Home />} />

@@ -82,6 +82,7 @@ export default function SiteLabelTextField(props) {
                     <TextField
                       {...inputProps}
                       label={null}
+                      className='bg-dark'
                       id={id}
                       disabled={props.disabled ? props.disabled : null}
                       variant="outlined"
@@ -138,7 +139,7 @@ export default function SiteLabelTextField(props) {
                     <div className="pr-4"><CircularProgress size={45} className="p-3" /></div>
                     : null
                 }
-                <div className="flex-grow-1">
+                <div className="flex-grow-1 w-100">
                   {
 
                     <TextField
@@ -159,6 +160,7 @@ export default function SiteLabelTextField(props) {
                         pattern: pattern,
 
                       }}
+                      className=''
                       onChange={onChange}
                       InputProps={{
                         classes: {
