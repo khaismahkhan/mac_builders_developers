@@ -18,6 +18,7 @@ const ProjectCategories = (props) => {
     email: "",
     phone: "",
     isDialogOpen: false,
+    loading: false,
   });
 
   const nkCategories = [
@@ -181,11 +182,48 @@ const ProjectCategories = (props) => {
       email: "",
       phone: "",
       isDialogOpen: false,
+      loading: false,
     });
   };
 
-  const handleSubmit = () => {
-    console.log(state);
+  const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
+
+  const handleSubmit = async () => {
+    try {
+      setState({
+        ...state,
+        loading: true,
+      });
+      const url = `${BASE_URL}/api/v1/auth/signup`;
+      const data = {
+        userName: state.name,
+        phoneNumber: state.phone,
+        email: state.email,
+        plan: state.project,
+        category: state.plan,
+      };
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+      onClose();
+    } catch (error) {
+      console.error("Error:", error);
+      setState({
+        ...state,
+        loading: false,
+      });
+    }
   };
 
   return (

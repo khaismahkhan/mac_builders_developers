@@ -1,10 +1,10 @@
 import React from "react";
 import SiteLabelTextField from "../../../../components/common/site.label.textfield/site.label.textfield";
 import ContentDialog from "../../../../components/common/content.dialog/content.dialog";
-import { Button } from "@mui/material";
+import LoaderButton from "../../../../components/common/loader.button/loader.button";
 
 const Dialog = (props) => {
-  const { title, open, project, plan, name, email, phone } = props;
+  const { title, open, project, plan, name, email, phone, loading } = props;
 
   return (
     <div>
@@ -62,25 +62,25 @@ const Dialog = (props) => {
                 props.handleChange("phone", event.target.value)
               }
               value={phone}
-              topAdornment="Enter Phone NUmber"
+              topAdornment="Enter Phone Number"
               placeholder="Type phone number"
             />
           </div>
 
           <div className="pt-4 d-flex  justify-content-end text-right">
-              <div className="w-40">
-                <Button
-                  fullWidth
-                  //   loading={execStatusAddCapCoiType.status === "PENDING"}
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  onClick={props.handleSubmit}
-                >
-                  SUBMIT
-                </Button>
-              </div>
+            <div className="w-40">
+              <LoaderButton
+                fullWidth
+                loading={loading}
+                type="submit"
+                variant="contained"
+                color="primary"
+                onClick={props.handleSubmit}
+              >
+                SUBMIT
+              </LoaderButton>
             </div>
+          </div>
         </div>
       </ContentDialog>
     </div>
