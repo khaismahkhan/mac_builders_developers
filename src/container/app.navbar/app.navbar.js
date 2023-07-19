@@ -106,23 +106,24 @@ const AppNavbar = () => {
             >
               <Grid container className="d-flex align-items-center">
                 <Grid xs={12} sm={3} md={6} lg={5} item>
-                  <div className="cursor-pointer d-flex justify-content-start">
-                    <a
-                      className="d-flex justify-content-center align-items-center"
+                  <div className="cursor-pointer d-flex justify-content-start align-items-center">
+                    {/* <a
+                      className="d-flex justify-content-center align-items-center text-transform-none"
                       href="/"
+                    > */}
+                    <img
+                      height="100%"
+                      width="80px"
+                      src={`${process.env.PUBLIC_URL}/assets/images/header-logo.png`}
+                      onClick={() => navigate("/")}
+                    ></img>
+                    <Typography
+                      variant="body1"
+                      className="text-transform-none text-white ml-2"
                     >
-                      <img
-                        height="100%"
-                        width="80px"
-                        src={`${process.env.PUBLIC_URL}/assets/images/header-logo.png`}
-                      ></img>
-                      <Typography
-                        variant="body1"
-                        className={`text-transform-none text-white ml-2`}
-                      >
-                        Mac Builders & Developers
-                      </Typography>
-                    </a>
+                      Mac Builders & Developers
+                    </Typography>
+                    {/* </a> */}
                   </div>
                 </Grid>
                 {/* {dropdownData && dropdownData.map((data, index) => {
@@ -198,7 +199,11 @@ const AppNavbar = () => {
           </Container>
         </AppBar>
       ) : (
-        <AppBar position="absolute" style={{ backgroundColor: navbarColor }} className={classes.responsiveAppNavbar}>
+        <AppBar
+          position="absolute"
+          style={{ backgroundColor: navbarColor }}
+          className={classes.responsiveAppNavbar}
+        >
           <Container maxWidth="lg" classes={{ root: classes.container }}>
             <Toolbar className="d-flex flex-row justify-content-between align-items-center m-auto">
               <Typography

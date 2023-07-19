@@ -22,6 +22,18 @@
     url("./container//material.theme//fonts/Rubik/static/Rubik-Bold.ttf")
       format("truetype");
 }
+@font-face {
+  font-family: "Joined-Bold";
+  src: local("Joined-Bold"),
+    url("./container/material.theme/fonts/Dancing_Script/static/DancingScript-Bold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Comfortaa";
+  src: local("Comfortaa"),
+    url("./container/material.theme/fonts/Comfortaa/static/Comfortaa-Medium.ttf")
+      format("truetype");
+}
 
 //swiper carousel
 :root {

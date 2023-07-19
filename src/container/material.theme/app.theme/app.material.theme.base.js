@@ -1,7 +1,7 @@
 //import { pink } from '@mui/material/colors'
 // export const primaryColor = "#622F8C";#380E7F
 export const primaryColor = "#1C1C1E";
-export const secondaryColor = "#1054A5";
+export const secondaryColor = "#033044";
 export const tagColor = "#e1180e";
 export const darkColor = "#000";
 export const bannerColor = "#d9d9d9";
@@ -22,180 +22,184 @@ export const inputControlColor = '#f4f4f4';
 //THEME_COLOR_CHANGES #82156f
 export const materialThemeBase = {
   typography: {
-    fontFamily: ['Rubik'].join(','),
+    fontFamily: ['Comfortaa'].join(','),
     h3: {
-      fontFamily: 'Rubik-SemiBold',
+      fontFamily: 'Comfortaa-SemiBold',
       fontWeight: 600,
       fontSize: 40,
       lineHeight: '125.3%'
     },
+    h3Joined: {
+      fontFamily: "Joined-Bold",
+      fontSize: 42,
+    },
     h4: {
-      fontFamily: 'Rubik-SemiBold',
+      fontFamily: 'Comfortaa-SemiBold',
       fontWeight: 600,
       fontSize: 32,
       lineHeight: '40px'
     },
     h5: {
-      fontFamily: 'Rubik-Bold',
+      fontFamily: 'Comfortaa-Bold',
       fontWeight: 600,
       fontSize: 28,
       lineHeight: '32px'
     },
     h6: {
-      fontFamily: 'Rubik-SemiBold',
+      fontFamily: 'Comfortaa-SemiBold',
       fontWeight: 600,
       fontSize: 24,
       lineHeight: '32px'
     },
     subtitle24M5: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 500,
       fontSize: 24,
       lineHeight: '32px',
       letterSpacing: '-0.0075em'
     },
     subtitle18M5: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 500,
       fontSize: 18,
       lineHeight: '24px',
       letterSpacing: '-0.0075em'
     },
     subtitle16N5: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 500,
       fontSize: 16,
       lineHeight: '20px',
     },
     subtitle20M7: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 700,
       fontSize: 20,
       lineHeight: '24px'
     },
     subtitle20M6: {
-      fontFamily: 'Rubik-SemiBold',
+      fontFamily: 'Comfortaa-SemiBold',
       fontWeight: 600,
       fontSize: 20,
       lineHeight: '24px'
     },
     subtitle: {
-      fontFamily: 'Rubik-SemiBold',
+      fontFamily: 'Comfortaa-SemiBold',
       fontSize: 18,
       fontWeight: 600,
       fontStyle: 'normal',
       lineHeight: '24px'
     },
     subtitle11: {
-      fontFamily: 'Rubik-Bold',
+      fontFamily: 'Comfortaa-Bold',
       fontSize: 16,
       fontWeight: 600,
       fontStyle: 'normal',
     },
     subtitle16SB: {
-      fontFamily: 'Rubik-SemiBold',
+      fontFamily: 'Comfortaa-SemiBold',
       fontSize: 16,
       fontWeight: 600,
       fontStyle: 'normal',
     },
     subtitle14M6: {
-      fontFamily: 'Rubik-Light',
+      fontFamily: 'Comfortaa-Light',
       fontWeight: 600,
       fontSize: 14,
       lineHeight: '20px'
     },
     subtitle12: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontSize: 16,
       fontWeight: 400,
       fontStyle: 'normal',
     },
     subtitle14M4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontSize: 14,
       fontWeight: 400,
       fontStyle: 'normal',
     },
     subtitle28M4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 400,
       fontSize: 28,
       lineHeight: '32px'
     },
     subtitle20M4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 400,
       fontSize: 20,
       lineHeight: '24px'
     },
     subtitle18M4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 400,
       fontSize: 18,
       lineHeight: '26px'
     },
     subtitle23M4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 400,
       fontSize: 23,
       lineHeight: '28px',
     },
     subtitle16M3: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 300,
       fontSize: 16,
       lineHeight: '24px'
     },
     subtitle35N6: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 600,
       fontSize: 35,
       lineHeight: '24px'
     },
     subtitle28N4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 400,
       fontSize: 28,
       lineHeight: '24px'
     },
     subtitle25N4: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 400,
       fontSize: 25,
       lineHeight: '24px'
     },
     body18NL: {
-      fontFamily: 'Rubik-Light',
+      fontFamily: 'Comfortaa-Light',
       fontWeight: 300,
       fontSize: 18,
       lineHeight: '24px'
     },
     body16NL: {
-      fontFamily: 'Rubik-Light',
+      fontFamily: 'Comfortaa-Light',
       fontWeight: 300,
       fontSize: 16,
       lineHeight: '24px'
     },
     body1: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 300,
       fontSize: 18,
       lineHeight: '24px'
     },
     body2: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 300,
       fontSize: 16,
       lineHeight: '24px'
     },
     body3: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 300,
       fontSize: 14,
       lineHeight: '20px'
     },
     caption: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Comfortaa',
       fontWeight: 300,
       fontSize: 12,
       lineHeight: '20px'

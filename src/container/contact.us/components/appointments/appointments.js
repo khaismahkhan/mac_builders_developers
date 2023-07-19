@@ -8,7 +8,7 @@ const Appointments = () => {
         Make an Appointment
       </Typography>
       <div className="py-3">
-        <Typography variant="subtitle1" className="text-theme fw-bold">
+        <Typography variant="subtitle1" className="text-theme font-weight-bold">
           Our Facebook Page:
         </Typography>
         <Typography variant="subtitle1">
@@ -23,7 +23,7 @@ const Appointments = () => {
         </Typography>
       </div>
       <div className="py-3">
-        <Typography variant="subtitle1" className="text-theme fw-bold">
+        <Typography variant="subtitle1" className="text-theme font-weight-bold">
           General Inquiries:
         </Typography>
         <Typography variant="subtitle1" className="text-theme fw-semi-bold">
@@ -31,7 +31,7 @@ const Appointments = () => {
         </Typography>
       </div>
       <div className="py-3">
-        <Typography variant="subtitle1" className="text-theme fw-bold">
+        <Typography variant="subtitle1" className="text-theme font-weight-bold">
           Our Location:
         </Typography>
         <Typography variant="subtitle1" className="text-theme fw-semi-bold">
