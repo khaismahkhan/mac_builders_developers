@@ -1,6 +1,8 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import "./coming.soon.carousel.scss";
+import { Swiper, SwiperSlide, } from "swiper/react";
+import { Navigation } from 'swiper/modules';
 
 const ComingSoonCarousel = (props) => {
   const comingItems = [
@@ -44,22 +46,35 @@ const ComingSoonCarousel = (props) => {
   };
   return (
     <div id="swiper-carousel">
-      <div className="d-flex justify-content-between mr-5 ml-5">
+      <Swiper
+        className="mySwiper py-3"
+        slidesPerView={5}
+        spaceBetween={10}
+        breakpoints={breakpoints}
+        navigation={true}
+        pagination={{
+          dynamicBullets: true,
+          clickable: true,
+        }}
+        modules={[Navigation]}
+      >
         {comingItems.map((item, index) => (
-          <div
-            className="d-flex justify-content-center align-items-center paper-root circle cursor-pointer p-2"
-            style={{ background: item.bg }}
-          >
-            <Typography
-              variant="subtitle1"
-              className="fw-semibold pt-3 txt"
-              style={{ color: item.color }}
+          <SwiperSlide className="d-flex justify-content-center" key={index}>
+            <div
+              className="d-flex justify-content-center align-items-center paper-root circle cursor-pointer p-2"
+              style={{ background: item.bg }}
             >
-              {item.name}
-            </Typography>
-          </div>
+              <Typography
+                variant="subtitle1"
+                className="fw-semibold pt-3 txt"
+                style={{ color: item.color }}
+              >
+                {item.name}
+              </Typography>
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };

@@ -33,6 +33,7 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
+    "swiper": "^10.0.4",
     "victory": "^36.6.8",
     "web-vitals": "^2.1.4"
   },

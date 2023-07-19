@@ -1,6 +1,6 @@
-import { TextareaAutosize, Typography, Button} from "@mui/material";
+import { TextareaAutosize, Typography, Button } from "@mui/material";
 import React, { useRef } from "react";
-import InputField from "../../../../components/common/site.label.textfield/site.label.textfield";
+import InputField from "../../../../components/common/input.field/input.field";
 import { IsMobileWidth } from "../../../../components/common/utill/utils";
 import clsx from "clsx";
 
@@ -80,6 +80,7 @@ const FormSection = (props) => {
                 value={message}
                 onChange={(e) => props.handleChange("message", e.target.value)}
                 name="message"
+                style={{ border: "none" }}
               />
             </div>
             <div
