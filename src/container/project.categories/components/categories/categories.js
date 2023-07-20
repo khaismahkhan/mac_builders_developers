@@ -113,7 +113,7 @@ const Categories = (props) => {
               className="font-weight-bold"
               color="primary"
             >
-              Select
+              For More Details
             </Button>
           </div>
         </div>

@@ -161,6 +161,45 @@ const ProjectCategories = (props) => {
     { img: "nk 4.jpeg" },
   ];
 
+  const urrojArcade = [{ img: "UroojArcade.jpeg" }];
+
+  const zohraResidency = [{ img: "ZohraResidency.jpeg" }];
+
+  const alMustafa = [
+    { img: "mustafa1.jpeg" },
+    { img: "mustafa2.jpeg" },
+    { img: "mustafa3.jpeg" },
+  ];
+
+  const nkBridge = [
+    { img: "nk bridge.jpeg" },
+    { img: "bridge1.jpeg" },
+    { img: "bridge2.jpeg" },
+    { img: "bridge3.jpeg" },
+    { img: "bridge4.jpeg" },
+    { img: "bridge5.jpeg" },
+    { img: "bridge6.jpeg" },
+    { img: "bridge7.jpeg" },
+    { img: "bridge8.jpeg" },
+    { img: "bridge9.jpeg" },
+    { img: "bridge10.jpeg" },
+    { img: "bridge11.jpeg" },
+    { img: "bridge12.jpeg" },
+    { img: "bridge13.jpeg" },
+  ];
+
+  const saraBlessing = [
+    { img: "sara blessing.jpeg" },
+    { img: "sb1.jpeg" },
+    { img: "sb2.jpeg" },
+    { img: "sb3.jpeg" },
+    { img: "sb4.jpeg" },
+    { img: "sb5.jpeg" },
+    { img: "sb6.jpeg" },
+    { img: "sb7.jpeg" },
+    { img: "sb8.jpeg" },
+  ];
+
   const handleChange = (name, value) => {
     setState({
       ...state,
@@ -241,48 +280,52 @@ const ProjectCategories = (props) => {
       <div className="m-5">
         <div className="d-flex flex-wrap justify-content-center">
           <div className="d-flex flex-column align-items-center">
-            {/* <Typography
-              variant="h3"
-              color="secondary"
-              className="font-weight-bold"
-            >
-              INTRODUCTION
-            </Typography> */}
-            <Heading text="INTRODUCTION" />
+            {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
+              <>
+                <Heading text="INTRODUCTION" />
 
-            <div className="w-70">
-              <Typography className="text-center mt-3">
-                {project === "SARARESIDENCY" &&
-                  `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
-                Laying one's hands comfortably to basic necessities of life in
-                the essence of an ideal living place anywhere, but a place where
-                on has a convenient access to every conceivable amenity has
-                literally no metal. People with a discriminatingfaste for living
-                compared to any other features, whatsoever. Project at an ideal
-                location has everything to offer, making life enjoyable in every
-                respect.
-              </Typography>
-              <Typography
-                variant="h6"
-                color="secondary"
-                className="font-weight-bold mt-5 text-center"
-              >
-                Excited About the Location ?
-              </Typography>
-              <Typography className="text-center mt-3">
-                Many people are quite choosy about the vicinity of a place they
-                live in. Beacuse the environs of a particular locality also play
-                a significant role from living point of view.{" "}
-                {project === "NKRESIDENCY"
-                  ? "NK Residency is situated at the most ideal and attractive central location of Block 13-D, Gulshan-e-Iqbal,"
-                  : "Sara Blessing is situated at the most ideal and attractive central location of Garden West,"}
-                Strategically located for a peaceful living with style and
-                elegance in a crowded city like karachi, it has no parallel in
-                the area. It is facilitated with well-maintained spacious roads,
-                public transport, Schools, Mosques, supermarkets, playground and
-                all other civic amenities in the close vicinity.
-              </Typography>
-            </div>
+                <div className="w-70">
+                  <Typography className="text-center mt-3">
+                    {project === "SARARESIDENCY" &&
+                      `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
+                    Laying one's hands comfortably to basic necessities of life
+                    in the essence of an ideal living place anywhere, but a
+                    place where on has a convenient access to every conceivable
+                    amenity has literally no metal. People with a
+                    discriminatingfaste for living compared to any other
+                    features, whatsoever. Project at an ideal location has
+                    everything to offer, making life enjoyable in every respect.
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    color="secondary"
+                    className="font-weight-bold mt-5 text-center"
+                  >
+                    Excited About the Location ?
+                  </Typography>
+                  <Typography className="text-center mt-3">
+                    Many people are quite choosy about the vicinity of a place
+                    they live in. Beacuse the environs of a particular locality
+                    also play a significant role from living point of view.{" "}
+                    {project === "NKRESIDENCY"
+                      ? "NK Residency is situated at the most ideal and attractive central location of Block 13-D, Gulshan-e-Iqbal,"
+                      : "Sara Blessing is situated at the most ideal and attractive central location of Garden West,"}
+                    Strategically located for a peaceful living with style and
+                    elegance in a crowded city like karachi, it has no parallel
+                    in the area. It is facilitated with well-maintained spacious
+                    roads, public transport, Schools, Mosques, supermarkets,
+                    playground and all other civic amenities in the close
+                    vicinity.
+                  </Typography>
+                </div>
+              </>
+            ) : project === "SARABLESSING" || project === "NKBRIDGEVIEW" ? (
+              <Heading text="COMING" span="SOON" />
+            ) : project === "NKICON" ? (
+              <Heading text="NK ICON" />
+            ) : (
+              <Heading text="COMPLETED" span="PROJECTS" />
+            )}
           </div>
         </div>
         {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
@@ -310,7 +353,67 @@ const ProjectCategories = (props) => {
                   />
                 ))}
           </>
-        ) : (
+        ) : project === "UROOJARCADE" ? (
+          <div className="d-flex justify-content-center flex-wrap mt-5">
+            {urrojArcade.map((image, index) => (
+              <img
+                style={{ height: 700, width: 600 }}
+                src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                alt="product-img"
+                className="zoom"
+                id={index}
+              />
+            ))}
+          </div>
+        ) : project === "ZOHRARESIDENCY" ? (
+          <div className="d-flex justify-content-center flex-wrap mt-5">
+            {zohraResidency.map((image, index) => (
+              <img
+                style={{ height: 700, width: 600 }}
+                src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                alt="product-img"
+                className="zoom"
+                id={index}
+              />
+            ))}
+          </div>
+        ) : project === "ALMUSTAFAPRIME" ? (
+          <div className="d-flex justify-content-center flex-wrap mt-5">
+            {alMustafa.map((image, index) => (
+              <img
+                style={{ height: 700, width: 600 }}
+                src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                alt="product-img"
+                className="zoom"
+                id={index}
+              />
+            ))}
+          </div>
+        ) : project === "NKBRIDGEVIEW" ? (
+          <div className="d-flex justify-content-center flex-wrap mt-5">
+            {nkBridge.map((image, index) => (
+              <img
+                style={{ height: 700, width: 600 }}
+                src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                alt="product-img"
+                className="zoom"
+                id={index}
+              />
+            ))}
+          </div>
+        ) : project === "SARABLESSING" ? (
+          <div className="d-flex justify-content-center flex-wrap mt-5">
+            {saraBlessing.map((image, index) => (
+              <img
+                style={{ height: 700, width: 600 }}
+                src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                alt="product-img"
+                className="zoom"
+                id={index}
+              />
+            ))}
+          </div>
+        ) : project === "NKICON" ? (
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {nkImages.map((image, index) => (
               <img
@@ -322,7 +425,7 @@ const ProjectCategories = (props) => {
               />
             ))}
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

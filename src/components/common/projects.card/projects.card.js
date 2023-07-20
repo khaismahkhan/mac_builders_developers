@@ -42,7 +42,7 @@ const ProjectsCard = (props) => {
           className="mt-3 font-weight-bold"
           color="primary"
         >
-          See More
+          See Plan
         </Button>
       </div>
     </div>

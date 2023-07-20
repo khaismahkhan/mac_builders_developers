@@ -1,31 +1,39 @@
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import React from "react";
 import "./coming.soon.carousel.scss";
-import { Swiper, SwiperSlide, } from "swiper/react";
-import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 const ComingSoonCarousel = (props) => {
   const comingItems = [
-    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
+    { name: "UROOJARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
     {
-      name: "ZOHRA RESIDENCY",
+      name: "ZOHRARESIDENCY",
       image: "sherwani.jpeg",
       bg: "#cadb3d",
       color: "white",
     },
     {
-      name: "AL MUSTAFA PRIME",
+      name: "ALMUSTAFAPRIME",
       image: "kk.jpg",
       bg: "#ebebeb",
       color: "#101010",
     },
     {
-      name: "NK BRIDGE VIEW",
+      name: "NKBRIDGEVIEW",
       image: "kk.jpg",
       bg: "#fdc11e",
       color: "#101010",
+      soon: true,
     },
-    { name: "SARA BLESSING", image: "kk.jpg", bg: "#d62196", color: "white" },
+    {
+      name: "SARABLESSING",
+      image: "kk.jpg",
+      bg: "#d62196",
+      color: "white",
+      soon: true,
+    },
   ];
   const breakpoints = {
     320: {
@@ -44,6 +52,13 @@ const ComingSoonCarousel = (props) => {
       slidesPerView: 5,
     },
   };
+
+  const history = useNavigate();
+
+  const redirect = (project) => {
+    history(`/${project}`);
+  };
+
   return (
     <div id="swiper-carousel">
       <Swiper
@@ -61,16 +76,29 @@ const ComingSoonCarousel = (props) => {
         {comingItems.map((item, index) => (
           <SwiperSlide className="d-flex justify-content-center" key={index}>
             <div
-              className="d-flex justify-content-center align-items-center paper-root circle cursor-pointer p-2"
+              className="d-flex justify-content-center flex-column align-items-center paper-root circle cursor-pointer p-2"
               style={{ background: item.bg }}
             >
               <Typography
                 variant="subtitle1"
                 className="fw-semibold pt-3 txt"
                 style={{ color: item.color }}
+                onClick={() => redirect(item.name)}
               >
                 {item.name}
               </Typography>
+              {item.soon && (
+                <div className="d-flex justify-content-center wrap">
+                  <Button
+                    variant="contained"
+                    className="soon"
+                    style={{ position: "absolute", bottom: 40 }}
+                    onClick={() => redirect(item.name)}
+                  >
+                    Coming Soon
+                  </Button>
+                </div>
+              )}
             </div>
           </SwiperSlide>
         ))}
