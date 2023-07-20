@@ -1,4 +1,4 @@
-import { TextareaAutosize, Typography, Button } from "@mui/material";
+import { TextareaAutosize, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import InputField from "../../../../components/common/input.field/input.field";
 import { IsMobileWidth } from "../../../../components/common/utill/utils";
@@ -102,11 +102,6 @@ const FormSection = (props) => {
           </div>
         </div>
       </form>
-
-      {/* <form ref={form} onSubmit={sendEmail}>
-          <Input placeholder="Placeholder" value="hello khaismah" name="message"/>
-          <input type="submit" value="Send" />
-        </form> */}
     </div>
   );
 };

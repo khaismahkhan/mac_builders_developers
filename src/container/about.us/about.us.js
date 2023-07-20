@@ -64,13 +64,6 @@ const AboutUs = () => {
       <Wrapper />
       <div className="m-5">
         <div className="d-flex flex-column align-items-center">
-          {/* <Typography
-            variant="h2"
-            color="secondary"
-            className="font-weight-bold"
-          >
-            Who We Are
-          </Typography> */}
           <Heading text="WHO WE" span=" ARE" />
           <div className="w-70">
             <Typography className="text-center mt-3">
@@ -92,13 +85,6 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="d-flex flex-column align-items-center">
-          {/* <Typography
-            variant="h2"
-            color="secondary"
-            className="font-weight-bold mt-5"
-          >
-            Our Mission Statement
-          </Typography> */}
           <Heading text="OUR MISSION" span=" STATEMENT" />
           <div className="d-flex justify-content-center align-items-center mt-4 w-90">
             <div className="w-50 mission"></div>
@@ -120,13 +106,6 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="d-flex flex-column align-items-center mt-5">
-          {/* <Typography
-            variant="h3"
-            color="secondary"
-            className="font-weight-bold"
-          >
-            About Our Services
-          </Typography> */}
           <Heading text="ABOUT OUR" span=" SERVICES" />
           <div className="d-flex justify-content-center align-items-center mt-4 w-90">
             <div className="w-50 services"></div>
@@ -151,13 +130,6 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="d-flex flex-column align-items-center mt-5">
-          {/* <Typography
-            variant="h3"
-            color="secondary"
-            className="font-weight-bold"
-          >
-            What Can we Offer?
-          </Typography> */}
           <Heading text="WHAT CAN WE" span=" OFFER?" />
 
           <div className="d-flex flex-wrap justify-content-center">
@@ -188,7 +160,7 @@ const AboutUs = () => {
         <div className="d-flex flex-wrap justify-content-center mt-5">
           {profiles.map((profile, index) => (
             <div className="m-2">
-              <ProductCard {...profile} />
+              <ProductCard {...profile} key={index}/>
             </div>
           ))}
         </div>

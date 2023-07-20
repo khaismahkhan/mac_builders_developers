@@ -26,15 +26,10 @@ const AppNavbar = () => {
   const tabletWidth = IsTabletWidth();
   let location = useLocation();
   let navigate = useNavigate();
-  const redirect = (url) => {
-    navigate(url);
-  };
   const [state, setState] = useState({
     isDrawerOpen: false,
   });
-  const onChange = (name, value) => {
-    setState({ ...state, [name]: value });
-  };
+
   const showDrawer = () => {
     setState({ ...state, isDrawerOpen: true });
   };
@@ -42,13 +37,7 @@ const AppNavbar = () => {
   const hideDrawer = () => {
     setState({ ...state, isDrawerOpen: false });
   };
-  const isToShowNavbarButtons = (location) => {
-    if (location.pathname === "/login") {
-      return false;
-    } else {
-      return true;
-    }
-  };
+
   const [navbarColor, setNavbarColor] = useState("");
 
   const handleScroll = () => {
@@ -107,10 +96,6 @@ const AppNavbar = () => {
               <Grid container className="d-flex align-items-center">
                 <Grid xs={12} sm={3} md={6} lg={5} item>
                   <div className="cursor-pointer d-flex justify-content-start align-items-center">
-                    {/* <a
-                      className="d-flex justify-content-center align-items-center text-transform-none"
-                      href="/"
-                    > */}
                     <img
                       height="100%"
                       width="80px"
@@ -126,16 +111,6 @@ const AppNavbar = () => {
                     {/* </a> */}
                   </div>
                 </Grid>
-                {/* {dropdownData && dropdownData.map((data, index) => {
-                                return <div key={index}>
-                                    <DropDownMenu
-                                        name={data.name}
-                                        label={data.items && data.items.label}
-                                        imageSrc={data.items && data.items.imageSrc}
-                                        data={data.items && data.items.child}
-                                    />
-                                </div>
-                            })} */}
                 <Grid
                   xs={12}
                   sm={9}
@@ -174,26 +149,7 @@ const AppNavbar = () => {
                       Contact Us
                     </Button>
                   </Link>
-                  {/* <Link
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    delay={500}
-                  >
-                    <Button
-                      variant="outlined"
-                      className="text-transform-none text-white ml-2"
-                    >
-                      Metamask not Installed
-                    </Button>
-                  </Link> */}
                 </Grid>
-                {/* <Link to="faqs" onClick={() => redirect('/')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
-                                <Button variant="none" className="text-transform-none text-white ml-2">
-                                    FAQS
-                                </Button>
-                            </Link> */}
               </Grid>
             </Toolbar>
           </Container>
@@ -265,16 +221,6 @@ const AppNavbar = () => {
           )}
         >
           <div className="w-100 d-flex flex-column justify-content-center align-items-center mt-2 mb-2">
-            {/* {dropdownData && dropdownData.map((data, index) => {
-                            return <div key={index}>
-                                <DropDownMenu
-                                    name={data.name}
-                                    label={data.items && data.items.label}
-                                    imageSrc={data.items && data.items.imageSrc}
-                                    data={data.items && data.items.child}
-                                />
-                            </div>
-                        })} */}
             <Link
               to="create-token"
               spy={true}

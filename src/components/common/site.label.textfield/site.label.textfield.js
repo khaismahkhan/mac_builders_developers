@@ -4,7 +4,7 @@ import ReactInputMask from 'react-input-mask';
 import { useStyles } from './site.label.textfield.style';
 import clsx from 'clsx';
 import { regex } from '../utill/regex'
-import { Typography, Paper, InputAdornment, CircularProgress, TextField } from "@mui/material";
+import { Paper, InputAdornment, CircularProgress, TextField } from "@mui/material";
 
 
 export default function SiteLabelTextField(props) {

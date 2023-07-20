@@ -256,6 +256,7 @@ const ProjectCategories = (props) => {
 
       const responseData = await response.json();
       onClose();
+      console.log(responseData);
     } catch (error) {
       console.error("Error:", error);
       setState({
@@ -330,9 +331,7 @@ const ProjectCategories = (props) => {
         </div>
         {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
           <>
-            {/* <Typography className="heading mt-5 mb-3 text-center" variant="h4">
-              CATEGORIES AVAILABLE
-            </Typography> */}
+          
             <Heading text="CATEGORIES AVAILABLE" />
 
             {project === "NKRESIDENCY"

@@ -1,22 +1,14 @@
-import React, { useRef, useState } from "react";
-import {
-  Button,
-  FormControl,
-  Input,
-  OutlinedInput,
-  TextareaAutosize,
-  Typography,
-} from "@mui/material";
+import React, { useState } from "react";
+import { Typography } from "@mui/material";
 import "./contact.us.scss";
 import { IsMobileWidth } from "../../components/common/utill/utils";
 import clsx from "clsx";
-import InputField from "../../components/common/site.label.textfield/site.label.textfield";
 import Appointments from "./components/appointments/appointments";
 import FormSection from "./components/form/form";
 import emailjs from "@emailjs/browser";
 
 const ContactUs = (props) => {
-  const {} = props;
+
   const mobileWidth = IsMobileWidth();
 
   const [state, setState] = useState({
@@ -30,7 +22,6 @@ const ContactUs = (props) => {
   const handleChange = (name, value) => {
     setState({ ...state, [name]: value });
   };
-  const form = useRef();
 
   const sendEmail = (e) => {
     setState({ ...state, isLoading: true });

@@ -1,15 +1,6 @@
-import React, { useRef, useState } from "react";
-import {
-  Button,
-  FormControl,
-  Input,
-  OutlinedInput,
-  TextareaAutosize,
-  Typography,
-} from "@mui/material";
+import React from "react";
+import { Typography } from "@mui/material";
 import "./home.scss";
-import { IsMobileWidth } from "../../components/common/utill/utils";
-import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
 import ProjectsSection from "./components/projects.section/projects.section";
 import ComingSoonCarousel from "../../components/common/coming.soon.carousel/coming.soon.carousel";
@@ -27,16 +18,10 @@ const Home = () => {
     <div>
       <CoverPage />
       <div className="m-5">
-        {/* <Typography className="heading mt-3 mb-5 text-center" variant="h4">
-          UPCOMING PROJECTS
-        </Typography> */}
-        <Heading text="UPCOMING" span="PROJECTS"/>
+        <Heading text="UPCOMING" span="PROJECTS" />
         <ComingSoonCarousel />
         <div className="d-flex flex-wrap justify-content-center">
-          {/* <Typography className="heading mt-5 mb-3" variant="h4">
-            CURRENT PROJECTS
-          </Typography> */}
-          <Heading text="CURRENT" span="PROJECTS"/>
+          <Heading text="CURRENT" span="PROJECTS" />
           <ProjectsSection redirect={redirect} />
 
           {/* harwork in numbers */}
