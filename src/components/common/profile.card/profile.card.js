@@ -27,6 +27,7 @@ const ProductCard = (props) => {
           variant="outlined"
           size="small"
           className="mt-1"
+          color="secondary"
           //   onClick={handleClickOpen}
         >
           Connect Me

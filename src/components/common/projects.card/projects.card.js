@@ -5,7 +5,13 @@ import { Button, Typography } from "@mui/material";
 const ProjectsCard = (props) => {
   return (
     <div className="projectContainer d-flex">
-      <div className="projectImage w-45"></div>
+      <div className="projectImage w-45">
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/images/${props.image}`}
+          alt="product-img"
+          className="w-100 h-100"
+        />
+      </div>
       <div className="w-55 ml-3 mt-5">
         <img
           style={{ height: 70, width: 240 }}
@@ -23,7 +29,7 @@ const ProjectsCard = (props) => {
           {props.offers}
         </Typography>
         <Typography className="font-weight-light pb-3" variant="subtitle2">
-         Address: {props.address}
+          Address: {props.address}
         </Typography>
         <Typography>
           {props.contacts.map((contact, index) => (
@@ -32,8 +38,9 @@ const ProjectsCard = (props) => {
         </Typography>
         <Button
           onClick={() => props.redirect(props.name)}
-          style={{ background: "white", color: "black" }}
-          className="mt-3"
+          // style={{ background: "white", color: "black" }}
+          className="mt-3 font-weight-bold"
+          color="primary"
         >
           See More
         </Button>

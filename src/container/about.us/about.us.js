@@ -5,6 +5,7 @@ import OfferLabel from "../../components/common/offer.label/offer.label";
 import Offers from "./components/offers/offers";
 import "./components/offers/offers.scss";
 import Wrapper from "../../components/common/wrapper/wrapper";
+import Heading from "../../components/common/heading/heading";
 
 const AboutUs = () => {
   const profiles = [
@@ -63,13 +64,14 @@ const AboutUs = () => {
       <Wrapper />
       <div className="m-5">
         <div className="d-flex flex-column align-items-center">
-          <Typography
+          {/* <Typography
             variant="h2"
             color="secondary"
             className="font-weight-bold"
           >
             Who We Are
-          </Typography>
+          </Typography> */}
+          <Heading text="WHO WE" span=" ARE" />
           <div className="w-70">
             <Typography className="text-center mt-3">
               Welcome to Vitazo. We are a trailblazing digital agency that
@@ -90,13 +92,14 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="d-flex flex-column align-items-center">
-          <Typography
+          {/* <Typography
             variant="h2"
             color="secondary"
             className="font-weight-bold mt-5"
           >
             Our Mission Statement
-          </Typography>
+          </Typography> */}
+          <Heading text="OUR MISSION" span=" STATEMENT" />
           <div className="d-flex justify-content-center align-items-center mt-4 w-90">
             <div className="w-50 mission"></div>
             <div className="w-50 p-5">
@@ -117,13 +120,14 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="d-flex flex-column align-items-center mt-5">
-          <Typography
+          {/* <Typography
             variant="h3"
             color="secondary"
             className="font-weight-bold"
           >
             About Our Services
-          </Typography>
+          </Typography> */}
+          <Heading text="ABOUT OUR" span=" SERVICES" />
           <div className="d-flex justify-content-center align-items-center mt-4 w-90">
             <div className="w-50 services"></div>
             <div className="w-50 p-5">
@@ -147,13 +151,15 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="d-flex flex-column align-items-center mt-5">
-          <Typography
+          {/* <Typography
             variant="h3"
             color="secondary"
             className="font-weight-bold"
           >
             What Can we Offer?
-          </Typography>
+          </Typography> */}
+          <Heading text="WHAT CAN WE" span=" OFFER?" />
+
           <div className="d-flex flex-wrap justify-content-center">
             {offers.map((offer, index) => (
               <Offers {...offer} key={index} />

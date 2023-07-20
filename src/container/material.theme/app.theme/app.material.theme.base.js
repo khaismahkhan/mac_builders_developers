@@ -1,7 +1,7 @@
 //import { pink } from '@mui/material/colors'
 // export const primaryColor = "#622F8C";#380E7F
-export const primaryColor = "#1C1C1E";
-export const secondaryColor = "#033044";
+export const primaryColor = "#bce0cb";
+export const secondaryColor = "#0c5352";
 export const tagColor = "#e1180e";
 export const darkColor = "#000";
 export const bannerColor = "#d9d9d9";

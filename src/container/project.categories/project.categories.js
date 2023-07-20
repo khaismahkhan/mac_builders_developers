@@ -154,7 +154,7 @@ const ProjectCategories = (props) => {
   ];
 
   const nkImages = [
-    { img: "nk icon.jpeg" },
+    { img: "nkicon.jpeg" },
     { img: "nk 1.jpeg" },
     { img: "nk 2.jpeg" },
     { img: "nk 3.jpeg" },

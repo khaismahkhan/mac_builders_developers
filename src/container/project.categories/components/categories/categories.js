@@ -1,7 +1,7 @@
 import { Typography, Button } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
-import "../../project.categories.scss"
+import "../../project.categories.scss";
 const Categories = (props) => {
   const { project } = useParams();
   const {
@@ -108,7 +108,13 @@ const Categories = (props) => {
             </div>
           </div>
           <div>
-            <Button onClick={() => props.handleClick(type)}>Select</Button>
+            <Button
+              onClick={() => props.handleClick(type)}
+              className="font-weight-bold"
+              color="primary"
+            >
+              Select
+            </Button>
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ const OfferLabel = () => {
           </Typography>
           <Button
             href="https://wa.me/923242930832"
-            variant="outlined"
+            variant="contained"
             className="mt-2"
             target="_blank"
           >

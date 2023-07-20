@@ -76,6 +76,7 @@ const Dialog = (props) => {
                 variant="contained"
                 color="primary"
                 onClick={props.handleSubmit}
+                className="font-weight-bold"
               >
                 SUBMIT
               </LoaderButton>

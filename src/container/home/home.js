@@ -30,13 +30,13 @@ const Home = () => {
         {/* <Typography className="heading mt-3 mb-5 text-center" variant="h4">
           UPCOMING PROJECTS
         </Typography> */}
-        <Heading text="UPCOMING" span="PROJCTS"/>
+        <Heading text="UPCOMING" span="PROJECTS"/>
         <ComingSoonCarousel />
         <div className="d-flex flex-wrap justify-content-center">
           {/* <Typography className="heading mt-5 mb-3" variant="h4">
             CURRENT PROJECTS
           </Typography> */}
-          <Heading text="CURRENT" span="PROJCTS"/>
+          <Heading text="CURRENT" span="PROJECTS"/>
           <ProjectsSection redirect={redirect} />
 
           {/* harwork in numbers */}

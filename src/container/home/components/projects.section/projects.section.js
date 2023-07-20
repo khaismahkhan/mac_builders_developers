@@ -23,10 +23,11 @@ const ProjectsSection = (props) => {
       ],
     },
     {
-      name: "Sara Residency",
+      name: "SARARESIDENCY",
       location: "Garden",
       address: "Plot # 320, GRW Near Prince Lawn, Garden West, Karachi.",
       offers: "Luxury 4 & 5 Apartments",
+      image:"sara.jpeg",
       contacts: [
         {
           number: "0324-2930830",
@@ -41,6 +42,7 @@ const ProjectsSection = (props) => {
       location: "Faderal B Area",
       address: "Plot # 320, GRW Near Prince Lawn, Karachi.",
       offers: "Shops & Showroom",
+      image:"nkicon.jpeg",
       contacts: [
         {
           number: "0324-2930830",
