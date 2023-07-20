@@ -1,7 +1,7 @@
 import { Typography, Button } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import "../../project.categories.scss"
 const Categories = (props) => {
   const { project } = useParams();
   const {
@@ -28,7 +28,7 @@ const Categories = (props) => {
       }
     >
       <div className="w-50 leftBox box m-2 paper-root">
-        <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3">
+        <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3 payment">
           <div>
             <Typography
               variant="h4"

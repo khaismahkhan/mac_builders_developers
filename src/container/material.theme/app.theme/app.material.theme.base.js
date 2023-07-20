@@ -23,6 +23,18 @@ export const inputControlColor = '#f4f4f4';
 export const materialThemeBase = {
   typography: {
     fontFamily: ['Comfortaa'].join(','),
+    h3poppins: {
+      fontFamily: 'Poppins',
+      fontWeight: 600,
+      fontSize: 60,
+      lineHeight: '125.3%'
+    },
+    h6poppins: {
+      fontFamily: 'Poppins',
+      fontWeight: 600,
+      fontSize: 30,
+      lineHeight: '125.3%'
+    },
     h3: {
       fontFamily: 'Comfortaa-SemiBold',
       fontWeight: 600,
@@ -46,7 +58,7 @@ export const materialThemeBase = {
       lineHeight: '32px'
     },
     h6: {
-      fontFamily: 'Comfortaa-SemiBold',
+      fontFamily: 'ComforPotaa-SemiBold',
       fontWeight: 600,
       fontSize: 24,
       lineHeight: '32px'

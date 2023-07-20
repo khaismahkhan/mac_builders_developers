@@ -34,6 +34,12 @@
     url("./container/material.theme/fonts/Comfortaa/static/Comfortaa-Medium.ttf")
       format("truetype");
 }
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url("./container/material.theme/fonts/Poppins/Poppins-Medium.ttf")
+      format("truetype");
+}
 
 //swiper carousel
 :root {
@@ -281,5 +287,13 @@ body::-webkit-scrollbar-thumb:hover {
   text-transform: none !important;
 }
 .heading {
-  letter-spacing: 7px;
+  letter-spacing: 10px;
+  // font-family: 'Poppins' !important;
+// font-weight: 700 !important;
+}
+.shaded {
+  letter-spacing: 10px;
+  position: relative;
+  top: 35px;
+  // font-family: 'Poppins' !important;
 }

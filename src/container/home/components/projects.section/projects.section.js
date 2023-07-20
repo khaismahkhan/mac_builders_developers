@@ -23,7 +23,7 @@ const ProjectsSection = (props) => {
       ],
     },
     {
-      name: "SARARESIDENCY",
+      name: "Sara Residency",
       location: "Garden",
       address: "Plot # 320, GRW Near Prince Lawn, Garden West, Karachi.",
       offers: "Luxury 4 & 5 Apartments",

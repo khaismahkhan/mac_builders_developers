@@ -241,13 +241,15 @@ const ProjectCategories = (props) => {
       <div className="m-5">
         <div className="d-flex flex-wrap justify-content-center">
           <div className="d-flex flex-column align-items-center">
-            <Typography
+            {/* <Typography
               variant="h3"
               color="secondary"
               className="font-weight-bold"
             >
               INTRODUCTION
-            </Typography>
+            </Typography> */}
+            <Heading text="INTRODUCTION" />
+
             <div className="w-70">
               <Typography className="text-center mt-3">
                 {project === "SARARESIDENCY" &&
@@ -285,9 +287,11 @@ const ProjectCategories = (props) => {
         </div>
         {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
           <>
-            <Typography className="heading mt-5 mb-3 text-center" variant="h4">
+            {/* <Typography className="heading mt-5 mb-3 text-center" variant="h4">
               CATEGORIES AVAILABLE
-            </Typography>
+            </Typography> */}
+            <Heading text="CATEGORIES AVAILABLE" />
+
             {project === "NKRESIDENCY"
               ? nkCategories.map((category, index) => (
                   <Categories
