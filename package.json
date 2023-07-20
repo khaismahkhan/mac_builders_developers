@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@hookstate/core": "^1.8.8",
@@ -22,7 +23,9 @@
     "clsx": "^1.2.1",
     "cross-env": "^5.1.6",
     "d3": "^7.8.2",
+    "emailjs": "^4.0.2",
     "es6-promise": "^4.2.8",
+    "google-one-tap": "^1.0.6",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",

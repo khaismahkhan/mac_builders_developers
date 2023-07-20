@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { OutlinedInput, Typography } from "@mui/material";
 
 const InputField = (props) => {
-  const { placeholder, value, onChange, topAdornment } = props;
+  const { placeholder, value, onChange, topAdornment, name,onClick} = props;
   return (
     <div id="input-field">
       {topAdornment ? (
@@ -21,6 +21,8 @@ const InputField = (props) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        name={name}
+        // onClick={onClick}
       />
     </div>
   );

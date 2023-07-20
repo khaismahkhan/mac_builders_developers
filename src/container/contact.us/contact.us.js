@@ -13,6 +13,7 @@ import clsx from "clsx";
 import InputField from "../../components/common/site.label.textfield/site.label.textfield";
 import Appointments from "./components/appointments/appointments";
 import FormSection from "./components/form/form";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = (props) => {
   const {} = props;
@@ -29,8 +30,39 @@ const ContactUs = (props) => {
   const handleChange = (name, value) => {
     setState({ ...state, [name]: value });
   };
-
   const form = useRef();
+
+  const sendEmail = (e) => {
+    setState({ ...state, isLoading: true });
+    e.preventDefault();
+    emailjs
+      .send(
+        "service_ex5nwbk",
+        "template_uh41u2i",
+        {
+          firstName: state.firstName,
+          lastName: state.lastName,
+          email: state.email,
+          message: state.message,
+        },
+        "HN3HV0IfMBnIN2zjS"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          setState({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+            isLoading: false,
+          });
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <div
@@ -97,7 +129,12 @@ const ContactUs = (props) => {
           <Appointments />
         </div>
       </div>
-      <FormSection />
+      <FormSection
+        handleChange={handleChange}
+        {...state}
+        {...props}
+        sendEmail={sendEmail}
+      />
     </div>
   );
 };

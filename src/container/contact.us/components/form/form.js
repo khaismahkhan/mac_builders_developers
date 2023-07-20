@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import InputField from "../../../../components/common/input.field/input.field";
 import { IsMobileWidth } from "../../../../components/common/utill/utils";
 import clsx from "clsx";
+import LoaderButton from "../../../../components/common/loader.button/loader.button";
 
 const FormSection = (props) => {
   const { email, message, firstName, lastName, isLoading } = props;
@@ -23,7 +24,7 @@ const FormSection = (props) => {
       <form
         className="w-100 justify-content-center"
         ref={form}
-        //   onSubmit={sendEmail}
+        onSubmit={props.sendEmail}
       >
         <div className="w-100 d-flex justify-content-center">
           <div
@@ -46,7 +47,7 @@ const FormSection = (props) => {
                 onChange={(e) =>
                   props.handleChange("firstName", e.target.value)
                 }
-                name="c_name"
+                name="firstName"
               />
             </div>
             <div
@@ -60,6 +61,7 @@ const FormSection = (props) => {
                 placeholder="Last Name"
                 value={lastName}
                 onChange={(e) => props.handleChange("lastName", e.target.value)}
+                name="lastName"
               />
             </div>
             <div className="w-100 p-3">
@@ -68,7 +70,7 @@ const FormSection = (props) => {
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => props.handleChange("email", e.target.value)}
-                name="reply_to"
+                name="email"
               />
             </div>
             <div className="w-100 p-3">
@@ -86,16 +88,16 @@ const FormSection = (props) => {
             <div
               className={clsx(!mobileWidth && "", mobileWidth && "w-100 mx-3")}
             >
-              <Button
+              <LoaderButton
                 variant="contained"
                 // className="w-50 m-3"
                 color="secondary"
                 type="submit"
-                //   onClick={sendEmail}
+                onClick={props.sendEmail}
                 loading={isLoading}
               >
                 Send a Message
-              </Button>
+              </LoaderButton>
             </div>
           </div>
         </div>
