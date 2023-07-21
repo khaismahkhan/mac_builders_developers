@@ -18,7 +18,7 @@ const Home = () => {
     <div>
       <CoverPage />
       <div className="m-5">
-        <Heading text="UPCOMING" span="PROJECTS" />
+        <Heading text="COMPLETED" span="PROJECTS" />
         <ComingSoonCarousel />
         <div className="d-flex flex-wrap justify-content-center">
           <Heading text="CURRENT" span="PROJECTS" />

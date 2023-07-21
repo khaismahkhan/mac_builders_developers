@@ -334,7 +334,7 @@ const ProjectCategories = (props) => {
             ) : project === "NKICON" ? (
               <Heading text="NK ICON" />
             ) : (
-              <Heading text="COMPLETED" span="PROJECTS" />
+              <Heading text="COMPLETED" span="PROJECT" />
             )}
           </div>
         </div>
