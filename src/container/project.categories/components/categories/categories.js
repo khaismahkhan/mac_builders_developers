@@ -1,7 +1,8 @@
 import { Typography, Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../project.categories.scss";
+import ImagePreviewDialog from "../image.preview.dialog/image.preview.dialog";
 const Categories = (props) => {
   const { project } = useParams();
   const {
@@ -19,7 +20,26 @@ const Categories = (props) => {
     yearly,
     ya,
     ma,
+    image,
   } = props;
+
+  const [state, setState] = useState({
+    previewDialog: false,
+  });
+
+  const onClosePreviewDialog = () => {
+    setState({
+      ...state,
+      previewDialog: false,
+    });
+  };
+
+  const previewDialogOpen = () => {
+    setState({
+      ...state,
+      previewDialog: true,
+    });
+  };
 
   return (
     <div
@@ -27,6 +47,13 @@ const Categories = (props) => {
         reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"
       }
     >
+      <ImagePreviewDialog
+        {...state}
+        {...props}
+        open={state.previewDialog}
+        onClose={onClosePreviewDialog}
+        src={image}
+      />
       <div className="w-50 leftBox box m-2 paper-root">
         <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3 payment">
           <div>
@@ -129,11 +156,11 @@ const Categories = (props) => {
               {bed}
             </Typography>
             <Button
-              onClick={props.previewDialogOpen}
+              onClick={previewDialogOpen}
               className="font-weight-bold mt-2"
               color="primary"
               variant="outlined"
-              style={{color:'white'}}
+              style={{ color: "white" }}
             >
               View Image
             </Button>

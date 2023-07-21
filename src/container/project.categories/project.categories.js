@@ -7,7 +7,6 @@ import Wrapper from "../../components/common/wrapper/wrapper";
 import { useParams } from "react-router-dom";
 import Dialog from "./components/dialog/dialog";
 import { useState } from "react";
-import ImagePreviewDialog from "./components/image.preview.dialog/image.preview.dialog";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
@@ -20,7 +19,6 @@ const ProjectCategories = (props) => {
     phone: "",
     isDialogOpen: false,
     loading: false,
-    previewDialog: false,
   });
 
   const nkCategories = [
@@ -34,6 +32,7 @@ const ProjectCategories = (props) => {
       possession: "2,453,360",
       reverse: true,
       bg: "#ff5556",
+      image: "nk a1.jpeg",
     },
     {
       type: "A",
@@ -45,6 +44,7 @@ const ProjectCategories = (props) => {
       possession: "1,955,480",
       reverse: false,
       bg: "#bcf955",
+      image: "nk a.jpeg",
     },
     {
       type: "B1",
@@ -56,6 +56,7 @@ const ProjectCategories = (props) => {
       possession: "1,271,120",
       reverse: true,
       bg: "#f8bc0c",
+      image: "nk b1.jpeg",
     },
     {
       type: "B",
@@ -67,6 +68,7 @@ const ProjectCategories = (props) => {
       possession: "1,032,800",
       reverse: false,
       bg: "#07ce58",
+      image: "nk b.jpeg",
     },
     {
       type: "C",
@@ -78,6 +80,7 @@ const ProjectCategories = (props) => {
       possession: "953,200",
       reverse: true,
       bg: "#0252a4",
+      image: "nk c.jpeg",
     },
     {
       type: "D",
@@ -89,6 +92,7 @@ const ProjectCategories = (props) => {
       possession: "996,080",
       reverse: false,
       bg: "#da9256",
+      image: "nk d.jpeg",
     },
   ];
 
@@ -107,6 +111,7 @@ const ProjectCategories = (props) => {
       possession: "2,300,000",
       reverse: true,
       bg: "#ff5556",
+      image: "sara a1.jpeg",
     },
     {
       type: "A",
@@ -122,6 +127,7 @@ const ProjectCategories = (props) => {
       possession: "2,150,000",
       reverse: false,
       bg: "#bcf955",
+      image: "sara a.jpeg",
     },
     {
       type: "B1",
@@ -137,6 +143,7 @@ const ProjectCategories = (props) => {
       possession: "2,200,000",
       reverse: true,
       bg: "#f8bc0c",
+      image: "sara b1.jpeg",
     },
     {
       type: "B",
@@ -152,6 +159,7 @@ const ProjectCategories = (props) => {
       possession: "2,550,000",
       reverse: false,
       bg: "#07ce58",
+      image: "sara b.jpeg",
     },
   ];
 
@@ -227,21 +235,6 @@ const ProjectCategories = (props) => {
     });
   };
 
-  const onClosePreviewDialog = () => {
-    setState({
-      ...state,
-      previewDialog: false,
-    });
-  };
-
-  const previewDialogOpen = () => {
-    debugger;
-    setState({
-      ...state,
-      previewDialog: true,
-    });
-  };
-
   const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
 
   const handleSubmit = async () => {
@@ -294,12 +287,6 @@ const ProjectCategories = (props) => {
         onClose={onClose}
       />
       <Wrapper />
-      <ImagePreviewDialog
-        {...state}
-        {...props}
-        open={state.previewDialog}
-        onClose={onClosePreviewDialog}
-      />
       <div className="m-5">
         <div className="d-flex flex-wrap justify-content-center">
           <div className="d-flex flex-column align-items-center">
@@ -362,7 +349,6 @@ const ProjectCategories = (props) => {
                     key={index}
                     {...state}
                     handleClick={handleClick}
-                    previewDialogOpen={previewDialogOpen}
                   />
                 ))
               : saraCategories.map((category, index) => (
@@ -371,7 +357,6 @@ const ProjectCategories = (props) => {
                     key={index}
                     {...state}
                     handleClick={handleClick}
-                    previewDialogOpen={previewDialogOpen}
                   />
                 ))}
           </>

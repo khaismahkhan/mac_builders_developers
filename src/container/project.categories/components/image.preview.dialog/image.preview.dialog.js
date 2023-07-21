@@ -51,7 +51,7 @@ export default function ImagePreviewDialog(props) {
                 <div className="w-100 d-flex justify-content-center">
                   <TransformComponent>
                     <img
-                      src={`${process.env.PUBLIC_URL}/assets/images/mustafa1.jpeg`}
+                      src={`${process.env.PUBLIC_URL}/assets/images/${props.src}`}
                       style={{
                         // width: "700px",
                         height: "50vh",
