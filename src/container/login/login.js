@@ -1,14 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./login.scss";
 import { Typography } from "@mui/material";
 import LoaderButton from "../../components/common/loader.button/loader.button";
 import InputField from "../../components/common/input.field/input.field";
 
 const Login = () => {
+  const form = useRef();
   const [state, setState] = useState({
-    username: "",
+    email: "",
     password: "",
+    isLoading: false,
   });
+
+  const handleChange = (name, value) => {
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+
+  const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
+
+  const login = async () => {
+    try {
+      setState({
+        ...state,
+        isLoading: true,
+      });
+      const url = `${BASE_URL}/api/v1/auth/signup`;
+      const data = {
+        email: state.email,
+        password: state.password,
+      };
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+      console.log(responseData);
+    } catch (error) {
+      console.error("Error:", error);
+      setState({
+        ...state,
+        isLoading: false,
+      });
+    }
+  };
+
   return (
     <div
       id="login"
@@ -28,8 +75,8 @@ const Login = () => {
       <div>
         <form
           className="w-100 justify-content-center"
-          //   ref={form}
-          //   onSubmit={props.sendEmail}
+          ref={form}
+          onSubmit={login}
         >
           <div className="d-flex justify-content-center flex-column w-100">
             <Typography className="font-weight-light pb-2">
@@ -37,24 +84,19 @@ const Login = () => {
             </Typography>
             <div className="w-100 mb-3">
               <InputField
-                placeholder="Enter Username"
-                //   value={firstName}
-                //   onChange={(e) =>
-                //     props.handleChange("firstName", e.target.value)
-                //   }
-                // name="userName"
+                placeholder="Enter your Email Address"
+                value={state.email}
+                onChange={(e) => handleChange("email", e.target.value)}
+                name="email"
                 className="w-100"
               />
             </div>
             <div className="w-100 mb-3">
               <InputField
-                // startAdornment="Password"
-                placeholder="Enter Password"
-                //   value={firstName}
-                //   onChange={(e) =>
-                //     props.handleChange("firstName", e.target.value)
-                //   }
-                // name="password"
+                placeholder="Enter your Password"
+                value={state.password}
+                onChange={(e) => handleChange("password", e.target.value)}
+                name="password"
                 type="password"
               />
             </div>
@@ -64,8 +106,8 @@ const Login = () => {
                 // className="w-50 m-3"
                 color="secondary"
                 type="submit"
-                //   onClick={props.sendEmail}
-                //   loading={isLoading}
+                onClick={login}
+                loading={state.isLoading}
               >
                 LOGIN
               </LoaderButton>
