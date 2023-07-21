@@ -128,6 +128,15 @@ const Categories = (props) => {
             <Typography variant="h3" className="font-weight-bold">
               {bed}
             </Typography>
+            <Button
+              onClick={props.previewDialogOpen}
+              className="font-weight-bold mt-2"
+              color="primary"
+              variant="outlined"
+              style={{color:'white'}}
+            >
+              View Image
+            </Button>
           </div>
           <div className="d-flex justify-content-end w-100">
             <Typography variant="h5" className="font-weight-bold">

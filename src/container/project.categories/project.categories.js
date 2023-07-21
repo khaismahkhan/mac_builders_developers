@@ -7,6 +7,7 @@ import Wrapper from "../../components/common/wrapper/wrapper";
 import { useParams } from "react-router-dom";
 import Dialog from "./components/dialog/dialog";
 import { useState } from "react";
+import ImagePreviewDialog from "./components/image.preview.dialog/image.preview.dialog";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
@@ -19,6 +20,7 @@ const ProjectCategories = (props) => {
     phone: "",
     isDialogOpen: false,
     loading: false,
+    previewDialog: false,
   });
 
   const nkCategories = [
@@ -225,6 +227,21 @@ const ProjectCategories = (props) => {
     });
   };
 
+  const onClosePreviewDialog = () => {
+    setState({
+      ...state,
+      previewDialog: false,
+    });
+  };
+
+  const previewDialogOpen = () => {
+    debugger;
+    setState({
+      ...state,
+      previewDialog: true,
+    });
+  };
+
   const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
 
   const handleSubmit = async () => {
@@ -277,7 +294,12 @@ const ProjectCategories = (props) => {
         onClose={onClose}
       />
       <Wrapper />
-
+      <ImagePreviewDialog
+        {...state}
+        {...props}
+        open={state.previewDialog}
+        onClose={onClosePreviewDialog}
+      />
       <div className="m-5">
         <div className="d-flex flex-wrap justify-content-center">
           <div className="d-flex flex-column align-items-center">
@@ -331,7 +353,6 @@ const ProjectCategories = (props) => {
         </div>
         {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
           <>
-          
             <Heading text="CATEGORIES AVAILABLE" />
 
             {project === "NKRESIDENCY"
@@ -341,6 +362,7 @@ const ProjectCategories = (props) => {
                     key={index}
                     {...state}
                     handleClick={handleClick}
+                    previewDialogOpen={previewDialogOpen}
                   />
                 ))
               : saraCategories.map((category, index) => (
@@ -349,6 +371,7 @@ const ProjectCategories = (props) => {
                     key={index}
                     {...state}
                     handleClick={handleClick}
+                    previewDialogOpen={previewDialogOpen}
                   />
                 ))}
           </>
