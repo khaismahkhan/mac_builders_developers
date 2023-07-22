@@ -134,7 +134,7 @@ const Dashboard = () => {
           data &&
           data.data?.map((user, index) => (
             <div className="d-flex flex-column mb-1 paper-root" key={index}>
-              <div className="d-flex w-100 d-flex p-1 mt-1">
+              <div className="d-flex w-100 d-flex p-2 mt-1">
                 <div className="w-5 d-flex justify-content-center align-items-center border-right font-size-small">
                   {index + 1}
                 </div>
@@ -162,11 +162,11 @@ const Dashboard = () => {
         <div className="d-flex justify-content-end pt-1">
           <Pagination
             disabled={state.loading ? true : false}
-            page={data.page + 1}
+            page={parseInt(data.number) + 1}
             onChange={onPageChange}
             className="p-3 pb-5"
             color="secondary"
-            count={data.totalPages}
+            count={data.totalPage}
             shape="rounded"
           />
         </div>
