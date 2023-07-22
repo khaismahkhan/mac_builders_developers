@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ContentDialog from "../../../../components/common/content.dialog/content.dialog";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import { Button } from "@mui/material";
 
 export default function ImagePreviewDialog(props) {
   const { title, src, open } = props;
@@ -8,7 +9,7 @@ export default function ImagePreviewDialog(props) {
   return (
     <div>
       <ContentDialog
-        title={<b>Preview Image</b>}
+        title={<b>{props.type} ({props.bed}) IMAGE</b>}
         onClose={props.onClose}
         dialogIsOpen={open}
         fullWidth
@@ -22,30 +23,90 @@ export default function ImagePreviewDialog(props) {
           >
             {({ zoomIn, zoomOut, resetTransform, centerView, ...rest }) => (
               <React.Fragment>
-                <div className="d-flex justify-content-center mb-2 mt-2">
+                <div className="d-flex justify-content-center mb-2">
                   <button
-                    className="cursor-pointer text-light rounded p-1 bg-primary border-rounded"
+                    style={{
+                      color: "#A9C585",
+                      textTransform: "unset",
+                      border: "none",
+                      background: "white",
+                      borderRadius: 5,
+                      fontSize:16
+                    }}
+                    className="pt-2 pb-2 mr-2 paper-root"
                     onClick={() => zoomIn()}
                   >
-                    Zoom In (+)
+                    <div className="d-flex align-items-center pl-2 pr-2">
+                      <div className="font-weight-bold">Zoom In</div>
+                      <div>
+                        <i
+                          class="fas fa-plus"
+                          style={{ color: "#A9C585", paddingLeft: 6 }}
+                        ></i>
+                      </div>
+                    </div>
                   </button>
                   <button
-                    className="cursor-pointer text-light rounded p-1 ml-1 bg-warning border-rounded"
+                    style={{
+                      color: "#02B7B4",
+                      textTransform: "unset",
+                      border: "none",
+                      background: "white",
+                      borderRadius: 5,
+                      fontSize:16
+                    }}
+                    className="pt-2 pb-2 mr-2 paper-root"
                     onClick={() => zoomOut()}
                   >
-                    Zoom Out (-)
+                    <div className="d-flex align-items-center pl-2 pr-2">
+                      <div className="font-weight-bold">Zoom Out</div>
+                      <div>
+                        <i
+                          class="fas fa-minus"
+                          style={{ color: "#02B7B4", paddingLeft: 6 }}
+                        ></i>
+                      </div>
+                    </div>
                   </button>
                   <button
-                    className="cursor-pointer text-light rounded p-1 ml-1 bg-danger-2 border-rounded"
+                    style={{
+                      color: "#dd3421",
+                      textTransform: "unset",
+                      border: "none",
+                      background: "white",
+                      borderRadius: 5,
+                      fontSize:16
+                    }}
+                    
+                    className="pt-2 pb-2 mr-2 paper-root"
                     onClick={() => centerView()}
                   >
-                    Center
+                    <div className="d-flex align-items-center pl-2 pr-2">
+                      <div className="font-weight-bold">Center</div>
+                      <div>
+                        <i
+                        // <FontAwesomeIcon icon="fa-solid fa-" />
+                          class="fas fa-eye"
+                          style={{ color: "#dd3421", paddingLeft: 6 }}
+                        ></i>
+                      </div>
+                    </div>
                   </button>
                   <button
-                    className="cursor-pointer text-light rounded p-1 ml-1 bg-danger-2 border-rounded"
+                    style={{
+                      color: "#033044",
+                      textTransform: "unset",
+                      border: "2px solid 033044",
+                      background: "white",
+                      borderRadius: 5,
+                      fontSize:16
+                    }}
+                    className="pt-2 pb-2 mr-2 paper-root"
                     onClick={() => resetTransform()}
                   >
-                    Reset
+                    <div className="d-flex align-items-center pl-2 pr-2">
+                      <div className="font-weight-bold">Reset</div>
+                    </div>
                   </button>
                 </div>
                 <div className="w-100 d-flex justify-content-center">

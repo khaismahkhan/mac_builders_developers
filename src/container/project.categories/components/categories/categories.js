@@ -53,6 +53,8 @@ const Categories = (props) => {
         open={state.previewDialog}
         onClose={onClosePreviewDialog}
         src={image}
+        type={type}
+        bed={bed}
       />
       <div className="w-50 leftBox box m-2 paper-root">
         <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3 payment">
@@ -160,7 +162,7 @@ const Categories = (props) => {
               className="font-weight-bold mt-2"
               color="primary"
               variant="outlined"
-              style={{ color: "white" }}
+              style={{ color: "white",border:'1px solid white' }}
             >
               View Image
             </Button>
