@@ -25,10 +25,7 @@ const Home = () => {
           <ProjectsSection redirect={redirect} />
 
           {/* harwork in numbers */}
-          <div
-            className="d-flex p-4"
-            style={{ borderRadius: "10px", background: "#15557c" }}
-          >
+          <div className="d-flex p-4 hardwork paper-root">
             <div className="w-60 d-flex flex-column justify-content-center align-items-start">
               <Typography
                 className="font-weight-bold pb-2"
@@ -58,7 +55,7 @@ const Home = () => {
                     variant="h2"
                     color="secondary"
                   >
-                    439
+                    33
                   </Typography>
                   <Typography>Executive Clients</Typography>
                 </div>
@@ -68,9 +65,9 @@ const Home = () => {
                     variant="h2"
                     color="secondary"
                   >
-                    439
+                    99%
                   </Typography>
-                  <Typography>Executive Clients</Typography>
+                  <Typography>Success Rate</Typography>
                 </div>
               </div>
               <div className="m-5">
@@ -82,7 +79,7 @@ const Home = () => {
                   >
                     439
                   </Typography>
-                  <Typography>Executive Clients</Typography>
+                  <Typography>Complted Projects</Typography>
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box">
                   <Typography
@@ -90,9 +87,9 @@ const Home = () => {
                     variant="h2"
                     color="secondary"
                   >
-                    439
+                    27
                   </Typography>
-                  <Typography>Executive Clients</Typography>
+                  <Typography>Team Experts</Typography>
                 </div>
               </div>
             </div>

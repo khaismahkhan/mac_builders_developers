@@ -3,13 +3,15 @@ import "./login.scss";
 import { Typography } from "@mui/material";
 import LoaderButton from "../../components/common/loader.button/loader.button";
 import InputField from "../../components/common/input.field/input.field";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const form = useRef();
   const [state, setState] = useState({
     email: "",
     password: "",
-    isLoading: false,
+    loading: false,
   });
 
   const handleChange = (name, value) => {
@@ -19,39 +21,38 @@ const Login = () => {
     });
   };
 
+  const history = useNavigate();
+
   const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
 
   const login = async () => {
     try {
       setState({
         ...state,
-        isLoading: true,
+        loading: true,
       });
-      const url = `${BASE_URL}/api/v1/auth/signup`;
-      const data = {
+      const response = await axios.post(`${BASE_URL}/api/v1/auth/login`, {
         email: state.email,
         password: state.password,
-      };
-
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      // Assuming the login API returns a token in the response.
+      const { token } = response.data;
 
-      const responseData = await response.json();
-      console.log(responseData);
-    } catch (error) {
-      console.error("Error:", error);
+      // Save the token in local storage.
+      localStorage.setItem("authToken", token);
+
+      // Redirect to the dashboard page.
+      history("/dashboard");
       setState({
         ...state,
-        isLoading: false,
+        loading: false,
+      });
+    } catch (error) {
+      console.error("Login failed", error);
+      setState({
+        ...state,
+        loading: false,
       });
     }
   };
@@ -59,7 +60,7 @@ const Login = () => {
   return (
     <div
       id="login"
-      className="d-flex flex-column align-items-center justify-content-between w-100 pb-5"
+      className="d-flex flex-column align-items-center justify-content-between w-100 pt-2 pb-5"
       style={{ height: "100vh" }}
     >
       <div className="d-flex flex-column align-items-center">
@@ -107,7 +108,7 @@ const Login = () => {
                 color="secondary"
                 type="submit"
                 onClick={login}
-                loading={state.isLoading}
+                loading={state.loading}
               >
                 LOGIN
               </LoaderButton>

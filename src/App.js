@@ -1,19 +1,31 @@
 import "./App.scss";
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect, Suspense } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams
+} from "react-router-dom";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { appTheme } from "./container/material.theme/app.theme/app.material.theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import PageNotFound from "./container/not.found.page/not.found.page";
-import Home from "./container/home/home";
-import ContactUs from "./container/contact.us/contact.us";
-import AboutUs from "./container/about.us/about.us";
-import ProjectCategories from "./container/project.categories/project.categories";
-import AppNavBar from "./container/app.navbar/app.navbar";
-import Footer from "./container/footer/footer";
 import googleOneTap from "google-one-tap";
-import Dashboard from "./container/dashboard/dshboard";
-import Login from "./container/login/login";
+import LazyLoading from "./components/common/lazy.loading/lazy.loading";
+import { Button } from "@mui/material";
+// import AppNavBar from "./container/app.navbar/app.navbar"
+// import Footer from "./container/footer/footer"
+
+const Home = React.lazy(() => import("./container/home/home"));
+const AppNavBar = React.lazy(() => import("./container/app.navbar/app.navbar"));
+const Footer = React.lazy(() => import("./container/footer/footer"));
+const AboutUs = React.lazy(() => import("./container/about.us/about.us"));
+const ContactUs = React.lazy(() => import("./container/contact.us/contact.us"));
+const ProjectCategories = React.lazy(() =>
+  import("./container/project.categories/project.categories")
+);
+const Dashboard = React.lazy(() => import("./container/dashboard/dashboard"));
+const Login = React.lazy(() => import("./container/login/login"));
 
 const options = {
   client_id:
@@ -30,52 +42,58 @@ function App() {
       : null
   );
 
-  // googleOneTap(options, (response) => {
-  //   console.log(response);
-  // });
+  const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
 
-  // useEffect(() => {
-  //   // if (!loginData) {
-  //     debugger
-  //     googleOneTap(options, async (response) => {
-  //       console.log(response);
-  //       // const res = await fetch("/api/google-login", {
-  //       //   method: "POST",
-  //       //   body: JSON.stringify({
-  //       //     token: response.credential,
-  //       //   }),
-  //       //   headers: {
-  //       //     "Content-Type": "application/json",
-  //       //   },
-  //       // });
-  //       // const data = await res.json();
-  //       // setLoginData(data);
-  //       // console.log(data)
-  //       // localStorage.setItem("loginData", JSON.stringify(data));
-  //     });
-  //   // }
-  // });
+  useEffect(() => {
+    if (!loginData) {
+      googleOneTap(options, async (response) => {
+        console.log(response);
+        const res = await fetch(`${BASE_URL}/api/v1/auth/google-login`, {
+          method: "POST",
+          body: JSON.stringify({
+            token: response.credential,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await res.json();
+        setLoginData(data);
+        console.log(data);
+        localStorage.setItem("loginData", JSON.stringify(data));
+      });
+    }
+  });
+
+  const handleLogout = () => {
+    localStorage.removeItem("loginData");
+    setLoginData(null);
+  };
+
 
   return (
     <div>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={appTheme}>
           <CssBaseline />
-          <Router>
-            {/* <AppNavBar /> */}
-            <div>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/contact-us" element={<ContactUs />} />
-                <Route path="/about-us" element={<AboutUs />} />
-                <Route path="/:project" element={<ProjectCategories />} />
-                <Route path="*" element={<PageNotFound />} />
-              </Routes>
-            </div>
-            {/* <Footer /> */}
-          </Router>
+          <Suspense fallback={<LazyLoading/>}>
+            <Router>
+              {/* {!hideNavBarAndFooter && <AppNavBar />} */}
+              <div>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/contact-us" element={<ContactUs />} />
+                  <Route path="/about-us" element={<AboutUs />} />
+                  <Route path="/:project" element={<ProjectCategories />} />
+                  <Route path="*" element={<PageNotFound />} />
+                </Routes>
+              </div>
+              {/* <Button onClick={handleLogout}>logout</Button> */}
+              {/* {!hideNavBarAndFooter && <Footer />} */}
+            </Router>
+          </Suspense>
         </ThemeProvider>
       </StyledEngineProvider>
     </div>
