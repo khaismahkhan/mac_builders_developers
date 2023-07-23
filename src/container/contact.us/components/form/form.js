@@ -1,13 +1,18 @@
 import { TextareaAutosize, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import InputField from "../../../../components/common/input.field/input.field";
-import { IsMobileWidth } from "../../../../components/common/utill/utils";
+import {
+  IsMobileWidth,
+  IsTabletWidth,
+} from "../../../../components/common/utill/utils";
 import clsx from "clsx";
 import LoaderButton from "../../../../components/common/loader.button/loader.button";
 
 const FormSection = (props) => {
   const { email, message, firstName, lastName, isLoading } = props;
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
+
   const form = useRef();
 
   return (
@@ -30,14 +35,14 @@ const FormSection = (props) => {
           <div
             className={clsx(
               "d-flex justify-content-center flex-wrap",
-              !mobileWidth && "w-70",
-              mobileWidth && "w-100"
+              (!mobileWidth || !tabletWidth) && "w-70",
+              (mobileWidth || tabletWidth) && "w-100"
             )}
           >
             <div
               className={clsx(
-                !mobileWidth && "w-50 p-3",
-                mobileWidth && "w-100 p-3"
+                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
               <InputField
@@ -52,8 +57,8 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                !mobileWidth && "w-50 p-3",
-                mobileWidth && "w-100 p-3"
+                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
               <InputField
@@ -86,7 +91,10 @@ const FormSection = (props) => {
               />
             </div>
             <div
-              className={clsx(!mobileWidth && "", mobileWidth && "w-100 mx-3")}
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "",
+                (mobileWidth || tabletWidth) && "w-100 mx-3"
+              )}
             >
               <LoaderButton
                 variant="contained"

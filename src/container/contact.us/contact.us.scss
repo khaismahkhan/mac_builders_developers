@@ -24,6 +24,17 @@
         height: 30vh;
       }
     }
+    @media screen and (max-width: 460px) {
+      .connectImage {
+        height: 250px;
+      }
+      .appointmentImage {
+        height: 350px;
+      }
+      .mb-padding {
+        height: 30vh;
+      }
+    }
   }
   
   

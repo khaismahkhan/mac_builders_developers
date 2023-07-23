@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Typography } from "@mui/material";
 import "./contact.us.scss";
-import { IsMobileWidth } from "../../components/common/utill/utils";
+import {
+  IsMobileWidth,
+  IsTabletWidth,
+} from "../../components/common/utill/utils";
 import clsx from "clsx";
 import Appointments from "./components/appointments/appointments";
 import FormSection from "./components/form/form";
 import emailjs from "@emailjs/browser";
 
 const ContactUs = (props) => {
-
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
 
   const [state, setState] = useState({
     firstName: "",
@@ -62,15 +65,15 @@ const ContactUs = (props) => {
     >
       <div
         className={clsx(
-          !mobileWidth && "d-flex w-100 paper-root",
-          mobileWidth && "d-flex flex-column"
+          (!tabletWidth || !mobileWidth) && "d-flex w-100 paper-root",
+          (tabletWidth || mobileWidth) && "d-flex flex-column w-100"
         )}
       >
         <div
           className={clsx(
             "d-flex flex-column justify-content-center text-theme",
-            !mobileWidth && "w-50 px-5",
-            mobileWidth && "w-100 px-4 mb-padding"
+            (!tabletWidth || !mobileWidth) && "w-50 px-5",
+            (tabletWidth || mobileWidth) && "w-100 px-4 mb-padding"
           )}
         >
           <Typography variant="subtitle1" className="pb-2">
@@ -78,13 +81,19 @@ const ContactUs = (props) => {
           </Typography>
           <Typography
             className="fw-bold"
-            variant={clsx(!mobileWidth && "h1", mobileWidth && "h2")}
+            variant={clsx(
+              (!tabletWidth || !mobileWidth) && "h1",
+              (tabletWidth || mobileWidth) && "h2"
+            )}
           >
             Get In Touch
           </Typography>
           <Typography
             className="fw-bold"
-            variant={clsx(!mobileWidth && "h1", mobileWidth && "h2")}
+            variant={clsx(
+              (!tabletWidth || !mobileWidth) && "h1",
+              (tabletWidth || mobileWidth) && "h2"
+            )}
           >
             With Us
           </Typography>
@@ -92,29 +101,29 @@ const ContactUs = (props) => {
         <div
           className={clsx(
             "connectImage",
-            !mobileWidth && "w-50",
-            mobileWidth && "w-100"
+            (!tabletWidth || !mobileWidth) && "w-50",
+            (tabletWidth || mobileWidth) && "w-100"
           )}
         ></div>
       </div>
       <div
         className={clsx(
-          !mobileWidth && "d-flex w-100 paper-root",
-          mobileWidth && "d-flex flex-column-reverse"
+          (!mobileWidth || !tabletWidth) && "d-flex w-100 paper-root",
+          (mobileWidth || tabletWidth) && "d-flex flex-column-reverse"
         )}
       >
         <div
           className={clsx(
             "appointmentImage",
-            !mobileWidth && "w-50",
-            mobileWidth && "w-100"
+            (!mobileWidth || !tabletWidth) && "w-50",
+            (mobileWidth || tabletWidth) && "w-100"
           )}
         ></div>
         <div
           className={clsx(
             "d-flex flex-column justify-content-center text-theme",
-            !mobileWidth && "w-50 px-5",
-            mobileWidth && "w-100 py-5 px-4"
+            (!mobileWidth || !tabletWidth) && "w-50 px-5",
+            (mobileWidth || tabletWidth) && "w-100 py-5 px-2"
           )}
         >
           <Appointments />

@@ -1,10 +1,20 @@
 import { Typography } from "@mui/material";
 import React from "react";
+import {
+  IsMobileWidth,
+  IsTabletWidth,
+} from "../../../../components/common/utill/utils";
+import clsx from "clsx";
 
 const Appointments = () => {
+  const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
   return (
     <>
-      <Typography variant="h2" className="pb-4">
+      <Typography
+        variant={clsx(!mobileWidth && "h2", mobileWidth && "h5")}
+        className="pb-4"
+      >
         Make an Appointment
       </Typography>
       <div className="py-3">
