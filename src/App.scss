@@ -152,6 +152,9 @@ body::-webkit-scrollbar-thumb:hover {
 .w-10 {
   width: 10% !important;
 }
+.w-100 {
+  width: 100% !important;
+}
 .w-18 {
   width: 18% !important;
 }
@@ -292,11 +295,29 @@ body::-webkit-scrollbar-thumb:hover {
 .heading {
   letter-spacing: 10px;
   // font-family: 'Poppins' !important;
-// font-weight: 700 !important;
+  // font-weight: 700 !important;
 }
 .shaded {
   letter-spacing: 10px;
   position: relative;
   top: 35px;
   // font-family: 'Poppins' !important;
+}
+
+@media screen and (max-width: 600px) {
+  .heading {
+    letter-spacing: 5px;
+  }
+  .shaded {
+    letter-spacing: 5px;
+    position: relative;
+    top: 22px;
+    // font-family: 'Poppins' !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .shaded {
+    display: none;
+  }
 }

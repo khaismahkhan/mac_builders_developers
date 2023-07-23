@@ -1,9 +1,14 @@
-  .wrapper{
-    height: 80vh;
-    // width: 100vw;
-    background-image: url(../../../../public/assets/images/mustafa1.jpeg);
-    background-size: 100% 100%, contain;
-    background-position: center;
-    opacity: 0.2;
+.wrapper {
+  height: 80vh;
+  // width: 100vw;
+  background-image: url(../../../../public/assets/images/mustafa1.jpeg);
+  background-size: 100% 100%, contain;
+  background-position: center;
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper {
+    height: 40vh;
   }
-  
+}

@@ -35,6 +35,13 @@ export const materialThemeBase = {
       fontSize: 30,
       lineHeight: '125.3%'
     },
+    subtitlepoppins: {
+      fontFamily: 'Poppins',
+      fontSize: 18,
+      fontWeight: 600,
+      fontStyle: 'normal',
+      lineHeight: '24px'
+    },
     h3: {
       fontFamily: 'Comfortaa-SemiBold',
       fontWeight: 600,

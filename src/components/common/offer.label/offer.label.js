@@ -1,22 +1,31 @@
 import { Button, Typography } from "@mui/material";
 import React from "react";
 import "./offer.label.scss";
-import { IsMobileWidth } from "../utill/utils";
+import { IsMobileWidth, IsTabletWidth } from "../utill/utils";
 import clsx from "clsx";
 
 const OfferLabel = () => {
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
   return (
     <div id="offer-label">
-      <div className="paper-root d-flex align-items-center bg-white" style={{borderRadius:20}}>
+      <div
+        className={clsx(
+          (!mobileWidth || !tabletWidth) &&
+            "justify-content-start paper-root d-flex align-items-center bg-white w-100 flex-wrap",
+          (mobileWidth || tabletWidth) &&
+            "justify-content-center paper-root d-flex align-items-center bg-white w-100 flex-wrap p-3"
+        )}
+        style={{ borderRadius: 20 }}
+      >
         <div
           className={clsx(
-            !mobileWidth && "w-60 ml-5",
-            mobileWidth && "ml-3 w-70"
+            (!mobileWidth || !tabletWidth) && "w-55 ml-5",
+            (mobileWidth || tabletWidth) && "w-100 text-center"
           )}
         >
           <Typography
-            variant="h2"
+            variant={clsx(!mobileWidth && "h2", mobileWidth && "h5")}
             color="secondary"
             className="font-weight-bold"
           >
@@ -27,8 +36,8 @@ const OfferLabel = () => {
             className="pt-2"
           >
             Associate with us and make us your family to get the better home
-            better life. Associate with us and make us your family to get the better home
-            better life.
+            better life. Associate with us and make us your family to get the
+            better home better life.
           </Typography>
           <Button
             href="https://wa.me/923242930832"
@@ -39,7 +48,12 @@ const OfferLabel = () => {
             Book Now
           </Button>
         </div>
-        <div className="w-40">
+        <div
+          className={clsx(
+            (!mobileWidth || !tabletWidth) && "w-40",
+            (mobileWidth || tabletWidth) && "w-100"
+          )}
+        >
           <img
             className="image"
             src={`${process.env.PUBLIC_URL}/assets/images/team.jpg`}

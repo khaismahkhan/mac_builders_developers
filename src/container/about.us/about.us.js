@@ -6,8 +6,16 @@ import Offers from "./components/offers/offers";
 import "./components/offers/offers.scss";
 import Wrapper from "../../components/common/wrapper/wrapper";
 import Heading from "../../components/common/heading/heading";
+import {
+  IsMobileWidth,
+  IsTabletWidth,
+} from "../../components/common/utill/utils";
+import clsx from "clsx";
 
 const AboutUs = () => {
+  const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
+
   const profiles = [
     {
       name: "Khaismah Bin Ilyas",
@@ -62,10 +70,10 @@ const AboutUs = () => {
   return (
     <div>
       <Wrapper />
-      <div className="m-5">
+      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-2")}>
         <div className="d-flex flex-column align-items-center">
           <Heading text="WHO WE" span=" ARE" />
-          <div className="w-70">
+          <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>
             <Typography className="text-center mt-3">
               Welcome to Vitazo. We are a trailblazing digital agency that
               crafts captivating online experiences and propels businesses to
@@ -86,10 +94,27 @@ const AboutUs = () => {
         </div>
         <div className="d-flex flex-column align-items-center">
           <Heading text="OUR MISSION" span=" STATEMENT" />
-          <div className="d-flex justify-content-center align-items-center mt-4 w-90">
-            <div className="w-50 mission"></div>
-            <div className="w-50 p-5">
-              <Typography className="">
+          <div
+            className={clsx(
+              (!mobileWidth || !tabletWidth) &&
+                "d-flex justify-content-center flex-wrap align-items-center mt-4 w-90",
+              (mobileWidth || tabletWidth) &&
+                "d-flex justify-content-center flex-wrap align-items-center mt-4 w-100"
+            )}
+          >
+            <div
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "w-50 mission",
+                (mobileWidth || tabletWidth) && "w-100 mission"
+              )}
+            ></div>
+            <div
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "w-50 p-5",
+                (mobileWidth || tabletWidth) && "w-100"
+              )}
+            >
+              <Typography className="w-100">
                 Our mission at Vitazo is to be the catalyst of digital
                 brilliance for businesses worldwide. We are driven by a singular
                 purpose: to transform the digital landscape with our visionary
@@ -105,11 +130,28 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="d-flex flex-column align-items-center mt-5">
+        <div className="d-flex flex-column align-items-center mt-3">
           <Heading text="ABOUT OUR" span=" SERVICES" />
-          <div className="d-flex justify-content-center align-items-center mt-4 w-90">
-            <div className="w-50 services"></div>
-            <div className="w-50 p-5">
+          <div
+            className={clsx(
+              (!mobileWidth || !tabletWidth) &&
+                "d-flex justify-content-center flex-wrap align-items-center mt-4 w-90",
+              (mobileWidth || tabletWidth) &&
+                "d-flex justify-content-center flex-wrap align-items-center mt-4 w-100"
+            )}
+          >
+            <div
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "w-50 services",
+                (mobileWidth || tabletWidth) && "w-100 services"
+              )}
+            ></div>
+            <div
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "w-50 p-5",
+                (mobileWidth || tabletWidth) && "w-100 p-2"
+              )}
+            >
               <Typography className="">
                 Owning a solitary unit or a whole structure or land, let our
                 experts bear the obligation while you receive the benefits. We
@@ -129,17 +171,17 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="d-flex flex-column align-items-center mt-5">
+        <div className="d-flex flex-column align-items-center mt-5 w-100">
           <Heading text="WHAT CAN WE" span=" OFFER?" />
 
-          <div className="d-flex flex-wrap justify-content-center">
+          {/* <div className="d-flex flex-wrap justify-content-center w-100">
             {offers.map((offer, index) => (
               <Offers {...offer} key={index} />
             ))}
-          </div>
+          </div> */}
         </div>
         <div className="d-flex flex-column align-items-center mt-5">
-          <div className="w-70">
+          <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>
             <Typography
               className="text-center font-weight-bold"
               variant="h4"
@@ -160,11 +202,11 @@ const AboutUs = () => {
         <div className="d-flex flex-wrap justify-content-center mt-5">
           {profiles.map((profile, index) => (
             <div className="m-2">
-              <ProductCard {...profile} key={index}/>
+              <ProductCard {...profile} key={index} />
             </div>
           ))}
         </div>
-        <div className="mt-4">
+        <div className="mt-4 w-100">
           <OfferLabel />
         </div>
       </div>
