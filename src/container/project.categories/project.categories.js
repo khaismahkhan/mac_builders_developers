@@ -7,6 +7,7 @@ import Wrapper from "../../components/common/wrapper/wrapper";
 import { useNavigate, useParams } from "react-router-dom";
 import Dialog from "./components/dialog/dialog";
 import { useState } from "react";
+import Features from "./components/features/features";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
@@ -428,6 +429,9 @@ const ProjectCategories = (props) => {
               </>
             )}
           </div>
+        </div>
+        <div className="mt-5">
+          <Features/>
         </div>
         {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
           <>

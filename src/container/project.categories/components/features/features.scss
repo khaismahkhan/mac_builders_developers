@@ -1,0 +1,24 @@
+.feature {
+  //   background: linear-gradient(#bce0cb, #033044);
+  background: white;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  letter-spacing: 2px;
+}
+.tagwrapper {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tag {
+  height: 160px;
+  width: 160px;
+  border-radius: 100%;
+  background: #033044;
+  color: white;
+}
+.featureBox {
+  width: 250px;
+}
