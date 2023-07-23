@@ -86,7 +86,7 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/contact-us" element={<ContactUs />} />
                   <Route path="/about-us" element={<AboutUs />} />
-                  <Route path="/:project" element={<ProjectCategories />} />
+                  <Route path="/project/:project" element={<ProjectCategories />} />
                   <Route path="*" element={<PageNotFound />} />
                 </Routes>
               </div>

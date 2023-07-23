@@ -1,18 +1,26 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React from "react";
 import Categories from "./components/categories/categories";
 import "./project.categories.scss";
 import Heading from "../../components/common/heading/heading";
 import Wrapper from "../../components/common/wrapper/wrapper";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Dialog from "./components/dialog/dialog";
 import { useState } from "react";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
 
+  const projectName = project.replace(/_/g, " ");
+
+  const history = useNavigate();
+
+  const redirect = (path) => {
+    history(`${path}`);
+  };
+
   const [state, setState] = useState({
-    project: project,
+    project: projectName,
     plan: "",
     name: "",
     email: "",
@@ -130,7 +138,7 @@ const ProjectCategories = (props) => {
       image: "sara a.jpeg",
     },
     {
-      type: "B1",
+      type: "B",
       bed: "2 BED DD",
       price: "16,000,000",
       booking: "1,600,000",
@@ -143,10 +151,10 @@ const ProjectCategories = (props) => {
       possession: "2,200,000",
       reverse: true,
       bg: "#f8bc0c",
-      image: "sara b1.jpeg",
+      image: "sara b.jpeg",
     },
     {
-      type: "B",
+      type: "C",
       bed: "2 BED DD",
       price: "15,000,000",
       booking: "1,500,000",
@@ -159,7 +167,7 @@ const ProjectCategories = (props) => {
       possession: "2,550,000",
       reverse: false,
       bg: "#07ce58",
-      image: "sara b.jpeg",
+      image: "sara c.jpeg",
     },
   ];
 
@@ -290,13 +298,33 @@ const ProjectCategories = (props) => {
       <div className="m-5">
         <div className="d-flex flex-wrap justify-content-center">
           <div className="d-flex flex-column align-items-center">
-            {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
+            {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
               <>
-                <Heading text="INTRODUCTION" />
-
+                {/* <Heading text="CURRENT" span="PROJECT" /> */}
+                <Typography
+                  variant="h5"
+                  color="secondary"
+                  className="font-weight-bold text-center"
+                >
+                  {projectName}
+                </Typography>
+                <Typography className="mt-3">
+                  {project === "NK_RESIDENCY"
+                    ? "Address : Plot # B 3/4 13-D3, Gulshan-e-Iqbal, Karachi."
+                    : project === "SARA_RESIDENCY"
+                    ? "Address : Plot # 107,OPP Court Yard Banquet, Alamghir Road, Bahadurabad, Karachi."
+                    : ""}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  color="secondary"
+                  className="font-weight-bold text-center mt-3"
+                >
+                  INTRODUCTION
+                </Typography>
                 <div className="w-70">
                   <Typography className="text-center mt-3">
-                    {project === "SARARESIDENCY" &&
+                    {project === "SARA_RESIDENCY" &&
                       `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
                     Laying one's hands comfortably to basic necessities of life
                     in the essence of an ideal living place anywhere, but a
@@ -317,7 +345,7 @@ const ProjectCategories = (props) => {
                     Many people are quite choosy about the vicinity of a place
                     they live in. Beacuse the environs of a particular locality
                     also play a significant role from living point of view.{" "}
-                    {project === "NKRESIDENCY"
+                    {project === "NK_RESIDENCY"
                       ? "NK Residency is situated at the most ideal and attractive central location of Block 13-D, Gulshan-e-Iqbal,"
                       : "Sara Blessing is situated at the most ideal and attractive central location of Garden West,"}
                     Strategically located for a peaceful living with style and
@@ -329,20 +357,83 @@ const ProjectCategories = (props) => {
                   </Typography>
                 </div>
               </>
-            ) : project === "SARABLESSING" || project === "NKBRIDGEVIEW" ? (
-              <Heading text="COMING" span="SOON" />
-            ) : project === "NKICON" ? (
-              <Heading text="NK ICON" />
+            ) : project === "SARA_BLESSING" || project === "NK_BRIDGE_VIEW" ? (
+              <>
+                <Heading text="COMING" span="SOON" />
+                <Typography
+                  variant="h6"
+                  color="secondary"
+                  className="font-weight-bold text-center"
+                >
+                  {projectName}
+                </Typography>
+                <Typography className="mt-3">
+                  {project === "SARA_BLESSING"
+                    ? "Address : Plot # 320, OPP Prince Lawn Near PSO Pump Garden West, Karachi."
+                    : project === "NK_BRIDGE_VIEW"
+                    ? "Address : Plot # 441, Garden West Karachi, Karachi."
+                    : ""}
+                </Typography>
+                <Button
+                  onClick={() => redirect("/contact-us")}
+                  className="font-weight-bold mt-3"
+                  color="primary"
+                >
+                  For More Details
+                </Button>
+              </>
+            ) : project === "NK_ICON" ? (
+              <>
+                <Heading text="NK ICON" />
+                <Typography className="">
+                  Address : Plot # 272, A.M OPP Pearadise Hotel Near Passport
+                  Office Saddar, Karachi.
+                </Typography>
+                <div className="text-center">
+                  <Button
+                    onClick={() => setState({ ...state, isDialogOpen: true })}
+                    className="font-weight-bold mt-3"
+                    color="primary"
+                  >
+                    Show Your Interest
+                  </Button>
+                </div>
+              </>
             ) : (
-              <Heading text="COMPLETED" span="PROJECT" />
+              <>
+                <Heading text="COMPLETED" span="PROJECT" />
+                <Typography
+                  variant="h6"
+                  color="secondary"
+                  className="font-weight-bold text-center"
+                >
+                  {projectName}
+                </Typography>
+                <Typography className="mt-3">
+                  {project === "ZOHRA_RESIDENCY"
+                    ? "Address : Plot # 434, Amil Colony Jamshed Road, Karachi."
+                    : project === "UROOJ_ARCADE"
+                    ? "Address : Plot # 711, Fatima Jinnah Colony Jamshed Road, Karachi."
+                    : project === "AL_MUSTAFA_PRIME"
+                    ? "Address : Plot # E-166, P.E.C.H.S Society, Karachi."
+                    : "Address : Plot # C-11, Block 20 Fader B Area, Karachi."}
+                </Typography>
+                <Button
+                  onClick={() => redirect("/contact-us")}
+                  className="font-weight-bold mt-3"
+                  color="primary"
+                >
+                  For More Details
+                </Button>
+              </>
             )}
           </div>
         </div>
-        {project === "NKRESIDENCY" || project === "SARARESIDENCY" ? (
+        {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
           <>
             <Heading text="CATEGORIES AVAILABLE" />
 
-            {project === "NKRESIDENCY"
+            {project === "NK_RESIDENCY"
               ? nkCategories.map((category, index) => (
                   <Categories
                     {...category}
@@ -360,7 +451,7 @@ const ProjectCategories = (props) => {
                   />
                 ))}
           </>
-        ) : project === "UROOJARCADE" ? (
+        ) : project === "UROOJ_ARCADE" ? (
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {urrojArcade.map((image, index) => (
               <img
@@ -372,7 +463,7 @@ const ProjectCategories = (props) => {
               />
             ))}
           </div>
-        ) : project === "ZOHRARESIDENCY" ? (
+        ) : project === "ZOHRA_RESIDENCY" ? (
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {zohraResidency.map((image, index) => (
               <img
@@ -384,7 +475,7 @@ const ProjectCategories = (props) => {
               />
             ))}
           </div>
-        ) : project === "ALMUSTAFAPRIME" ? (
+        ) : project === "AL_MUSTAFA_PRIME" ? (
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {alMustafa.map((image, index) => (
               <img
@@ -396,7 +487,7 @@ const ProjectCategories = (props) => {
               />
             ))}
           </div>
-        ) : project === "NKBRIDGEVIEW" ? (
+        ) : project === "NK_BRIDGE_VIEW" ? (
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {nkBridge.map((image, index) => (
               <img
@@ -408,7 +499,7 @@ const ProjectCategories = (props) => {
               />
             ))}
           </div>
-        ) : project === "SARABLESSING" ? (
+        ) : project === "SARA_BLESSING" ? (
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {saraBlessing.map((image, index) => (
               <img
@@ -420,19 +511,23 @@ const ProjectCategories = (props) => {
               />
             ))}
           </div>
-        ) : project === "NKICON" ? (
-          <div className="d-flex justify-content-center flex-wrap mt-5">
-            {nkImages.map((image, index) => (
-              <img
-                style={{ height: 700, width: 600 }}
-                src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
-                alt="product-img"
-                className="zoom"
-                id={index}
-              />
-            ))}
-          </div>
-        ) : null}
+        ) : project === "NK_ICON" ? (
+          <>
+            <div className="d-flex justify-content-center flex-wrap mt-5">
+              {nkImages.map((image, index) => (
+                <img
+                  style={{ height: 700, width: 600 }}
+                  src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                  alt="product-img"
+                  className="zoom"
+                  id={index}
+                />
+              ))}
+            </div>
+          </>
+        ) : (
+          <Typography>No Image Available</Typography>
+        )}
       </div>
     </div>
   );

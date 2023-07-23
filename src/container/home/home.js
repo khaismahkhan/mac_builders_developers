@@ -11,7 +11,7 @@ const Home = () => {
   const history = useNavigate();
 
   const redirect = (project) => {
-    history(`/${project}`);
+    history(`project/${project.replace(/\s+/g, "_")}`);
   };
 
   return (

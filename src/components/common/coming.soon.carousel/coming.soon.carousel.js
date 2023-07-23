@@ -7,28 +7,28 @@ import { useNavigate } from "react-router-dom";
 
 const ComingSoonCarousel = (props) => {
   const comingItems = [
-    { name: "UROOJARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
+    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
     {
-      name: "ZOHRARESIDENCY",
+      name: "ZOHRA RESIDENCY",
       image: "sherwani.jpeg",
       bg: "#cadb3d",
       color: "white",
     },
     {
-      name: "ALMUSTAFAPRIME",
+      name: "AL MUSTAFA PRIME",
       image: "kk.jpg",
       bg: "#ebebeb",
       color: "#101010",
     },
     {
-      name: "NKBRIDGEVIEW",
+      name: "NK BRIDGE VIEW",
       image: "kk.jpg",
       bg: "#fdc11e",
       color: "#101010",
       soon: true,
     },
     {
-      name: "SARABLESSING",
+      name: "SARA BLESSING",
       image: "kk.jpg",
       bg: "#d62196",
       color: "white",
@@ -56,7 +56,7 @@ const ComingSoonCarousel = (props) => {
   const history = useNavigate();
 
   const redirect = (project) => {
-    history(`/${project}`);
+    history(`project/${project.replace(/\s+/g, "_")}`);
   };
 
   return (

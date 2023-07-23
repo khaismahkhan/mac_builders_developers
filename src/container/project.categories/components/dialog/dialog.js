@@ -25,17 +25,19 @@ const Dialog = (props) => {
               disabled
             />
           </div>
-          <div className="pt-4">
-            <SiteLabelTextField
-              onChange={(event) =>
-                props.handleChange("plan", event.target.value)
-              }
-              value={plan}
-              topAdornment="Project Plan"
-              placeholder="Type Plan"
-              disabled
-            />
-          </div>
+          {project !== "NK ICON" && (
+            <div className="pt-4">
+              <SiteLabelTextField
+                onChange={(event) =>
+                  props.handleChange("plan", event.target.value)
+                }
+                value={plan}
+                topAdornment="Project Plan"
+                placeholder="Type Plan"
+                disabled
+              />
+            </div>
+          )}
           <div className="pt-4">
             <SiteLabelTextField
               onChange={(event) =>

@@ -2,10 +2,9 @@ import React from "react";
 import ProjectsCard from "../../../../components/common/projects.card/projects.card";
 
 const ProjectsSection = (props) => {
-
   const projects = [
     {
-      name: "NKRESIDENCY",
+      name: "NK RESIDENCY",
       location: "Gulshan-e-Iqbal",
       address: "Plot # B 3/4 13-D3, Gulshan-e-Iqbal, Karachi.",
       offers: "Luxury 3,4 & 5 Apartments and Showroom",
@@ -20,9 +19,10 @@ const ProjectsSection = (props) => {
       ],
     },
     {
-      name: "SARARESIDENCY",
-      location: "Garden",
-      address: "Plot # 320, GRW Near Prince Lawn, Garden West, Karachi.",
+      name: "SARA RESIDENCY",
+      location: "Bahadurabad",
+      address:
+        "Plot # 107,OPP Court Yard Banquet, Alamghir Road, Bahadurabad, Karachi.",
       offers: "Luxury 4 & 5 Apartments",
       image: "sara.jpeg",
       contacts: [
@@ -35,10 +35,11 @@ const ProjectsSection = (props) => {
       ],
     },
     {
-      name: "NKICON",
-      location: "Faderal B Area",
-      address: "Plot # 320, GRW Near Prince Lawn, Karachi.",
-      offers: "Shops & Showroom",
+      name: "NK ICON",
+      location: "Saddar (Commercial Project)",
+      address:
+        "Plot # 272, A.M OPP Pearadise Hotel Near Passport Office Saddar, Karachi.",
+      offers: "Shops & Offices",
       image: "nkicon.jpeg",
       contacts: [
         {

@@ -5,6 +5,7 @@ import "../../project.categories.scss";
 import ImagePreviewDialog from "../image.preview.dialog/image.preview.dialog";
 const Categories = (props) => {
   const { project } = useParams();
+  const projectName = project.replace(/_/g, " ")
   const {
     reverse,
     bg,
@@ -70,7 +71,7 @@ const Categories = (props) => {
           <div className="text-center w-90">
             <div className="d-flex justify-content-between m-1">
               <Typography variant="h6" color="secondary">
-                {project === "NKRESIDENCY"
+                {project === "NK_RESIDENCY"
                   ? "On Booking 40%"
                   : "On Booking 10%"}
               </Typography>
@@ -101,7 +102,7 @@ const Categories = (props) => {
             <div className="d-flex justify-content-between m-1">
               <Typography variant="h6" color="secondary">
                 Monthly Installment
-                {project === "NKRESIDENCY" ? " 15 X 400,000" : ` 36 X ${ma}`}
+                {project === "NK_RESIDENCY" ? " 15 X 400,000" : ` 36 X ${ma}`}
               </Typography>
               <Typography variant="h6" color="secondary">
                 Rs. {monthly}/=
