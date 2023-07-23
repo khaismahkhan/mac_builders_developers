@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../project.categories.scss";
 import ImagePreviewDialog from "../image.preview.dialog/image.preview.dialog";
+import clsx from "clsx";
+import { IsMobileWidth } from "../../../../components/common/utill/utils";
 const Categories = (props) => {
   const { project } = useParams();
-  const projectName = project.replace(/_/g, " ")
+  const mobileWidth = IsMobileWidth();
+  const projectName = project.replace(/_/g, " ");
   const {
     reverse,
     bg,
@@ -45,7 +48,9 @@ const Categories = (props) => {
   return (
     <div
       className={
-        reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"
+        reverse
+          ? "d-flex w-100 flex-row-reverse flex-wrap"
+          : "d-flex w-100 flex-row flex-wrap"
       }
     >
       <ImagePreviewDialog
@@ -57,7 +62,12 @@ const Categories = (props) => {
         type={type}
         bed={bed}
       />
-      <div className="w-50 leftBox box m-2 paper-root">
+      <div
+        className={clsx(
+          !mobileWidth && "w-48 leftBox box m-2 paper-root",
+          mobileWidth && "w-100 leftBox box m-2 paper-root"
+        )}
+      >
         <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3 payment">
           <div>
             <Typography
@@ -68,71 +78,118 @@ const Categories = (props) => {
               Payment Schedule
             </Typography>
           </div>
-          <div className="text-center w-90">
+          <div
+            className={clsx(
+              !mobileWidth && "text-center w-100",
+              mobileWidth && "text-center w-100"
+            )}
+          >
             <div className="d-flex justify-content-between m-1">
-              <Typography variant="h6" color="secondary">
+              <Typography
+                variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                color="secondary"
+              >
                 {project === "NK_RESIDENCY"
                   ? "On Booking 40%"
                   : "On Booking 10%"}
               </Typography>
-              <Typography variant="h6" color="secondary">
+              <Typography
+                variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                color="secondary"
+              >
                 Rs. {booking}/=
               </Typography>
             </div>
             {allocation && (
               <div className="d-flex justify-content-between m-1">
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   On Allocation 10%
                 </Typography>
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   Rs. {allocation}/=
                 </Typography>
               </div>
             )}
             {star && (
               <div className="d-flex justify-content-between m-1">
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   On Star of Working 10%
                 </Typography>
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   Rs. {star}/=
                 </Typography>
               </div>
             )}
             <div className="d-flex justify-content-between m-1">
-              <Typography variant="h6" color="secondary">
+              <Typography
+                variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                color="secondary"
+              >
                 Monthly Installment
                 {project === "NK_RESIDENCY" ? " 15 X 400,000" : ` 36 X ${ma}`}
               </Typography>
-              <Typography variant="h6" color="secondary">
+              <Typography
+                variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                color="secondary"
+              >
                 Rs. {monthly}/=
               </Typography>
             </div>
             {quarterly && (
               <div className="d-flex justify-content-between m-1">
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   Quarterly Installment 05 X 500,000
                 </Typography>
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   Rs. {quarterly}/=
                 </Typography>
               </div>
             )}
             {yearly && (
               <div className="d-flex justify-content-between m-1">
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   Yearly Installment 06 X {ya}
                 </Typography>
-                <Typography variant="h6" color="secondary">
+                <Typography
+                  variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                  color="secondary"
+                >
                   Rs. {yearly}/=
                 </Typography>
               </div>
             )}
             <div className="d-flex justify-content-between m-1">
-              <Typography variant="h6" color="secondary">
+              <Typography
+                variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                color="secondary"
+              >
                 On Possession
               </Typography>
-              <Typography variant="h6" color="secondary">
+              <Typography
+                variant={clsx(!mobileWidth && "h6", mobileWidth && "caption")}
+                color="secondary"
+              >
                 Rs. {possession}/=
               </Typography>
             </div>
@@ -148,7 +205,13 @@ const Categories = (props) => {
           </div>
         </div>
       </div>
-      <div className="w-50 rightBox m-2 paper-root" style={{ background: bg }}>
+      <div
+        className={clsx(
+          !mobileWidth && "w-48 rightBox box m-2 paper-root",
+          mobileWidth && "w-100 rightBox box m-2 paper-root"
+        )}
+        style={{ background: bg }}
+      >
         <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3">
           <div></div>
           <div className="text-center">
@@ -163,7 +226,7 @@ const Categories = (props) => {
               className="font-weight-bold mt-2"
               color="primary"
               variant="outlined"
-              style={{ color: "white",border:'1px solid white' }}
+              style={{ color: "white", border: "1px solid white" }}
             >
               View Image
             </Button>

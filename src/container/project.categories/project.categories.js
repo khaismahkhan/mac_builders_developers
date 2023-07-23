@@ -8,10 +8,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import Dialog from "./components/dialog/dialog";
 import { useState } from "react";
 import Features from "./components/features/features";
+import clsx from "clsx";
+import { IsMobileWidth } from "../../components/common/utill/utils";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
-
+  const mobileWidth = IsMobileWidth();
   const projectName = project.replace(/_/g, " ");
 
   const history = useNavigate();
@@ -296,7 +298,7 @@ const ProjectCategories = (props) => {
         onClose={onClose}
       />
       <Wrapper />
-      <div className="m-5">
+      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-2")}>
         <div className="d-flex flex-wrap justify-content-center">
           <div className="d-flex flex-column align-items-center">
             {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
@@ -309,7 +311,7 @@ const ProjectCategories = (props) => {
                 >
                   {projectName}
                 </Typography>
-                <Typography className="mt-3">
+                <Typography className="mt-3 text-center">
                   {project === "NK_RESIDENCY"
                     ? "Address : Plot # B 3/4 13-D3, Gulshan-e-Iqbal, Karachi."
                     : project === "SARA_RESIDENCY"
@@ -368,7 +370,7 @@ const ProjectCategories = (props) => {
                 >
                   {projectName}
                 </Typography>
-                <Typography className="mt-3">
+                <Typography className="mt-3 text-center">
                   {project === "SARA_BLESSING"
                     ? "Address : Plot # 320, OPP Prince Lawn Near PSO Pump Garden West, Karachi."
                     : project === "NK_BRIDGE_VIEW"
@@ -386,7 +388,7 @@ const ProjectCategories = (props) => {
             ) : project === "NK_ICON" ? (
               <>
                 <Heading text="NK ICON" />
-                <Typography className="">
+                <Typography className="text-center">
                   Address : Plot # 272, A.M OPP Pearadise Hotel Near Passport
                   Office Saddar, Karachi.
                 </Typography>
@@ -410,7 +412,7 @@ const ProjectCategories = (props) => {
                 >
                   {projectName}
                 </Typography>
-                <Typography className="mt-3">
+                <Typography className="mt-3 text-center">
                   {project === "ZOHRA_RESIDENCY"
                     ? "Address : Plot # 434, Amil Colony Jamshed Road, Karachi."
                     : project === "UROOJ_ARCADE"
@@ -431,7 +433,7 @@ const ProjectCategories = (props) => {
           </div>
         </div>
         <div className="mt-5">
-          <Features/>
+          <Features />
         </div>
         {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
           <>
@@ -459,7 +461,6 @@ const ProjectCategories = (props) => {
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {urrojArcade.map((image, index) => (
               <img
-                style={{ height: 700, width: 600 }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                 alt="product-img"
                 className="zoom"
@@ -471,7 +472,6 @@ const ProjectCategories = (props) => {
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {zohraResidency.map((image, index) => (
               <img
-                style={{ height: 700, width: 600 }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                 alt="product-img"
                 className="zoom"
@@ -483,7 +483,6 @@ const ProjectCategories = (props) => {
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {alMustafa.map((image, index) => (
               <img
-                style={{ height: 700, width: 600 }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                 alt="product-img"
                 className="zoom"
@@ -495,7 +494,6 @@ const ProjectCategories = (props) => {
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {nkBridge.map((image, index) => (
               <img
-                style={{ height: 700, width: 600 }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                 alt="product-img"
                 className="zoom"
@@ -507,7 +505,6 @@ const ProjectCategories = (props) => {
           <div className="d-flex justify-content-center flex-wrap mt-5">
             {saraBlessing.map((image, index) => (
               <img
-                style={{ height: 700, width: 600 }}
                 src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                 alt="product-img"
                 className="zoom"
@@ -520,7 +517,6 @@ const ProjectCategories = (props) => {
             <div className="d-flex justify-content-center flex-wrap mt-5">
               {nkImages.map((image, index) => (
                 <img
-                  style={{ height: 700, width: 600 }}
                   src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                   alt="product-img"
                   className="zoom"

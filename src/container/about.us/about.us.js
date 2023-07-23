@@ -174,11 +174,11 @@ const AboutUs = () => {
         <div className="d-flex flex-column align-items-center mt-5 w-100">
           <Heading text="WHAT CAN WE" span=" OFFER?" />
 
-          {/* <div className="d-flex flex-wrap justify-content-center w-100">
+          <div className="d-flex flex-wrap justify-content-center w-100">
             {offers.map((offer, index) => (
               <Offers {...offer} key={index} />
             ))}
-          </div> */}
+          </div>
         </div>
         <div className="d-flex flex-column align-items-center mt-5">
           <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>

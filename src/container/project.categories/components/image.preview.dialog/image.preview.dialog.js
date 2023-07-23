@@ -9,7 +9,11 @@ export default function ImagePreviewDialog(props) {
   return (
     <div>
       <ContentDialog
-        title={<b>{props.type} ({props.bed}) IMAGE</b>}
+        title={
+          <b>
+            {props.type} ({props.bed}) IMAGE
+          </b>
+        }
         onClose={props.onClose}
         dialogIsOpen={open}
         fullWidth
@@ -23,7 +27,7 @@ export default function ImagePreviewDialog(props) {
           >
             {({ zoomIn, zoomOut, resetTransform, centerView, ...rest }) => (
               <React.Fragment>
-                <div className="d-flex justify-content-center mb-2">
+                <div className="d-flex justify-content-center flex-wrap mb-2">
                   <button
                     style={{
                       color: "#A9C585",
@@ -31,9 +35,9 @@ export default function ImagePreviewDialog(props) {
                       border: "none",
                       background: "white",
                       borderRadius: 5,
-                      fontSize:16
+                      fontSize: 16,
                     }}
-                    className="pt-2 pb-2 mr-2 paper-root"
+                    className="pt-2 pb-2 m-2 paper-root"
                     onClick={() => zoomIn()}
                   >
                     <div className="d-flex align-items-center pl-2 pr-2">
@@ -53,9 +57,9 @@ export default function ImagePreviewDialog(props) {
                       border: "none",
                       background: "white",
                       borderRadius: 5,
-                      fontSize:16
+                      fontSize: 16,
                     }}
-                    className="pt-2 pb-2 mr-2 paper-root"
+                    className="pt-2 pb-2 m-2 paper-root"
                     onClick={() => zoomOut()}
                   >
                     <div className="d-flex align-items-center pl-2 pr-2">
@@ -75,17 +79,16 @@ export default function ImagePreviewDialog(props) {
                       border: "none",
                       background: "white",
                       borderRadius: 5,
-                      fontSize:16
+                      fontSize: 16,
                     }}
-                    
-                    className="pt-2 pb-2 mr-2 paper-root"
+                    className="pt-2 pb-2 m-2 paper-root"
                     onClick={() => centerView()}
                   >
                     <div className="d-flex align-items-center pl-2 pr-2">
                       <div className="font-weight-bold">Center</div>
                       <div>
                         <i
-                        // <FontAwesomeIcon icon="fa-solid fa-" />
+                          // <FontAwesomeIcon icon="fa-solid fa-" />
                           class="fas fa-eye"
                           style={{ color: "#dd3421", paddingLeft: 6 }}
                         ></i>
@@ -99,9 +102,9 @@ export default function ImagePreviewDialog(props) {
                       border: "2px solid 033044",
                       background: "white",
                       borderRadius: 5,
-                      fontSize:16
+                      fontSize: 16,
                     }}
-                    className="pt-2 pb-2 mr-2 paper-root"
+                    className="pt-2 pb-2 m-2 paper-root"
                     onClick={() => resetTransform()}
                   >
                     <div className="d-flex align-items-center pl-2 pr-2">
