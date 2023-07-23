@@ -4,7 +4,7 @@ import { Button, Typography } from "@mui/material";
 
 const ProjectsCard = (props) => {
   return (
-    <div className="projectContainer d-flex">
+    <div className="projectContainer paper-root d-flex">
       <div className="projectImage w-45">
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/${props.image}`}
