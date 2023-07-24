@@ -16,15 +16,14 @@ const Home = () => {
 
   return (
     <div>
-      <CoverPage />
-      <div className="m-5">
+      {/* <CoverPage /> */}
+      {/* <div className="m-5">
         <Heading text="COMPLETED" span="PROJECTS" />
         <ComingSoonCarousel />
         <div className="d-flex flex-wrap justify-content-center">
           <Heading text="CURRENT" span="PROJECTS" />
           <ProjectsSection redirect={redirect} />
 
-          {/* harwork in numbers */}
           <div className="d-flex p-4 hardwork paper-root">
             <div className="w-60 d-flex flex-column justify-content-center align-items-start">
               <Typography
@@ -95,7 +94,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

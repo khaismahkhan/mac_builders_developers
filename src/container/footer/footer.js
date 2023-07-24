@@ -1,28 +1,40 @@
 import React from "react";
 import { Link, Typography } from "@mui/material";
 import clsx from "clsx";
-import { IsMobileWidth,IsTabletWidth} from "../../components/common/utill/utils";
+import {
+  IsMobileWidth,
+  IsTabletWidth,
+} from "../../components/common/utill/utils";
 
 const Footer = () => {
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
   return (
     <div
-      className={mobileWidth ? "p-4 mt-5 ml-2 mr-2 mb-2" : "p-5 mt-5 ml-4 mr-4 mb-2"}
+      className={
+        mobileWidth ? "p-4 mt-5 ml-2 mr-2 mb-2" : "p-5 mt-5 ml-4 mr-4 mb-2"
+      }
       style={{ background: "#033044", borderBottomRightRadius: 50 }}
     >
-      <div className="d-flex w-100 justify-content-center flex-wrap pt-4 pb-4 text-white">
+      <div
+        className={clsx(
+          !tabletWidth &&
+            "d-flex w-100 justify-content-center pt-4 pb-4 text-white",
+          (tabletWidth || mobileWidth) &&
+            "d-flex w-100 justify-content-center pt-4 pb-4 text-white flex-wrap"
+        )}
+      >
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !tabletWidth && "w-25",
-            tabletWidth && "w-100 pt-3 pb-3"
+            !mobileWidth && "w-25",
+            (tabletWidth || mobileWidth) && "w-100 pt-3 pb-3"
           )}
         >
           <img
             style={{
-              height: tabletWidth ? "80px" : "100px",
-              width: tabletWidth ? "180px" : "230px",
+              height: mobileWidth ? "80px" : "100px",
+              width: mobileWidth ? "180px" : "230px",
             }}
             src={`${process.env.PUBLIC_URL}/assets/images/header-logo.png`}
             alt="header-logo"
@@ -31,8 +43,8 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !tabletWidth && "w-25",
-            tabletWidth && "w-100 pt-3"
+            !mobileWidth && "w-25",
+            (tabletWidth || mobileWidth) && "w-100 pt-3"
           )}
         >
           <Typography className="pb-2 font-weight-bold" variant="body1">
@@ -45,8 +57,8 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !tabletWidth && "w-25",
-            tabletWidth && "w-100 pt-3"
+            !mobileWidth && "w-25",
+            (tabletWidth || mobileWidth) && "w-100 pt-3"
           )}
         >
           <Typography className="pb-2 font-weight-bold" variant="body1">
@@ -61,12 +73,12 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !tabletWidth && "w-25",
-            tabletWidth && "w-100 pt-3"
+            !mobileWidth && "w-25",
+            (tabletWidth || mobileWidth) && "w-100 pt-3"
           )}
         >
           <Typography className="pb-2 font-weight-bold" variant="body1">
-            Contact
+            Social
           </Typography>
           <Link
             href="https://www.facebook.com/porchamstore/"

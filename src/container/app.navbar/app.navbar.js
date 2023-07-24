@@ -250,7 +250,7 @@ const AppNavbar = () => {
                 variant="none"
                 className="text-transform-none text-white mt-2 mb-2"
               >
-                Pricing
+                Contact Us
               </Button>
             </Link>
           </div>
