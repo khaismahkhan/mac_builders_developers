@@ -55,7 +55,7 @@ const ProjectsSection = (props) => {
   return (
     <div className="d-flex flex-wrap justify-content-center">
       {projects.map((project, index) => (
-        <div className=" m-3" key={index}>
+        <div className="m-3" key={index}>
           <ProjectsCard {...props} {...project} />
         </div>
       ))}

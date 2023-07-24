@@ -1,5 +1,5 @@
 .projectContainer {
-  background: radial-gradient(#033044, rgb(155, 149, 149),black );
+  background: radial-gradient(#033044, rgb(155, 149, 149), black);
   // background:#033044;
   height: 500px;
   width: 680px;
@@ -9,6 +9,26 @@
 }
 .projectImage {
   // background-image: url(../../../../public/assets/images/nk.jpeg);
-  background-size: 100% 100%,auto;
+  background-size: 100% 100%, auto;
+}
 
+.mac {
+  height: 90px;
+  width: 250px;
+}
+
+@media screen and (max-width: 700px) {
+  .projectContainer {
+    width: 100%;
+  }
+  .mac {
+    height: 50px;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projectContainer {
+    height: 420px;
+  }
 }

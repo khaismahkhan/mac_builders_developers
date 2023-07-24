@@ -93,7 +93,7 @@ function App() {
                 </Routes>
               </div>
               {/* <Button onClick={handleLogout}>logout</Button> */}
-              <Footer />
+              {/* <Footer /> */}
             </Router>
           </Suspense>
         </ThemeProvider>

@@ -1,10 +1,26 @@
-.hardwork{
-  background: linear-gradient(to right,#033044,#bce0cb );
+.hardwork {
+  background: linear-gradient(to right, #033044, #bce0cb);
   border-radius: 12px;
+  overflow: hidden;
 }
 .hardwork-box {
   height: 160px;
   width: 220px;
   border-radius: 12px;
   background: white;
+}
+
+@media screen and (max-width: 600px) {
+  .hardwork-box {
+    height: 120px;
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hardwork-box {
+    height: 120px;
+    width: 100%;
+    padding: 10px;
+  }
 }
