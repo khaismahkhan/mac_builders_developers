@@ -73,6 +73,7 @@ const ProjectsCard = (props) => {
           // style={{ background: "white", color: "black" }}
           className="mt-3 font-weight-bold"
           color="primary"
+          data-aos="flip-left"
         >
           See Plan
         </Button>

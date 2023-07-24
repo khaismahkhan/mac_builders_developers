@@ -44,6 +44,7 @@ const OfferLabel = () => {
             variant="contained"
             className="mt-2"
             target="_blank"
+            data-aos="flip-left"
           >
             Book Now
           </Button>

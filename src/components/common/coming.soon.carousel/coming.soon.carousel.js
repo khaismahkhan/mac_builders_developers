@@ -90,6 +90,7 @@ const ComingSoonCarousel = (props) => {
               {item.soon && (
                 <div className="d-flex justify-content-center wrap">
                   <Button
+                  data-aos="flip-left"
                     variant="contained"
                     className="soon"
                     style={{ position: "absolute", bottom: 40 }}

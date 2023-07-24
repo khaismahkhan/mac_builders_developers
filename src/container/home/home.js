@@ -46,6 +46,7 @@ const Home = () => {
               )}
             >
               <Typography
+                data-aos="zoom-up"
                 className={clsx(
                   !mobileWidth && "font-weight-bold pb-2",
                   mobileWidth && "font-weight-bold pb-2 text-center"
@@ -55,7 +56,7 @@ const Home = () => {
               >
                 Our Hardwork in Numbers
               </Typography>
-              <Typography color={{ color: "white" }}>
+              <Typography data-aos="zoom-up" color={{ color: "white" }}>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -77,6 +78,7 @@ const Home = () => {
               <div className={clsx(!mobileWidth && "", mobileWidth && "m-1")}>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box mb-4">
                   <Typography
+                    data-aos="zoom-out-up"
                     className="font-weight-bold"
                     variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
                     color="secondary"
@@ -89,6 +91,7 @@ const Home = () => {
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box">
                   <Typography
+                    data-aos="zoom-out-up"
                     className="font-weight-bold"
                     variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
                     color="secondary"
@@ -103,6 +106,7 @@ const Home = () => {
               >
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box mb-4">
                   <Typography
+                    data-aos="zoom-out-up"
                     className="font-weight-bold"
                     variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
                     color="secondary"
@@ -115,6 +119,7 @@ const Home = () => {
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box">
                   <Typography
+                    data-aos="zoom-out-up"
                     className="font-weight-bold"
                     variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
                     color="secondary"

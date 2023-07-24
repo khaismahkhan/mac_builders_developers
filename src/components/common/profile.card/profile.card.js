@@ -7,7 +7,7 @@ const ProductCard = (props) => {
   const { name, role, image } = props;
 
   return (
-    <div id="product-card" className="card-wrapper paper-root">
+    <div data-aos="fade-down" id="product-card" className="card-wrapper paper-root">
       <img
         className="image"
         src={`${process.env.PUBLIC_URL}/assets/images/${

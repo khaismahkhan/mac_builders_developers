@@ -16,7 +16,12 @@ const FormSection = (props) => {
   const form = useRef();
 
   return (
-    <div className="py-5 w-100 d-flex flex-column">
+    <div
+      data-aos="fade-up"
+      data-aos-easing="linear"
+      data-aos-duration="15000"
+      className="py-5 w-100 d-flex flex-column"
+    >
       <Typography
         variant={clsx(!mobileWidth && "h2", mobileWidth && "h5")}
         className="text-center font-weight-bolder text-theme pt-5 main-heading"
@@ -103,6 +108,7 @@ const FormSection = (props) => {
                 type="submit"
                 onClick={props.sendEmail}
                 loading={isLoading}
+                data-aos="flip-left"
               >
                 Send a Message
               </LoaderButton>

@@ -300,7 +300,7 @@ const ProjectCategories = (props) => {
       <Wrapper />
       <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-2")}>
         <div className="d-flex flex-wrap justify-content-center">
-          <div className="d-flex flex-column align-items-center">
+          <div data-aos="fade-up" className="d-flex flex-column align-items-center">
             {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
               <>
                 {/* <Heading text="CURRENT" span="PROJECT" /> */}
@@ -381,6 +381,7 @@ const ProjectCategories = (props) => {
                   onClick={() => redirect("/contact-us")}
                   className="font-weight-bold mt-3"
                   color="primary"
+                  data-aos="flip-left"
                 >
                   For More Details
                 </Button>
@@ -397,6 +398,7 @@ const ProjectCategories = (props) => {
                     onClick={() => setState({ ...state, isDialogOpen: true })}
                     className="font-weight-bold mt-3"
                     color="primary"
+                    data-aos="flip-left"
                   >
                     Show Your Interest
                   </Button>
@@ -425,6 +427,7 @@ const ProjectCategories = (props) => {
                   onClick={() => redirect("/contact-us")}
                   className="font-weight-bold mt-3"
                   color="primary"
+                  data-aos="flip-left"
                 >
                   For More Details
                 </Button>
@@ -432,7 +435,7 @@ const ProjectCategories = (props) => {
             )}
           </div>
         </div>
-        <div className="mt-5">
+        <div data-aos="fade-up" className="mt-5">
           <Features />
         </div>
         {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (

@@ -8,6 +8,8 @@ import PageNotFound from "./container/not.found.page/not.found.page";
 import googleOneTap from "google-one-tap";
 import LazyLoading from "./components/common/lazy.loading/lazy.loading";
 import { Button } from "@mui/material";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 // import AppNavBar from "./container/app.navbar/app.navbar"
 // import Footer from "./container/footer/footer"
 
@@ -59,6 +61,10 @@ function App() {
       });
     }
   });
+
+  useEffect(() => {
+    Aos.init();
+  }, [])
 
   const handleLogout = () => {
     localStorage.removeItem("loginData");

@@ -12,6 +12,7 @@ const Offers = (props) => {
   const tabletWidth = IsTabletWidth();
   return (
     <div
+    data-aos="fade-up"
       className={clsx(
         (!mobileWidth || !tabletWidth) &&
           "w-40 p-3 m-4 d-flex paper-root h-100 align-items-center offerWrapper",

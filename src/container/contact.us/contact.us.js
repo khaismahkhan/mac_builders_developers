@@ -64,6 +64,7 @@ const ContactUs = (props) => {
       className={clsx(!mobileWidth && "m-5", mobileWidth && "")}
     >
       <div
+        data-aos="fade-up"
         className={clsx(
           (!tabletWidth || !mobileWidth) && "d-flex w-100 paper-root",
           (tabletWidth || mobileWidth) && "d-flex flex-column w-100"
@@ -113,6 +114,7 @@ const ContactUs = (props) => {
         )}
       >
         <div
+        data-aos="fade-right"
           className={clsx(
             "appointmentImage",
             (!mobileWidth || !tabletWidth) && "w-50",
@@ -120,6 +122,7 @@ const ContactUs = (props) => {
           )}
         ></div>
         <div
+        data-aos="fade-left"
           className={clsx(
             "d-flex flex-column justify-content-center text-theme",
             (!mobileWidth || !tabletWidth) && "w-50 px-5",

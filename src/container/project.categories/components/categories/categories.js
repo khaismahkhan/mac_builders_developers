@@ -51,6 +51,7 @@ const Categories = (props) => {
 
   return (
     <div
+    data-aos="zoom-in-up"
       className={clsx(
         (!mobileWidth || !tabletWidth) &&
           (reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"),
@@ -245,6 +246,7 @@ const Categories = (props) => {
               onClick={() => props.handleClick(type)}
               className="font-weight-bold"
               color="primary"
+              data-aos="flip-left"
             >
               For More Details
             </Button>
@@ -273,6 +275,7 @@ const Categories = (props) => {
               color="primary"
               variant="outlined"
               style={{ color: "white", border: "1px solid white" }}
+              data-aos="flip-left"
             >
               View Image
             </Button>

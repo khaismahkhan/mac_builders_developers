@@ -74,7 +74,7 @@ const AboutUs = () => {
         <div className="d-flex flex-column align-items-center">
           <Heading text="WHO WE" span=" ARE" />
           <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>
-            <Typography className="text-center mt-3">
+            <Typography data-aos="fade-up" className="text-center mt-3">
               Welcome to Vitazo. We are a trailblazing digital agency that
               crafts captivating online experiences and propels businesses to
               new heights in the digital realm. With a dazzling array of
@@ -82,7 +82,7 @@ const AboutUs = () => {
               marketing to UI/UX design, and DevOps security, we are your
               one-stop destination for all things digital.
             </Typography>
-            <Typography className="text-center mt-3">
+            <Typography data-aos="fade-up" className="text-center mt-3">
               Welcome to Vitazo. We are a trailblazing digital agency that
               crafts captivating online experiences and propels businesses to
               new heights in the digital realm. With a dazzling array of
@@ -103,6 +103,7 @@ const AboutUs = () => {
             )}
           >
             <div
+            data-aos="fade-right"
               className={clsx(
                 (!mobileWidth || !tabletWidth) && "w-50 mission",
                 (mobileWidth || tabletWidth) && "w-100 mission"
@@ -114,7 +115,7 @@ const AboutUs = () => {
                 (mobileWidth || tabletWidth) && "w-100"
               )}
             >
-              <Typography className="w-100">
+              <Typography data-aos="fade-left" className="w-100">
                 Our mission at Vitazo is to be the catalyst of digital
                 brilliance for businesses worldwide. We are driven by a singular
                 purpose: to transform the digital landscape with our visionary
@@ -141,6 +142,7 @@ const AboutUs = () => {
             )}
           >
             <div
+            data-aos="fade-right"
               className={clsx(
                 (!mobileWidth || !tabletWidth) && "w-50 services",
                 (mobileWidth || tabletWidth) && "w-100 services"
@@ -152,7 +154,7 @@ const AboutUs = () => {
                 (mobileWidth || tabletWidth) && "w-100 p-2"
               )}
             >
-              <Typography className="">
+              <Typography data-aos="fade-left" className="">
                 Owning a solitary unit or a whole structure or land, let our
                 experts bear the obligation while you receive the benefits. We
                 have a chosen group of trusted and qualified engineers,
@@ -186,10 +188,11 @@ const AboutUs = () => {
               className="text-center font-weight-bold"
               variant="h4"
               color="secondary"
+              data-aos="fade-up"
             >
               The Brains Behind MAC Builders & Developers
             </Typography>
-            <Typography className="text-center">
+            <Typography data-aos="fade-up" className="text-center">
               Meet our exceptional team members – the true architects of digital
               magic. From visionary web developers who can breathe life into
               lines of code to UX/UI designers who craft mesmerizing
