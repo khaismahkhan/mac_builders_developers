@@ -22,7 +22,7 @@ const ProjectsSection = (props) => {
       name: "SARA RESIDENCY",
       location: "Bahadurabad",
       address:
-        "Plot # 107,OPP Court Yard Banquet, Alamghir Road, Bahadurabad, Karachi.",
+        "Plot # 107, OPP Court Yard Banquet, Alamghir Road, Bahadurabad, Karachi.",
       offers: "Luxury 4 & 5 Apartments",
       image: "sara.jpeg",
       contacts: [
@@ -38,7 +38,7 @@ const ProjectsSection = (props) => {
       name: "NK ICON",
       location: "Saddar (Commercial Project)",
       address:
-        "Plot # 272, A.M OPP Pearadise Hotel Near Passport Office Saddar, Karachi.",
+        "Plot # 272, A.M OPP Paradise Hotel Near Passport Office Saddar, Karachi.",
       offers: "Shops & Offices",
       image: "nkicon.jpeg",
       contacts: [

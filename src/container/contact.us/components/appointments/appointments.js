@@ -25,11 +25,11 @@ const Appointments = () => {
           <a
             href="https://www.facebook.com/SOHAILLAKHANI100/"
             target="_blank"
-            className="link2 pe-2"
+            className="link2 pr-1"
           >
             facebook page
           </a>
-          of Mac Builders and Developers
+          Mac Builders and Developers
         </Typography>
       </div>
       <div className="py-3">

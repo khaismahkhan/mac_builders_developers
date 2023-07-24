@@ -17,8 +17,8 @@ const ComingSoonCarousel = (props) => {
     {
       name: "AL MUSTAFA PRIME",
       image: "kk.jpg",
-      bg: "#ebebeb",
-      color: "#101010",
+      bg: "#542327",
+      color: "white",
     },
     {
       name: "NK BRIDGE VIEW",

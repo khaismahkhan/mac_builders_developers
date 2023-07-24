@@ -9,7 +9,7 @@ import clsx from "clsx";
 import LoaderButton from "../../../../components/common/loader.button/loader.button";
 
 const FormSection = (props) => {
-  const { email, message, firstName, lastName, isLoading } = props;
+  const { email, message, firstName, lastName,phone, isLoading } = props;
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
 
@@ -51,7 +51,7 @@ const FormSection = (props) => {
               )}
             >
               <InputField
-                topAdornment="Enter Your Name"
+                topAdornment="Enter Your First Name"
                 placeholder="First Name"
                 value={firstName}
                 onChange={(e) =>
@@ -74,13 +74,32 @@ const FormSection = (props) => {
                 name="lastName"
               />
             </div>
-            <div className="w-100 p-3">
+            <div
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (mobileWidth || tabletWidth) && "w-100 p-3"
+              )}
+            >
               <InputField
                 topAdornment="Enter Your Email Address"
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => props.handleChange("email", e.target.value)}
                 name="email"
+              />
+            </div>
+            <div
+              className={clsx(
+                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (mobileWidth || tabletWidth) && "w-100 p-3"
+              )}
+            >
+              <InputField
+                topAdornment="Enter Your Phone Number"
+                placeholder="Phone Number"
+                value={phone}
+                onChange={(e) => props.handleChange("phone", e.target.value)}
+                name="phone"
               />
             </div>
             <div className="w-100 p-3">

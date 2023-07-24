@@ -25,19 +25,22 @@ const OfferLabel = () => {
           )}
         >
           <Typography
-            variant={clsx(!mobileWidth && "h2", mobileWidth && "h5")}
+            variant={clsx(!mobileWidth && "h6", mobileWidth && "h5")}
             color="secondary"
             className="font-weight-bold"
           >
-            Grow With Us
+            Welcome to MAC Builders & Developers - Where You Belong!
           </Typography>
           <Typography
             variant={clsx(!mobileWidth && "body1", mobileWidth && "subtitle1")}
             className="pt-2"
           >
-            Associate with us and make us your family to get the better home
-            better life. Associate with us and make us your family to get the
-            better home better life.
+            Are you searching for the perfect team to build your dream home?
+            Look no further, because MAC Builders & Developers is here to be
+            your reliable partner on this exciting journey. We believe in more
+            than just constructing houses; we believe in building long-lasting
+            relationships with our clients - relationships that make you feel
+            like a part of our extended family.
           </Typography>
           <Button
             href="https://wa.me/923242930832"
@@ -46,7 +49,7 @@ const OfferLabel = () => {
             target="_blank"
             data-aos="flip-left"
           >
-            Book Now
+            Book an Appointment
           </Button>
         </div>
         <div

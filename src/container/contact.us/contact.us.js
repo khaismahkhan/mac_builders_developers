@@ -18,6 +18,7 @@ const ContactUs = (props) => {
     firstName: "",
     lastName: "",
     email: "",
+    phone:"",
     message: "",
     isLoading: "",
   });
@@ -38,6 +39,7 @@ const ContactUs = (props) => {
           lastName: state.lastName,
           email: state.email,
           message: state.message,
+          phone:state.phone
         },
         "HN3HV0IfMBnIN2zjS"
       )
@@ -49,6 +51,7 @@ const ContactUs = (props) => {
             lastName: "",
             email: "",
             message: "",
+            phone:"",
             isLoading: false,
           });
         },

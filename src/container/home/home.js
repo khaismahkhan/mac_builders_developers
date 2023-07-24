@@ -56,17 +56,15 @@ const Home = () => {
               >
                 Our Hardwork in Numbers
               </Typography>
-              <Typography data-aos="zoom-up" color={{ color: "white" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+              <Typography data-aos="zoom-up" color={{ color: "white", letterSpacing:2 }}>
+                At MAC Builders & Developers, hard work is the foundation of
+                every successful endeavor, and we take immense pride in
+                quantifying our dedication through tangible results. Here's a
+                glimpse into "Our Hard Work in Numbers": With 13 projects
+                completed, a skilled workforce of 27 professionals with over
+                11 years of combined experience, and 24 hours of unwavering
+                dedication, we have earned the trust of 99% satisfied clients.
+                Incorporating sustainable practices of our projects.
               </Typography>
             </div>
             <div
@@ -83,10 +81,10 @@ const Home = () => {
                     variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
                     color="secondary"
                   >
-                    33
+                    11
                   </Typography>
                   <Typography className="text-center">
-                    Executive Clients
+                    Year of Experience
                   </Typography>
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box">
@@ -111,10 +109,10 @@ const Home = () => {
                     variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
                     color="secondary"
                   >
-                    439
+                    13
                   </Typography>
                   <Typography className="text-center">
-                    Complted Projects
+                    Completed Projects
                   </Typography>
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box">
