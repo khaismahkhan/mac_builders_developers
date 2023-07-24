@@ -1,11 +1,6 @@
 import "./App.scss";
 import React, { useState, useEffect, Suspense } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useParams,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { appTheme } from "./container/material.theme/app.theme/app.material.theme";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -70,31 +65,32 @@ function App() {
     setLoginData(null);
   };
 
+  const { pathname } = useLocation();
+  const hideNavBarAndFooter =
+    pathname === "/login" || pathname === "/dashboard";
+  console.log(hideNavBarAndFooter);
   return (
     <div>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={appTheme}>
           <CssBaseline />
           <Suspense fallback={<LazyLoading />}>
-            <Router>
-              <AppNavBar />
-              <div>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/contact-us" element={<ContactUs />} />
-                  <Route path="/about-us" element={<AboutUs />} />
-                  <Route
-                    path="/project/:project"
-                    element={<ProjectCategories />}
-                  />
-                  <Route path="*" element={<PageNotFound />} />
-                </Routes>
-              </div>
-              {/* <Button onClick={handleLogout}>logout</Button> */}
-              <Footer />
-            </Router>
+            {!hideNavBarAndFooter && <AppNavBar />}
+            <div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/about-us" element={<AboutUs />} />
+                <Route
+                  path="/project/:project"
+                  element={<ProjectCategories />}
+                />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </div>
+            {!hideNavBarAndFooter && <Footer />}
           </Suspense>
         </ThemeProvider>
       </StyledEngineProvider>
