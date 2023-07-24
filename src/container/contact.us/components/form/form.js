@@ -81,11 +81,11 @@ const FormSection = (props) => {
               )}
             >
               <InputField
-                topAdornment="Enter Your Email Address"
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => props.handleChange("email", e.target.value)}
-                name="email"
+                topAdornment="Enter Your Phone Number"
+                placeholder="Phone Number"
+                value={phone}
+                onChange={(e) => props.handleChange("phone", e.target.value)}
+                name="phone"
               />
             </div>
             <div
@@ -95,13 +95,14 @@ const FormSection = (props) => {
               )}
             >
               <InputField
-                topAdornment="Enter Your Phone Number"
-                placeholder="Phone Number"
-                value={phone}
-                onChange={(e) => props.handleChange("phone", e.target.value)}
-                name="phone"
+                topAdornment="Enter Your Email Address"
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => props.handleChange("email", e.target.value)}
+                name="email"
               />
             </div>
+            
             <div className="w-100 p-3">
               <TextareaAutosize
                 aria-label="minimum height"

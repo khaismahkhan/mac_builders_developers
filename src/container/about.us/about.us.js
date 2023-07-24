@@ -163,7 +163,7 @@ const AboutUs = () => {
                 needs, and we always strive to deliver what we promise. Our
                 dedication lies in never making commitments we cannot fulfill,
                 ensuring transparency and client satisfaction throughout the
-                process
+                process.
               </Typography>
             </div>
           </div>
@@ -199,10 +199,10 @@ const AboutUs = () => {
                 MAC builders and developers are committed to providing
                 affordable housing options to their customers while ensuring
                 that they offer luxurious amenities and high-quality utilities.
-                With MAC, individuals can finally realize their dream of owning
-                a house and transform their visions into reality. By
-                prioritizing both affordability and quality, MAC aims to make
-                homeownership accessible to everyone.
+                With Us, individuals can finally realize their dream of owning a
+                house and transform their visions into reality. By prioritizing
+                both affordability and quality, Our aims to make home ownership
+                accessible to everyone.
               </Typography>
             </div>
           </div>
@@ -250,9 +250,9 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-        <div className="mt-4 w-100">
+        {/* <div className="mt-4 w-100">
           <OfferLabel />
-        </div>
+        </div> */}
       </div>
     </div>
   );

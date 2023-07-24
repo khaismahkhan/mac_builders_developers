@@ -84,7 +84,7 @@ const Home = () => {
                     11
                   </Typography>
                   <Typography className="text-center">
-                    Year of Experience
+                    Years of Experience
                   </Typography>
                 </div>
                 <div className="d-flex flex-column justify-content-center align-items-center paper-root hardwork-box">
