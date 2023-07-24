@@ -23,13 +23,13 @@ const Home = () => {
 
   return (
     <div>
-      {/* <CoverPage /> */}
+      <CoverPage />
       <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-1")}>
-        {/* <Heading text="COMPLETED" span="PROJECTS" />
-        <ComingSoonCarousel /> */}
+        <Heading text="COMPLETED" span="PROJECTS" />
+        <ComingSoonCarousel />
         <div className="d-flex flex-wrap justify-content-center">
-          {/* <Heading text="CURRENT" span="PROJECTS" />
-          <ProjectsSection redirect={redirect} /> */}
+          <Heading text="CURRENT" span="PROJECTS" />
+          <ProjectsSection redirect={redirect} />
 
           <div
             className={clsx(
@@ -46,7 +46,10 @@ const Home = () => {
               )}
             >
               <Typography
-                className="font-weight-bold pb-2"
+                className={clsx(
+                  !mobileWidth && "font-weight-bold pb-2",
+                  mobileWidth && "font-weight-bold pb-2 text-center"
+                )}
                 variant={clsx(!mobileWidth && "h3", mobileWidth && "h6")}
                 color={{ color: "white" }}
               >

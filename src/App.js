@@ -77,7 +77,7 @@ function App() {
           <CssBaseline />
           <Suspense fallback={<LazyLoading />}>
             <Router>
-              {/* <AppNavBar /> */}
+              <AppNavBar />
               <div>
                 <Routes>
                   <Route path="/" element={<Home />} />
@@ -93,7 +93,7 @@ function App() {
                 </Routes>
               </div>
               {/* <Button onClick={handleLogout}>logout</Button> */}
-              {/* <Footer /> */}
+              <Footer />
             </Router>
           </Suspense>
         </ThemeProvider>
