@@ -11,14 +11,24 @@ const CoverPage = () => {
       <div className="cover-page">
         <div className="cover-label">
           <Typography
-            variant={clsx(!mobileWidth && "h1poppins", mobileWidth && "h6")}
-            style={{ letterSpacing: "6px" }}
+            variant={clsx(!mobileWidth && "h1poppins", mobileWidth && "H6poppins")}
+            style={{ letterSpacing: mobileWidth ? "1px" : "4px" }}
+            className="shinee"
           >
-            Find Your Place
+           FIND YOUR PLACE
           </Typography>
-          <Typography className="font-weight-light" variant="subtitlepoppins">
-            Building what's next in the heart of 
-            <span className="font-weight-bold pl-1" style={{ color: "#316848" }}>
+          <Typography
+            className="font-weight-light"
+            variant={clsx(
+              !mobileWidth && "subtitlepoppins",
+              mobileWidth && "body3"
+            )}
+          >
+            Building what's next in the heart of
+            <span
+              className="font-weight-bold pl-1"
+              style={{ color: "#bce0cb" }}
+            >
               City of Light.
             </span>
           </Typography>

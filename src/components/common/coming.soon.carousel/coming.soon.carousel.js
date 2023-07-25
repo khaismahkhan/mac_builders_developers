@@ -37,7 +37,7 @@ const ComingSoonCarousel = (props) => {
   ];
   const breakpoints = {
     320: {
-      slidesPerView: 1.6,
+      slidesPerView: 1.3,
     },
     400: {
       slidesPerView: 1.8,

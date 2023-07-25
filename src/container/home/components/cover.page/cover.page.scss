@@ -14,9 +14,36 @@
 .cover-label {
   top: 120px;
   position: relative;
-  left: 650px;
+  left: 620px;
   color: white;
 }
+
+.shinee {
+  color: #000;
+  // padding: 64px;
+  background: linear-gradient(
+    to right,
+    hsl(0, 0%, 48%) 0,
+    hsl(0, 0%, 100%) 10%,
+    hsl(0, 2%, 83%) 20%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 600px;
+  }
+  100% {
+    background-position: 600px;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .cover-label {
     top: 120px;
@@ -38,5 +65,18 @@
   .cover-page {
     height: 50vh;
     background-image: url(../../../../../public/assets/images/mobile.png);
+  }
+  .cover-label {
+    top: 120px;
+    left: 20px;
+    // padding: 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .cover-label {
+    top: 120px;
+    left: 10px;
+    // padding: 10px;
   }
 }
