@@ -166,7 +166,7 @@ const Dashboard = () => {
             onChange={onPageChange}
             className="p-3 pb-5"
             color="secondary"
-            count={data.totalPage}
+            count={data.totalPage + 1}
             shape="rounded"
           />
         </div>
