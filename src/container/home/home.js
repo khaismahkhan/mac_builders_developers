@@ -24,17 +24,22 @@ const Home = () => {
   return (
     <div>
       <CoverPage />
-      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-1")}>
+      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "mt-5 ml-1 mr-1")}>
         <Heading text="COMPLETED" span="PROJECTS" />
         <ComingSoonCarousel />
-        <div className="d-flex flex-wrap justify-content-center">
+        <div
+          className={clsx(
+            !mobileWidth && "d-flex flex-wrap justify-content-center",
+            mobileWidth && "d-flex flex-wrap justify-content-center mt-5"
+          )}
+        >
           <Heading text="CURRENT" span="PROJECTS" />
           <ProjectsSection redirect={redirect} />
 
           <div
             className={clsx(
               !mobileWidth && "d-flex p-4 hardwork paper-root w-100",
-              mobileWidth && "d-flex p-4 hardwork paper-root w-100 flex-wrap"
+              mobileWidth && "d-flex p-4 hardwork paper-root w-100 flex-wrap mt-5"
             )}
           >
             <div
@@ -56,13 +61,17 @@ const Home = () => {
               >
                 Our Hardwork in Numbers
               </Typography>
-              <Typography data-aos="zoom-up" color={{ color: "white", letterSpacing:2 }}>
+              <Typography
+                variant={clsx(!mobileWidth && "", mobileWidth && "body2")}
+                data-aos="zoom-up"
+                color={{ color: "white", letterSpacing: 2 }}
+              >
                 At MAC Builders & Developers, hard work is the foundation of
                 every successful endeavor, and we take immense pride in
                 quantifying our dedication through tangible results. Here's a
                 glimpse into "Our Hard Work in Numbers": With 13 projects
-                completed, a skilled workforce of 27 professionals with over
-                11 years of combined experience, and 24 hours of unwavering
+                completed, a skilled workforce of 27 professionals with over 11
+                years of combined experience, and 24 hours of unwavering
                 dedication, we have earned the trust of 99% satisfied clients.
                 Incorporating sustainable practices of our projects.
               </Typography>

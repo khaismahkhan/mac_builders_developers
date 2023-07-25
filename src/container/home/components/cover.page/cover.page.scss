@@ -73,6 +73,15 @@
   }
 }
 
+@media screen and (max-width: 450px) {
+  .cover {
+    height: 40vh;
+  }
+  .cover-page {
+    height: 40vh;
+  }
+}
+
 @media screen and (max-width: 380px) {
   .cover-label {
     top: 120px;
@@ -80,3 +89,4 @@
     // padding: 10px;
   }
 }
+

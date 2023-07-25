@@ -70,8 +70,8 @@ const AboutUs = () => {
   return (
     <div>
       <Wrapper />
-      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-2")}>
-        <div className="d-flex flex-column align-items-center">
+      <div className={clsx(!mobileWidth && "p-5", mobileWidth && "p-2")}>
+        <div className="d-flex flex-column align-items-center p-2">
           <Heading text="WHO WE" span=" ARE" />
           <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>
             <Typography
@@ -250,9 +250,9 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-        {/* <div className="mt-4 w-100">
+        <div className="mt-4 w-100">
           <OfferLabel />
-        </div> */}
+        </div>
       </div>
     </div>
   );

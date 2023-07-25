@@ -64,7 +64,7 @@ const ContactUs = (props) => {
   return (
     <div
       id="contact-us"
-      className={clsx(!mobileWidth && "m-5", mobileWidth && "")}
+      className={clsx(!mobileWidth && "m-4", mobileWidth && "")}
     >
       <div
         data-aos="fade-up"
