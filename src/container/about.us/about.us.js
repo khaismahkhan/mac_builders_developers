@@ -93,35 +93,14 @@ const AboutUs = () => {
               className="text-center mt-3"
               style={{ lineHeight: 1.5 }}
             >
-              Mr. Dewan, with over 30 years of experience, brings a wealth of
+              Mr. Dewan, with over 25 years of experience, brings a wealth of
               knowledge and principles to the industry, inspiring a new
               generation by revolutionizing accessibility and convenience in the
               real estate market. His innovative leadership and commitment to
               excellence are reflected in the residential and commercial
               developments that feature cutting-edge designs, superior
               craftsmanship, and responsive solutions that meet the evolving
-              needs of their valued customers. MAC Builders and Developers have
-              gained a solid reputation as a diversified construction company,
-              renowned for their successful projects in Karachi. With their
-              latest venture in Islamabad, they continue to showcase their drive
-              for perpetual success.
-            </Typography>
-            <Typography
-              data-aos="fade-up"
-              className="text-center mt-3"
-              style={{ lineHeight: 1.5 }}
-            >
-              Led by the diligent supervision of Chief Executive Mr. Faizan
-              Dewan, MAC Builders and Developers implement effective business
-              management strategies that have propelled them to greater heights
-              in the real estate market. Mr. Dewan, with over 30 years of
-              experience, brings a wealth of knowledge and principles to the
-              industry, inspiring a new generation by revolutionizing
-              accessibility and convenience in the real estate market. His
-              innovative leadership and commitment to excellence are reflected
-              in the residential and commercial developments that feature
-              cutting-edge designs, superior craftsmanship, and responsive
-              solutions that meet the evolving needs of their valued customers.
+              needs of their valued customers.
             </Typography>
           </div>
         </div>

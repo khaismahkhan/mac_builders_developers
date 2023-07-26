@@ -438,6 +438,21 @@ const ProjectCategories = (props) => {
                     ? "Address : Plot # C.11 Block 20 FB Area Gulberg Town Ancholi, Karachi"
                     : "Address : Plot # C-11, Block 20 Fader B Area, Karachi."}
                 </Typography>
+                <div className="mt-3">
+                  <iframe
+                    style={{
+                      height: "260px",
+                      width: mobileWidth ? "100%" : "600px",
+                    }}
+                    class="gmap_iframe"
+                    width="100%"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://goo.gl/maps/crgoLtH8cTqi5WeA8"
+                  ></iframe>
+                </div>
                 <Button
                   onClick={() => redirect("/contact-us")}
                   className="font-weight-bold mt-3"
