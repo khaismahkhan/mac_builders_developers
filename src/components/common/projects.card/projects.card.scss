@@ -1,11 +1,13 @@
 .projectContainer {
   background: radial-gradient(#033044, rgb(155, 149, 149), black);
+  // background: wheat;
   // background:#033044;
-  height: 500px;
+  // height: 500px;
   width: 680px;
   border-radius: 16px;
   overflow: hidden;
   color: white;
+  // color: #033044;
 }
 .projectImage {
   // background-image: url(../../../../public/assets/images/nk.jpeg);
@@ -28,7 +30,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  .projectContainer {
-    height: 420px;
+  // .projectContainer {
+  //   height: 420px;
+  // }
+  .projectContent {
+    padding-top: 10px;
+    padding-bottom: 14px;
   }
 }

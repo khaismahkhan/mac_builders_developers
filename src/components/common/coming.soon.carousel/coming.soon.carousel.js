@@ -9,6 +9,12 @@ const ComingSoonCarousel = (props) => {
   const comingItems = [
     { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
     {
+      name: "ABBAS COMFORT",
+      image: "sherwani.jpeg",
+      bg: "black",
+      color: "white",
+    },
+    {
       name: "ZOHRA RESIDENCY",
       image: "sherwani.jpeg",
       bg: "#cadb3d",
@@ -90,7 +96,7 @@ const ComingSoonCarousel = (props) => {
               {item.soon && (
                 <div className="d-flex justify-content-center wrap">
                   <Button
-                  data-aos="flip-left"
+                    data-aos="flip-left"
                     variant="contained"
                     className="soon"
                     style={{ position: "absolute", bottom: 40 }}

@@ -17,8 +17,8 @@ const ProjectsCard = (props) => {
       </div>
       <div
         className={clsx(
-          !mobileWidth && "w-55 ml-3 mt-4",
-          mobileWidth && "w-55 ml-3 mt-2"
+          !mobileWidth && "w-55 ml-3 mt-4 projectContent",
+          mobileWidth && "w-55 ml-3 mt-2 projectContent"
         )}
       >
         <img

@@ -221,6 +221,16 @@ const ProjectCategories = (props) => {
     { img: "sb8.jpeg" },
   ];
 
+  const abbasComfort = [
+    { img: "abbas.jpeg" },
+    { img: "abbas1.jpeg" },
+    { img: "abbas2.jpeg" },
+    { img: "abbas3.jpeg" },
+    { img: "abbas4.jpeg" },
+    { img: "abbas5.jpeg" },
+    { img: "abbas6.jpeg" },
+  ];
+
   const handleChange = (name, value) => {
     setState({
       ...state,
@@ -300,7 +310,10 @@ const ProjectCategories = (props) => {
       <Wrapper />
       <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-2")}>
         <div className="d-flex flex-wrap justify-content-center">
-          <div data-aos="fade-up" className="d-flex flex-column align-items-center">
+          <div
+            data-aos="fade-up"
+            className="d-flex flex-column align-items-center"
+          >
             {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
               <>
                 {/* <Heading text="CURRENT" span="PROJECT" /> */}
@@ -421,6 +434,8 @@ const ProjectCategories = (props) => {
                     ? "Address : Plot # 711, Fatima Jinnah Colony Jamshed Road, Karachi."
                     : project === "AL_MUSTAFA_PRIME"
                     ? "Address : Plot # E-166, P.E.C.H.S Society, Karachi."
+                    : project === "ABBAS_COMFORT"
+                    ? "Address : Plot # C.11 Block 20 FB Area Gulberg Town Ancholi, Karachi"
                     : "Address : Plot # C-11, Block 20 Fader B Area, Karachi."}
                 </Typography>
                 <Button
@@ -435,9 +450,7 @@ const ProjectCategories = (props) => {
             )}
           </div>
         </div>
-        <div data-aos="fade-up" className="mt-5">
-          <Features />
-        </div>
+
         {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
           <>
             <Heading text="CATEGORIES AVAILABLE" />
@@ -528,9 +541,25 @@ const ProjectCategories = (props) => {
               ))}
             </div>
           </>
+        ) : project === "ABBAS_COMFORT" ? (
+          <>
+            <div className="d-flex justify-content-center flex-wrap mt-5">
+              {abbasComfort.map((image, index) => (
+                <img
+                  src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                  alt="product-img"
+                  className="zoom"
+                  id={index}
+                />
+              ))}
+            </div>
+          </>
         ) : (
           <Typography>No Image Available</Typography>
         )}
+      </div>
+      <div data-aos="fade-up" className="mt-5">
+        <Features />
       </div>
     </div>
   );

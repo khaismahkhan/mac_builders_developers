@@ -171,6 +171,7 @@ const AppNavbar = () => {
                   height="100%"
                   width="60px"
                   src={`${process.env.PUBLIC_URL}/assets/images/header-logo.png`}
+                  onClick={() => navigate("/")}
                 ></img>
               </Typography>
               {state.isDrawerOpen ? (

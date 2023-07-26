@@ -51,7 +51,8 @@ const Footer = () => {
             Address
           </Typography>
           <Typography variant="body3">
-            R-306 Sharifabad FB Area Block-1, Karachi
+            BANGLOW NO 30 JM 1 51 LAL CHAND H ROAD, opp. Masjid-e-Aisha, near
+            NISTAR PARK, Parsi Colony Karachi, Pakistan
           </Typography>
         </div>
         <div
@@ -65,9 +66,9 @@ const Footer = () => {
             Contact
           </Typography>
           <Typography variant="body3">
-            Mail: khaismahilyaskhan00@gmail.com
+            Mail: macbuilders.515@gmail.com
           </Typography>
-          <Typography variant="body3">Phone: +92 3352683699</Typography>
+          <Typography variant="body3">Phone: +92 324-2930830</Typography>
         </div>
 
         <div
