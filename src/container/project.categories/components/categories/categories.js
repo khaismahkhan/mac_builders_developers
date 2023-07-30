@@ -53,7 +53,7 @@ const Categories = (props) => {
     <div
       data-aos="zoom-in-up"
       className={clsx(
-        (!mobileWidth || !tabletWidth) &&
+        (!mobileWidth && !tabletWidth) &&
           (reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"),
         (mobileWidth || tabletWidth) && "d-flex w-100 flex-wrap"
       )}
@@ -69,7 +69,7 @@ const Categories = (props) => {
       />
       <div
         className={clsx(
-          (!mobileWidth || !tabletWidth) && "w-50 leftBox box m-2 paper-root",
+          (!mobileWidth && !tabletWidth) && "w-50 leftBox box m-2 paper-root",
           (mobileWidth || tabletWidth) && "w-100 leftBox box m-2 paper-root"
         )}
       >
@@ -85,16 +85,13 @@ const Categories = (props) => {
           </div>
           <div
             className={clsx(
-              (!mobileWidth || !tabletWidth) && "text-center w-100",
+              (!mobileWidth && !tabletWidth) && "text-center w-100",
               (mobileWidth || tabletWidth) && "text-center w-100"
             )}
           >
             <div className="d-flex justify-content-between m-1">
               <Typography
-                variant={clsx(
-                  (!mobileWidth || !tabletWidth) && "h6",
-                  (mobileWidth || tabletWidth) && "caption"
-                )}
+                variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                 color="secondary"
               >
                 {project === "NK_RESIDENCY"
@@ -102,10 +99,7 @@ const Categories = (props) => {
                   : "On Booking 10%"}
               </Typography>
               <Typography
-                variant={clsx(
-                  (!mobileWidth || !tabletWidth) && "h6",
-                  (mobileWidth || tabletWidth) && "caption"
-                )}
+                variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                 color="secondary"
               >
                 Rs. {booking}/=
@@ -114,19 +108,13 @@ const Categories = (props) => {
             {allocation && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                 variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   On Allocation 10%
                 </Typography>
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                  variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   Rs. {allocation}/=
@@ -136,19 +124,13 @@ const Categories = (props) => {
             {star && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                  variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   On Star of Working 10%
                 </Typography>
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                  variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   Rs. {star}/=
@@ -157,20 +139,14 @@ const Categories = (props) => {
             )}
             <div className="d-flex justify-content-between m-1">
               <Typography
-                variant={clsx(
-                  (!mobileWidth || !tabletWidth) && "h6",
-                  (mobileWidth || tabletWidth) && "caption"
-                )}
+                variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                 color="secondary"
               >
                 Monthly Installment
                 {project === "NK_RESIDENCY" ? " 15 X 400,000" : ` 36 X ${ma}`}
               </Typography>
               <Typography
-                variant={clsx(
-                  (!mobileWidth || !tabletWidth) && "h6",
-                  (mobileWidth || tabletWidth) && "caption"
-                )}
+                variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                 color="secondary"
               >
                 Rs. {monthly}/=
@@ -179,19 +155,13 @@ const Categories = (props) => {
             {quarterly && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                  variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   Quarterly Installment 05 X 500,000
                 </Typography>
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                  variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   Rs. {quarterly}/=
@@ -201,19 +171,13 @@ const Categories = (props) => {
             {yearly && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                 variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   Yearly Installment 06 X {ya}
                 </Typography>
                 <Typography
-                  variant={clsx(
-                    (!mobileWidth || !tabletWidth) && "h6",
-                    (mobileWidth || tabletWidth) && "caption"
-                  )}
+                 variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                   color="secondary"
                 >
                   Rs. {yearly}/=
@@ -222,19 +186,13 @@ const Categories = (props) => {
             )}
             <div className="d-flex justify-content-between m-1">
               <Typography
-                variant={clsx(
-                  (!mobileWidth || !tabletWidth) && "h6",
-                  (mobileWidth || tabletWidth) && "caption"
-                )}
+                variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                 color="secondary"
               >
                 On Possession
               </Typography>
               <Typography
-                variant={clsx(
-                  (!mobileWidth || !tabletWidth) && "h6",
-                  (mobileWidth || tabletWidth) && "caption"
-                )}
+               variant={mobileWidth || tabletWidth ? "body3" : "h6"}
                 color="secondary"
               >
                 Rs. {possession}/=
@@ -255,7 +213,7 @@ const Categories = (props) => {
       </div>
       <div
         className={clsx(
-          (!mobileWidth || !tabletWidth) && "w-50 rightBox box m-2 paper-root",
+          (!mobileWidth && !tabletWidth) && "w-50 rightBox box m-2 paper-root",
           (mobileWidth || tabletWidth) && "w-100 rightBox box m-2 paper-root"
         )}
         style={{ background: bg }}

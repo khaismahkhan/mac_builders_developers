@@ -338,7 +338,7 @@ const ProjectCategories = (props) => {
                 >
                   INTRODUCTION
                 </Typography>
-                <div className="w-70">
+                <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>
                   <Typography className="text-center mt-3">
                     {project === "SARA_RESIDENCY" &&
                       `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
