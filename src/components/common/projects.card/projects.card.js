@@ -27,43 +27,38 @@ const ProjectsCard = (props) => {
           alt="product-img"
         />
         <Typography
-          variant={clsx(!mobileWidth && "h6", mobileWidth && "subtitle")}
+          variant={mobileWidth ? "subtitle" : "h6"}
           className="font-weight-bold pt-4 "
         >
           {props.name}
         </Typography>
         <Typography
           className="font-weight-light pb-3"
-          variant={clsx(!mobileWidth && "body2", mobileWidth && "caption")}
+          variant={mobileWidth ? "caption" : "body2"}
         >
           Powered by Mac Builders & Developer
         </Typography>
         <Typography
           className="font-weight-bold"
-          variant={clsx(!mobileWidth && "", mobileWidth && "body3")}
+          variant={mobileWidth && "body3"}
         >
           {props.location}
         </Typography>
         <Typography
-          variant={clsx(!mobileWidth && "subtitle2", mobileWidth && "body3")}
+          variant={mobileWidth ? "body3" : "subtitle2"}
           className="font-weight-bold pt-4 "
         >
           {props.offers}
         </Typography>
         <Typography
           className="font-weight-light pb-3 pt-1"
-          variant={clsx(!mobileWidth && "subtitle2", mobileWidth && "caption")}
+          variant={mobileWidth ? "caption" : "subtitle2"}
         >
           Address: {props.address}
         </Typography>
         <Typography>
           {props.contacts.map((contact, index) => (
-            <Typography
-              variant={clsx(
-                !mobileWidth && "subtitle2",
-                mobileWidth && "body3"
-              )}
-            >
+            <Typography variant={mobileWidth ? "body3" : "subtitle2"}>
               {contact.number}
             </Typography>
           ))}

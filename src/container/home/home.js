@@ -24,7 +24,9 @@ const Home = () => {
   return (
     <div>
       <CoverPage />
-      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "mt-5 ml-1 mr-1")}>
+      <div
+        className={clsx(!mobileWidth && "m-5", mobileWidth && "mt-5 ml-1 mr-1")}
+      >
         <Heading text="COMPLETED" span="PROJECTS" />
         <ComingSoonCarousel />
         <div
@@ -39,7 +41,8 @@ const Home = () => {
           <div
             className={clsx(
               !mobileWidth && "d-flex p-4 hardwork paper-root w-100",
-              mobileWidth && "d-flex p-4 hardwork paper-root w-100 flex-wrap mt-5"
+              mobileWidth &&
+                "d-flex p-4 hardwork paper-root w-100 flex-wrap mt-5"
             )}
           >
             <div
@@ -56,13 +59,13 @@ const Home = () => {
                   !mobileWidth && "font-weight-bold pb-2",
                   mobileWidth && "font-weight-bold pb-2 text-center"
                 )}
-                variant={clsx(!mobileWidth && "h3", mobileWidth && "h6")}
+                variant={mobileWidth ? "h6" : "h3"}
                 color={{ color: "white" }}
               >
                 Our Hardwork in Numbers
               </Typography>
               <Typography
-                variant={clsx(!mobileWidth && "", mobileWidth && "body2")}
+                variant={mobileWidth && "body2"}
                 data-aos="zoom-up"
                 color={{ color: "white", letterSpacing: 2 }}
               >
@@ -87,7 +90,7 @@ const Home = () => {
                   <Typography
                     data-aos="zoom-out-up"
                     className="font-weight-bold"
-                    variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
+                    variant={mobileWidth ? "h6" : "h2"}
                     color="secondary"
                   >
                     11
@@ -100,7 +103,7 @@ const Home = () => {
                   <Typography
                     data-aos="zoom-out-up"
                     className="font-weight-bold"
-                    variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
+                    variant={mobileWidth ? "h6" : "h2"}
                     color="secondary"
                   >
                     99%
@@ -115,7 +118,7 @@ const Home = () => {
                   <Typography
                     data-aos="zoom-out-up"
                     className="font-weight-bold"
-                    variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
+                    variant={mobileWidth ? "h6" : "h2"}
                     color="secondary"
                   >
                     13
@@ -128,7 +131,7 @@ const Home = () => {
                   <Typography
                     data-aos="zoom-out-up"
                     className="font-weight-bold"
-                    variant={clsx(!mobileWidth && "h2", mobileWidth && "h6")}
+                    variant={mobileWidth ? "h6" : "h2"}
                     color="secondary"
                   >
                     27

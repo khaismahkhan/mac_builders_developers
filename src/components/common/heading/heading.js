@@ -8,20 +8,24 @@ const Heading = (props) => {
   const mobileWidth = IsMobileWidth();
 
   return (
-    <div data-aos="fade-up" className={clsx(!mobileWidth && "text-center mb-5", mobileWidth && "text-center mb-2 mt-3")} style={{ position: "relative" }}>
+    <div
+      data-aos="fade-up"
+      className={clsx(
+        !mobileWidth && "text-center mb-5",
+        mobileWidth && "text-center mb-2 mt-3"
+      )}
+      style={{ position: "relative" }}
+    >
       <Typography
         className="shaded text-center font-weight-bold"
-        variant={clsx(!mobileWidth && "h3poppins", mobileWidth && "h6poppins")}
+        variant={mobileWidth ? "h6poppins" : "h3poppins"}
         style={{ opacity: "4%" }}
       >
         {text} {span}
       </Typography>
       <Typography
         className="heading text-center"
-        variant={clsx(
-          !mobileWidth && "h6poppins",
-          mobileWidth && "subtitlepoppins"
-        )}
+        variant={mobileWidth ? "subtitlepoppins" : "h6poppins"}
       >
         {text} <span style={{ color: "#0c5352" }}>{span}</span>
       </Typography>

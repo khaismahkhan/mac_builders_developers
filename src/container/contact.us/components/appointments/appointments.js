@@ -12,7 +12,7 @@ const Appointments = () => {
   return (
     <>
       <Typography
-        variant={clsx(!mobileWidth && "h2", mobileWidth && "h5")}
+        variant={mobileWidth ? "h5" : "h2"}
         className="pb-4"
       >
         Make an Appointment
@@ -45,8 +45,8 @@ const Appointments = () => {
           Our Location:
         </Typography>
         <Typography variant="subtitle1" className="text-theme fw-semi-bold">
-          BANGLOW NO 30 JM 1 51 LAL CHAND H ROAD, opp. Masjid-e-Aisha, near
-          NISTAR PARK, Parsi Colony Karachi, Pakistan
+        Banglow No # 30 JM 1 51 Lal Chand H Road, Opp. Masjid-e-Aisha, Near
+       NISTAR PARK, Parsi Colony Karachi, Pakistan
         </Typography>
       </div>
       <div>

@@ -8,10 +8,10 @@ const OfferLabel = () => {
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
   return (
-    <div id="offer-label">
+    <div>
       <div
         className={clsx(
-          (!mobileWidth || !tabletWidth) &&
+          (!mobileWidth && !tabletWidth) &&
             "justify-content-start paper-root d-flex align-items-center bg-white w-100 flex-wrap",
           (mobileWidth || tabletWidth) &&
             "justify-content-center paper-root d-flex align-items-center bg-white w-100 flex-wrap p-3"
@@ -20,19 +20,19 @@ const OfferLabel = () => {
       >
         <div
           className={clsx(
-            (!mobileWidth || !tabletWidth) && "w-55 ml-5",
+            (!mobileWidth && !tabletWidth) && "w-55 ml-5",
             (mobileWidth || tabletWidth) && "w-100 text-center"
           )}
         >
           <Typography
-            variant={clsx(!mobileWidth && "h6", mobileWidth && "h5")}
+            variant={mobileWidth ? "h5" : "h6"}
             color="secondary"
             className="font-weight-bold"
           >
             Welcome to MAC Builders & Developers - Where You Belong!
           </Typography>
           <Typography
-            variant={clsx(!mobileWidth && "body1", mobileWidth && "subtitle1")}
+            variant={mobileWidth ? "subtitle1" : "body1"}
             className="pt-2"
           >
             Are you searching for the perfect team to build your dream home?
@@ -54,7 +54,7 @@ const OfferLabel = () => {
         </div>
         <div
           className={clsx(
-            (!mobileWidth || !tabletWidth) && "w-40",
+            (!mobileWidth && !tabletWidth) && "w-40",
             (mobileWidth || tabletWidth) && "w-100"
           )}
         >

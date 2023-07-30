@@ -53,7 +53,8 @@ const Categories = (props) => {
     <div
       data-aos="zoom-in-up"
       className={clsx(
-        (!mobileWidth && !tabletWidth) &&
+        !mobileWidth &&
+          !tabletWidth &&
           (reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"),
         (mobileWidth || tabletWidth) && "d-flex w-100 flex-wrap"
       )}
@@ -69,7 +70,7 @@ const Categories = (props) => {
       />
       <div
         className={clsx(
-          (!mobileWidth && !tabletWidth) && "w-50 leftBox box m-2 paper-root",
+          !mobileWidth && !tabletWidth && "w-50 leftBox box m-2 paper-root",
           (mobileWidth || tabletWidth) && "w-100 leftBox box m-2 paper-root"
         )}
       >
@@ -85,7 +86,7 @@ const Categories = (props) => {
           </div>
           <div
             className={clsx(
-              (!mobileWidth && !tabletWidth) && "text-center w-100",
+              !mobileWidth && !tabletWidth && "text-center w-100",
               (mobileWidth || tabletWidth) && "text-center w-100"
             )}
           >
@@ -108,7 +109,7 @@ const Categories = (props) => {
             {allocation && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
-                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
+                  variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
                   On Allocation 10%
@@ -171,13 +172,13 @@ const Categories = (props) => {
             {yearly && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
-                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
+                  variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
                   Yearly Installment 06 X {ya}
                 </Typography>
                 <Typography
-                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
+                  variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
                   Rs. {yearly}/=
@@ -192,7 +193,7 @@ const Categories = (props) => {
                 On Possession
               </Typography>
               <Typography
-               variant={mobileWidth || tabletWidth ? "caption" : "h6"}
+                variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                 color="secondary"
               >
                 Rs. {possession}/=
@@ -213,13 +214,22 @@ const Categories = (props) => {
       </div>
       <div
         className={clsx(
-          (!mobileWidth && !tabletWidth) && "w-50 rightBox box m-2 paper-root",
+          !mobileWidth && !tabletWidth && "w-50 rightBox box m-2 paper-root",
           (mobileWidth || tabletWidth) && "w-100 rightBox box m-2 paper-root"
         )}
         style={{ background: bg }}
       >
         <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3">
-          <div></div>
+          <div
+            className={clsx(
+              !mobileWidth && "d-flex justify-content-start w-100",
+              mobileWidth && "d-flex justify-content-start w-100 pb-4"
+            )}
+          >
+            <Typography variant="h6" className="font-weight-bold">
+              {projectName}
+            </Typography>
+          </div>
           <div className="text-center">
             <Typography variant="h2" className="font-weight-bold">
               TYPE <span style={{ color: "#fbeb23" }}>{type}</span>

@@ -51,7 +51,7 @@ const Footer = () => {
             Address
           </Typography>
           <Typography variant="body3">
-            BANGLOW NO 30 JM 1 51 LAL CHAND H ROAD, opp. Masjid-e-Aisha, near
+            Banglow No # 30 JM 1 51 Lal Chand H Road, Opp. Masjid-e-Aisha, Near
             NISTAR PARK, Parsi Colony Karachi, Pakistan
           </Typography>
         </div>

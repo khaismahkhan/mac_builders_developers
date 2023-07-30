@@ -23,7 +23,7 @@ const FormSection = (props) => {
       className="py-5 w-100 d-flex flex-column"
     >
       <Typography
-        variant={clsx(!mobileWidth && "h2", mobileWidth && "h5")}
+        variant={mobileWidth ? "h5" : "h2"}
         className="text-center font-weight-bolder text-theme pt-5 main-heading"
       >
         For Any Queries
@@ -40,13 +40,13 @@ const FormSection = (props) => {
           <div
             className={clsx(
               "d-flex justify-content-center flex-wrap",
-              (!mobileWidth || !tabletWidth) && "w-70",
+              (!mobileWidth && !tabletWidth) && "w-70",
               (mobileWidth || tabletWidth) && "w-100"
             )}
           >
             <div
               className={clsx(
-                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (!mobileWidth && !tabletWidth) && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -62,7 +62,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (!mobileWidth && !tabletWidth) && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -76,7 +76,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (!mobileWidth && !tabletWidth) && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -90,7 +90,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth || !tabletWidth) && "w-50 p-3",
+                (!mobileWidth && !tabletWidth) && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -117,7 +117,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth || !tabletWidth) && "",
+                (!mobileWidth && !tabletWidth) && "",
                 (mobileWidth || tabletWidth) && "w-100 mx-3"
               )}
             >

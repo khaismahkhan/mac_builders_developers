@@ -308,7 +308,7 @@ const ProjectCategories = (props) => {
         onClose={onClose}
       />
       <Wrapper />
-      <div className={clsx(!mobileWidth && "m-5", mobileWidth && "m-2")}>
+      <div className={clsx(!mobileWidth && "p-5", mobileWidth && "p-2")}>
         <div className="d-flex flex-wrap justify-content-center">
           <div
             data-aos="fade-up"

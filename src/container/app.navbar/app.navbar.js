@@ -57,6 +57,7 @@ const AppNavbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      hideDrawer()
     };
   }, [location.pathname]);
 
