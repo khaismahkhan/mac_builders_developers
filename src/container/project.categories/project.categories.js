@@ -450,7 +450,7 @@ const ProjectCategories = (props) => {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
-                    src="https://goo.gl/maps/crgoLtH8cTqi5WeA8"
+                    src={`https://maps.google.com/maps?q=${project === "ABBAS_COMFORT" ?"abbas comforts":"abbas comforts"}&t=&z=10&ie=UTF8&iwloc=&output=embed`}
                   ></iframe>
                 </div>
                 <Button

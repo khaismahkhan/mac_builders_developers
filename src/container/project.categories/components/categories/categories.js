@@ -51,7 +51,7 @@ const Categories = (props) => {
 
   return (
     <div
-    data-aos="zoom-in-up"
+      data-aos="zoom-in-up"
       className={clsx(
         (!mobileWidth || !tabletWidth) &&
           (reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"),
@@ -74,7 +74,7 @@ const Categories = (props) => {
         )}
       >
         <div className="d-flex flex-column justify-content-between center align-items-center h-100 p-3 payment">
-          <div>
+          <div className={clsx(mobileWidth && "pb-2")}>
             <Typography
               variant="h4"
               className="font-weight-bold"
@@ -241,7 +241,7 @@ const Categories = (props) => {
               </Typography>
             </div>
           </div>
-          <div>
+          <div className={clsx(mobileWidth && "pt-3")}>
             <Button
               onClick={() => props.handleClick(type)}
               className="font-weight-bold"
@@ -280,7 +280,12 @@ const Categories = (props) => {
               View Image
             </Button>
           </div>
-          <div className="d-flex justify-content-end w-100">
+          <div
+            className={clsx(
+              !mobileWidth && "d-flex justify-content-end w-100",
+              mobileWidth && "d-flex justify-content-end w-100 pt-4"
+            )}
+          >
             <Typography variant="h5" className="font-weight-bold">
               Rs. {price}/=
             </Typography>
