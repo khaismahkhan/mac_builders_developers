@@ -58,7 +58,7 @@ const Categories = (props) => {
         !mobileWidth &&
           !tabletWidth &&
           (reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"),
-        (mobileWidth || tabletWidth) && "d-flex w-100 flex-wrap"
+        (mobileWidth || tabletWidth) && "d-flex w-100 flex-wrap flex-column-reverse pr-3"
       )}
     >
       <ImagePreviewDialog

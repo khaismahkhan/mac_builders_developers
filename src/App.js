@@ -33,6 +33,9 @@ const options = {
 };
 
 function App() {
+
+  let location = useLocation();
+
   const [loginData, setLoginData] = useState(
     localStorage.getItem("loginData")
       ? JSON.parse(localStorage.getItem("loginData"))
@@ -40,6 +43,10 @@ function App() {
   );
 
   const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!loginData) {
@@ -74,7 +81,8 @@ function App() {
   const { pathname } = useLocation();
   const hideNavBarAndFooter =
     pathname === "/login" || pathname === "/dashboard";
-  console.log(hideNavBarAndFooter);
+
+
   return (
     <div>
       <StyledEngineProvider injectFirst>

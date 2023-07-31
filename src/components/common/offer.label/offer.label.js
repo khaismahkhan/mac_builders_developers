@@ -14,7 +14,7 @@ const OfferLabel = () => {
           (!mobileWidth && !tabletWidth) &&
             "justify-content-start paper-root d-flex align-items-center bg-white w-100 flex-wrap",
           (mobileWidth || tabletWidth) &&
-            "justify-content-center paper-root d-flex align-items-center bg-white w-100 flex-wrap p-3"
+            "justify-content-center paper-root d-flex align-items-center bg-white w-100 flex-wrap p-3 flex-column-reverse"
         )}
         style={{ borderRadius: 20 }}
       >

@@ -232,7 +232,7 @@ const ProjectCategories = (props) => {
     { img: "abbas3.jpeg" },
     { img: "abbas4.jpeg" },
     { img: "abbas5.jpeg" },
-    { img: "abbas6.jpeg" },
+    { img: "abbas6.jfif" },
   ];
 
   const handleChange = (name, value) => {
