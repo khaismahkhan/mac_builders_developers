@@ -8,7 +8,7 @@ import { Paper, InputAdornment, CircularProgress, TextField } from "@mui/materia
 
 
 export default function SiteLabelTextField(props) {
-  const { maxLength, pattern, endAdornment, label, execStatus, error, maskChar, value, mask, placeholder, validationType, topAdornment, type, required, borderRadius, isValid, validationResult, id,multiline, rows,isAmount } = props
+  const { maxLength, pattern, endAdornment, label, execStatus, error, maskChar, value, mask, placeholder, validationType, topAdornment, type, required, borderRadius, isValid, validationResult, id,multiline, rows,isAmount,name } = props
   const classes = useStyles()
 
   const [errorState, setError] = useState(false)
@@ -92,7 +92,7 @@ export default function SiteLabelTextField(props) {
                         maxLength: maxLength,
                         pattern: pattern,
                       }}
-
+                      name={name}
                       InputProps={{
                         classes: {
                           inputAdornedEnd: classes.endAdn,
@@ -160,6 +160,7 @@ export default function SiteLabelTextField(props) {
                         pattern: pattern,
 
                       }}
+                      name={name}
                       className=''
                       onChange={onChange}
                       InputProps={{

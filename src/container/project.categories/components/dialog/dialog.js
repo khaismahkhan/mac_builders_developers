@@ -4,7 +4,17 @@ import ContentDialog from "../../../../components/common/content.dialog/content.
 import LoaderButton from "../../../../components/common/loader.button/loader.button";
 
 const Dialog = (props) => {
-  const { title, open, project, plan, name, email, phone, loading } = props;
+  const {
+    title,
+    open,
+    project,
+    plan,
+    name,
+    email,
+    phone,
+    loading,
+    validationResult,
+  } = props;
 
   return (
     <div>
@@ -44,8 +54,27 @@ const Dialog = (props) => {
                 props.handleChange("name", event.target.value)
               }
               value={name}
-              topAdornment="Name"
+              topAdornment="Enter Name"
               placeholder="Type name"
+            />
+          </div>
+
+          <div className="pt-4">
+            <SiteLabelTextField
+              onChange={(event) =>
+                props.handleChange("phone", event.target.value)
+              }
+              value={phone}
+              topAdornment="Enter Phone Number"
+              placeholder="Type phone number"
+              validationResult={validationResult}
+              error={
+                validationResult && !validationResult.isValidOneFieldRequired
+                  ? "Field Required either Email Adderess"
+                  : null
+              }
+              validationType="NUMERIC"
+              maxLength={11}
             />
           </div>
           <div className="pt-4">
@@ -56,16 +85,13 @@ const Dialog = (props) => {
               value={email}
               topAdornment="Enter Email"
               placeholder="Type Email Address"
-            />
-          </div>
-          <div className="pt-4">
-            <SiteLabelTextField
-              onChange={(event) =>
-                props.handleChange("phone", event.target.value)
+              validationResult={validationResult}
+              error={
+                validationResult && !validationResult.isValidOneFieldRequired
+                  ? "Required Valid Email OR Phone Number"
+                  : null
               }
-              value={phone}
-              topAdornment="Enter Phone Number"
-              placeholder="Type phone number"
+              validationType="EMAIL"
             />
           </div>
 

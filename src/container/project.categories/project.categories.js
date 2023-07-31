@@ -10,6 +10,7 @@ import { useState } from "react";
 import Features from "./components/features/features";
 import clsx from "clsx";
 import { IsMobileWidth } from "../../components/common/utill/utils";
+import { isValidDeatils } from "./validator";
 
 const ProjectCategories = (props) => {
   const { project } = useParams();
@@ -30,6 +31,9 @@ const ProjectCategories = (props) => {
     phone: "",
     isDialogOpen: false,
     loading: false,
+    validationResult: {
+      isValidOneFieldRequired: true,
+    },
   });
 
   const nkCategories = [
@@ -259,6 +263,9 @@ const ProjectCategories = (props) => {
   const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
 
   const handleSubmit = async () => {
+    const validationResult = isValidDeatils(state);
+    setState({ ...state, validationResult });
+    if (validationResult?.isAllValid) {
     try {
       setState({
         ...state,
@@ -295,6 +302,7 @@ const ProjectCategories = (props) => {
         loading: false,
       });
     }
+  }
   };
 
   return (
