@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ContentDialog from "../../../../components/common/content.dialog/content.dialog";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
-import { Button } from "@mui/material";
 
 export default function ImagePreviewDialog(props) {
   const { title, src, open } = props;

@@ -2,7 +2,6 @@ import { Typography } from "@mui/material";
 import React from "react";
 import ProductCard from "../../components/common/profile.card/profile.card";
 import OfferLabel from "../../components/common/offer.label/offer.label";
-import Offers from "./components/offers/offers";
 import "./components/offers/offers.scss";
 import Wrapper from "../../components/common/wrapper/wrapper";
 import Heading from "../../components/common/heading/heading";

@@ -1,14 +1,11 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import {
-  IsMobileWidth,
-  IsTabletWidth,
+  IsMobileWidth
 } from "../../../../components/common/utill/utils";
-import clsx from "clsx";
 
 const Appointments = () => {
   const mobileWidth = IsMobileWidth();
-  const tabletWidth = IsTabletWidth();
   return (
     <>
       <Typography

@@ -1,6 +1,6 @@
 import React from "react";
 import "./features.scss";
-import { Hidden, Typography } from "@mui/material";
+import {Typography } from "@mui/material";
 
 const Features = () => {
   const features = [

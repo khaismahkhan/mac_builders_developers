@@ -1,7 +1,5 @@
 import {
-  IconButton,
   Pagination,
-  Paper,
   Typography,
   Button,
 } from "@mui/material";

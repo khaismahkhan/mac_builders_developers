@@ -6,6 +6,7 @@ import { Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 
 const ComingSoonCarousel = (props) => {
+  const {} = props
   const comingItems = [
     { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
     {

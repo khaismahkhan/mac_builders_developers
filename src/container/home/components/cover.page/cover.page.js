@@ -2,7 +2,6 @@ import React from "react";
 import "./cover.page.scss";
 import { Typography } from "@mui/material";
 import { IsMobileWidth } from "../../../../components/common/utill/utils";
-import clsx from "clsx";
 
 const CoverPage = () => {
   const mobileWidth = IsMobileWidth();

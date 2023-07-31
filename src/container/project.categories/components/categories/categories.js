@@ -8,6 +8,8 @@ import {
   IsMobileWidth,
   IsTabletWidth,
 } from "../../../../components/common/utill/utils";
+
+
 const Categories = (props) => {
   const { project } = useParams();
   const mobileWidth = IsMobileWidth();
