@@ -9,6 +9,7 @@ import clsx from "clsx";
 import Appointments from "./components/appointments/appointments";
 import FormSection from "./components/form/form";
 import emailjs from "@emailjs/browser";
+import { isValidDeatils } from "./validator";
 
 const ContactUs = (props) => {
   const mobileWidth = IsMobileWidth();
@@ -21,6 +22,9 @@ const ContactUs = (props) => {
     phone: "",
     message: "",
     isLoading: "",
+    validationResult: {
+      isValidOneFieldRequired: true,
+    },
   });
 
   const handleChange = (name, value) => {
@@ -28,6 +32,9 @@ const ContactUs = (props) => {
   };
 
   const sendEmail = (e) => {
+    const validationResult = isValidDeatils(state);
+    setState({ ...state, validationResult });
+    if (validationResult?.isAllValid) {
     setState({ ...state, isLoading: true });
     e.preventDefault();
     emailjs
@@ -59,6 +66,7 @@ const ContactUs = (props) => {
           console.log(error.text);
         }
       );
+    }
   };
 
   return (

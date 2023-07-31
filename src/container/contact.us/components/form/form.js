@@ -1,6 +1,6 @@
 import { TextareaAutosize, Typography } from "@mui/material";
 import React, { useRef } from "react";
-import InputField from "../../../../components/common/input.field/input.field";
+import InputField from "../../../../components/common/site.label.textfield/site.label.textfield";
 import {
   IsMobileWidth,
   IsTabletWidth,
@@ -9,7 +9,7 @@ import clsx from "clsx";
 import LoaderButton from "../../../../components/common/loader.button/loader.button";
 
 const FormSection = (props) => {
-  const { email, message, firstName, lastName,phone, isLoading } = props;
+  const { email, message, firstName, lastName, phone, isLoading,validationResult } = props;
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
 
@@ -40,13 +40,13 @@ const FormSection = (props) => {
           <div
             className={clsx(
               "d-flex justify-content-center flex-wrap",
-              (!mobileWidth && !tabletWidth) && "w-70",
+              !mobileWidth && !tabletWidth && "w-70",
               (mobileWidth || tabletWidth) && "w-100"
             )}
           >
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 p-3",
+                !mobileWidth && !tabletWidth && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -62,7 +62,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 p-3",
+                !mobileWidth && !tabletWidth && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -76,7 +76,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 p-3",
+                !mobileWidth && !tabletWidth && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -86,11 +86,18 @@ const FormSection = (props) => {
                 value={phone}
                 onChange={(e) => props.handleChange("phone", e.target.value)}
                 name="phone"
+                error={
+                  validationResult && !validationResult.isValidOneFieldRequired
+                    ? "Field Required either Email Adderess"
+                    : null
+                }
+                validationType="NUMERIC"
+                maxLength={11}
               />
             </div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 p-3",
+                !mobileWidth && !tabletWidth && "w-50 p-3",
                 (mobileWidth || tabletWidth) && "w-100 p-3"
               )}
             >
@@ -100,9 +107,16 @@ const FormSection = (props) => {
                 value={email}
                 onChange={(e) => props.handleChange("email", e.target.value)}
                 name="email"
+                validationResult={validationResult}
+                error={
+                  validationResult && !validationResult.isValidOneFieldRequired
+                    ? "Required Valid Email OR Phone Number"
+                    : null
+                }
+                validationType="EMAIL"
               />
             </div>
-            
+
             <div className="w-100 p-3">
               <TextareaAutosize
                 aria-label="minimum height"
@@ -117,7 +131,7 @@ const FormSection = (props) => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "",
+                !mobileWidth && !tabletWidth && "",
                 (mobileWidth || tabletWidth) && "w-100 mx-3"
               )}
             >
