@@ -6,7 +6,7 @@
 .cover-page {
   height: 100vh;
   // width: 100vw;
-  background-image: url(../../../../../public/assets/images/desktop.png);
+  background-image: url(../../../../../public/assets/images/Desktop.png);
   background-size: 100% 100%, contain;
   background-position: center;
   overflow: hidden;
@@ -14,7 +14,7 @@
 .cover-label {
   top: 120px;
   position: relative;
-  left: 620px;
+  left: 80px;
   color: white;
 }
 
@@ -47,14 +47,14 @@
 @media screen and (max-width: 1400px) {
   .cover-label {
     top: 120px;
-    left: 250px;
+    left: 50px;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .cover-label {
     top: 120px;
-    left: 120px;
+    left: 40px;
   }
 }
 
@@ -64,7 +64,7 @@
   }
   .cover-page {
     height: 50vh;
-    background-image: url(../../../../../public/assets/images/mobile.png);
+    background-image: url(../../../../../public/assets/images/Mobile.png);
   }
   .cover-label {
     top: 120px;
@@ -80,11 +80,13 @@
   .cover-page {
     height: 40vh;
   }
+  .cover-label {
+    top: 85px;
+  }
 }
 
 @media screen and (max-width: 380px) {
   .cover-label {
-    top: 120px;
     left: 10px;
     // padding: 10px;
   }

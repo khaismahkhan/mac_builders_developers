@@ -1,16 +1,17 @@
 import React from "react";
 import "./cover.page.scss";
 import { Typography } from "@mui/material";
-import { IsMobileWidth } from "../../../../components/common/utill/utils";
+import { IsMobileWidth, IsTabletWidth } from "../../../../components/common/utill/utils";
 
 const CoverPage = () => {
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
   return (
     <div className="cover">
       <div className="cover-page">
         <div className="cover-label">
           <Typography
-            variant={mobileWidth ? "H6poppins" : "h1poppins"}
+            variant={tabletWidth ? "h4poppins" : mobileWidth ? "h6poppins" : "h1poppins"}
             style={{ letterSpacing: mobileWidth ? "1px" : "4px" }}
             className="shinee"
           >
@@ -18,7 +19,7 @@ const CoverPage = () => {
           </Typography>
           <Typography
             className="font-weight-light"
-            variant={mobileWidth ? "body3" : "subtitlepoppins"}
+            variant={tabletWidth ? "body1poppins" : mobileWidth ? "body3poppins" : "subtitlepoppins"}
           >
             Building what's next in the heart of
             <span

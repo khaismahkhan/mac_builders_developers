@@ -33,7 +33,13 @@ export const materialThemeBase = {
     h6poppins: {
       fontFamily: "Poppins",
       fontWeight: 600,
-      fontSize: 30,
+      fontSize: 28,
+      lineHeight: "125.3%",
+    },
+    h4poppins:{
+      fontFamily: "Poppins",
+      fontWeight: 600,
+      fontSize: 42,
       lineHeight: "125.3%",
     },
     h1poppins: {
@@ -45,6 +51,20 @@ export const materialThemeBase = {
     subtitlepoppins: {
       fontFamily: "Poppins",
       fontSize: 20,
+      fontWeight: 600,
+      fontStyle: "normal",
+      lineHeight: "24px",
+    },
+    body1poppins: {
+      fontFamily: "Poppins",
+      fontSize: 20,
+      fontWeight: 600,
+      fontStyle: "normal",
+      lineHeight: "24px",
+    },
+    body3poppins: {
+      fontFamily: "Poppins",
+      fontSize: 12,
       fontWeight: 600,
       fontStyle: "normal",
       lineHeight: "24px",
