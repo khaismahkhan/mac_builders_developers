@@ -214,7 +214,7 @@ const ProjectCategories = (props) => {
   ];
 
   const saraBlessing = [
-    { img: "sara blessing.jpeg" },
+    { img: "sara blessing.jpg" },
     { img: "sb1.jpeg" },
     { img: "sb2.jpeg" },
     { img: "sb3.jpeg" },

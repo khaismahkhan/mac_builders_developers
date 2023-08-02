@@ -79,6 +79,10 @@ export const materialThemeBase = {
       fontFamily: "Joined-Bold",
       fontSize: 42,
     },
+    h6Joined: {
+      fontFamily: "Joined-Bold",
+      fontSize: 18,
+    },
     h4: {
       fontFamily: "Comfortaa-SemiBold",
       fontWeight: 600,
