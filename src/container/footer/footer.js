@@ -18,7 +18,7 @@ const Footer = () => {
     >
       <div
         className={clsx(
-          !tabletWidth &&
+          (!tabletWidth && !mobileWidth) &&
             "d-flex w-100 justify-content-center pt-4 pb-4 text-white",
           (tabletWidth || mobileWidth) &&
             "d-flex w-100 justify-content-center pt-4 pb-4 text-white flex-wrap"
@@ -27,7 +27,7 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !mobileWidth && "w-25",
+            (!tabletWidth && !mobileWidth) && "w-25",
             (tabletWidth || mobileWidth) && "w-100 pt-3 pb-3"
           )}
         >
@@ -43,7 +43,7 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !mobileWidth && "w-25",
+            (!tabletWidth && !mobileWidth) && "w-25",
             (tabletWidth || mobileWidth) && "w-100 pt-3"
           )}
         >
@@ -58,7 +58,7 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !mobileWidth && "w-25",
+            (!tabletWidth && !mobileWidth) && "w-25",
             (tabletWidth || mobileWidth) && "w-100 pt-3"
           )}
         >
@@ -74,7 +74,7 @@ const Footer = () => {
         <div
           className={clsx(
             "d-flex flex-column align-items-start",
-            !mobileWidth && "w-25",
+            (!tabletWidth && !mobileWidth) && "w-25",
             (tabletWidth || mobileWidth) && "w-100 pt-3"
           )}
         >

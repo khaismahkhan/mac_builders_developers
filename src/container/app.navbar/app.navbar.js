@@ -106,6 +106,7 @@ const AppNavbar = () => {
                     <Typography
                       variant="body1"
                       className="text-transform-none text-white ml-2"
+                      onClick={() => navigate("/")}
                     >
                       Mac Builders & Developers
                     </Typography>
