@@ -73,7 +73,7 @@ const ContactUs = (props) => {
     <div
       id="contact-us"
       style={{overflow:'hidden'}}
-      className={clsx(!mobileWidth && "p-4", mobileWidth && "pt-5")}
+      className={clsx((!mobileWidth && !tabletWidth) && "p-4", (mobileWidth || tabletWidth) && "pt-5")}
     >
       <div
         data-aos="fade-up"
