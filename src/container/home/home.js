@@ -40,8 +40,8 @@ const Home = () => {
 
           <div
             className={clsx(
-              !mobileWidth && "d-flex p-4 hardwork paper-root w-100",
-              mobileWidth &&
+              (!mobileWidth && !tabletWidth) && "d-flex p-4 hardwork paper-root w-100",
+              (mobileWidth || tabletWidth) &&
                 "d-flex p-4 hardwork paper-root w-100 flex-wrap mt-5"
             )}
           >
