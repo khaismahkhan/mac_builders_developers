@@ -1,13 +1,14 @@
 import React from "react";
 import "./wrapper.scss";
 import { Typography } from "@mui/material";
-import { IsMobileWidth } from "../utill/utils";
+import { IsMobileWidth, IsTabletWidth } from "../utill/utils";
 const Wrapper = () => {
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
   return (
-    <div className="wrapper" style={{overflow:'hidden'}}>
+    <div className="wrapper" style={{ overflow: 'hidden' }}>
       <Typography
-        variant={mobileWidth ? "h6Joined" : "h3Joined"}
+        variant={tabletWidth ? "h6Joined" : mobileWidth ? "h6Joined" : "h3Joined"}
         className="wrapperTxt"
         color="secondary"
       >
