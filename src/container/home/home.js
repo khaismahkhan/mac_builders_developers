@@ -47,9 +47,9 @@ const Home = () => {
           >
             <div
               className={clsx(
-                !mobileWidth &&
+                (!mobileWidth && !tabletWidth) &&
                   "w-60 d-flex flex-column justify-content-center align-items-start",
-                mobileWidth &&
+                (mobileWidth || tabletWidth) &&
                   "w-100 d-flex flex-column justify-content-center align-items-start"
               )}
             >
@@ -81,8 +81,8 @@ const Home = () => {
             </div>
             <div
               className={clsx(
-                !mobileWidth && "w-40 ml-5 d-flex",
-                mobileWidth && "w-100 d-flex justify-content-center mt-3"
+                (!mobileWidth && !tabletWidth) && "w-40 ml-5 d-flex",
+                (mobileWidth || tabletWidth) && "w-100 d-flex justify-content-center mt-3"
               )}
             >
               <div className={clsx(!mobileWidth && "", mobileWidth && "m-1")}>
