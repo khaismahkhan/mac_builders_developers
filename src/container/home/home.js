@@ -106,7 +106,7 @@ const Home = () => {
                     variant={mobileWidth ? "h6" : "h2"}
                     color="secondary"
                   >
-                    99%
+                    99<span style={{fontSize:40}}>%</span>
                   </Typography>
                   <Typography className="text-center">Success Rate</Typography>
                 </div>
