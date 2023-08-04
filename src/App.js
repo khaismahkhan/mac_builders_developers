@@ -9,7 +9,7 @@ import googleOneTap from "google-one-tap";
 import LazyLoading from "./components/common/lazy.loading/lazy.loading";
 import { Button } from "@mui/material";
 import Aos from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // import AppNavBar from "./container/app.navbar/app.navbar"
 // import Footer from "./container/footer/footer"
 
@@ -33,7 +33,6 @@ const options = {
 };
 
 function App() {
-
   let location = useLocation();
 
   const [loginData, setLoginData] = useState(
@@ -71,7 +70,7 @@ function App() {
 
   useEffect(() => {
     Aos.init();
-  }, [])
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("loginData");
@@ -81,7 +80,6 @@ function App() {
   const { pathname } = useLocation();
   const hideNavBarAndFooter =
     pathname === "/login" || pathname === "/dashboard";
-
 
   return (
     <div>
