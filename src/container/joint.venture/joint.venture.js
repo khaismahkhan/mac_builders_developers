@@ -40,7 +40,7 @@ const JointVenture = () => {
           className={clsx(
             "d-flex justify-content-between align-items-center w-100",
             !mobileWidth && "mt-5",
-            mobileWidth && "mt-1"
+            mobileWidth && "mt-1 pr-1 pl-1"
           )}
         >
           <div className="w-100 d-flex justify-content-center flex-wrap">

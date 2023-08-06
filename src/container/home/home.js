@@ -83,7 +83,9 @@ const Home = () => {
         >
           <Heading text="CURRENT" span="PROJECTS" />
           <ProjectsSection redirect={redirect} />
-          <Heading text="JOINT" span="VENTURE" />
+          <div className={clsx(!mobileWidth && "", mobileWidth && "pt-2 pb-4")}>
+            <Heading text="JOINT" span="VENTURE" />
+          </div>
           <div
             className="joint w-90 mb-5"
             onClick={() => history("/joint-venture")}
