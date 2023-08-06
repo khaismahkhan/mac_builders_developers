@@ -10,6 +10,7 @@ import LazyLoading from "./components/common/lazy.loading/lazy.loading";
 import { Button } from "@mui/material";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import JointVenture from "./container/joint.venture/joint.venture";
 // import AppNavBar from "./container/app.navbar/app.navbar"
 // import Footer from "./container/footer/footer"
 
@@ -95,6 +96,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/joint-venture" element={<JointVenture />} />
                 <Route
                   path="/project/:project"
                   element={<ProjectCategories />}

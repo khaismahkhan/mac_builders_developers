@@ -10,7 +10,6 @@ const Wrapper = () => {
       <Typography
         variant={tabletWidth ? "h6Joined" : mobileWidth ? "h6Joined" : "h3Joined"}
         className="wrapperTxt"
-        color="secondary"
       >
         Projects of Mac Builders & Developers.
       </Typography>

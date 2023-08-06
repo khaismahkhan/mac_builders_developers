@@ -19,7 +19,7 @@ const AboutUs = () => {
     {
       name: "Sohail Lakhani",
       role: "General Manager",
-      image: "sohail.jfif",
+      image: "sohail.jpeg",
     },
     {
       name: "Khaismah Bin Ilyas",
@@ -35,26 +35,6 @@ const AboutUs = () => {
       name: "Bazigh Waseem",
       role: "Marketing",
       image: "bazigh.jpg",
-    },
-    {
-      name: "Muhammad Talal Shaikh",
-      role: "Social Media",
-      image: "talal.jpeg",
-    },
-    {
-      name: "Bazigh Waseem",
-      role: "Marketing",
-      image: "bazigh.jpg",
-    },
-    {
-      name: "Khaismah Bin Ilyas",
-      role: "IT Tech",
-      image: "khaismah.jpeg",
-    },
-    {
-      name: "Muhammad Talal Shaikh",
-      role: "Social Media",
-      image: "talal.jpeg",
     },
   ];
 
@@ -67,7 +47,7 @@ const AboutUs = () => {
     { title: "Finance & Accounting" },
   ];
   return (
-    <div style={{overflow:"hidden"}}>
+    <div style={{ overflow: "hidden" }}>
       <Wrapper />
       <div className={clsx(!mobileWidth && "p-5", mobileWidth && "p-2")}>
         <div className="d-flex flex-column align-items-center p-2">
@@ -107,7 +87,8 @@ const AboutUs = () => {
           <Heading text="MESSAGE FROM" span=" CEO" />
           <div
             className={clsx(
-              (!mobileWidth && !tabletWidth) &&
+              !mobileWidth &&
+                !tabletWidth &&
                 "d-flex justify-content-center flex-wrap align-items-center mt-4 w-90",
               (mobileWidth || tabletWidth) &&
                 "d-flex justify-content-center flex-wrap align-items-center mt-4 w-100"
@@ -116,13 +97,13 @@ const AboutUs = () => {
             <div
               data-aos="fade-right"
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 mission",
+                !mobileWidth && !tabletWidth && "w-50 mission",
                 (mobileWidth || tabletWidth) && "w-100 mission"
               )}
             ></div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 p-5",
+                !mobileWidth && !tabletWidth && "w-50 p-5",
                 (mobileWidth || tabletWidth) && "w-100 pt-3"
               )}
             >
@@ -150,7 +131,8 @@ const AboutUs = () => {
           <Heading text="OUR" span=" PASSION" />
           <div
             className={clsx(
-              (!mobileWidth && !tabletWidth) &&
+              !mobileWidth &&
+                !tabletWidth &&
                 "d-flex justify-content-center flex-wrap align-items-center mt-4 w-90",
               (mobileWidth || tabletWidth) &&
                 "d-flex justify-content-center flex-wrap align-items-center mt-4 w-100"
@@ -159,13 +141,13 @@ const AboutUs = () => {
             <div
               data-aos="fade-right"
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 services",
+                !mobileWidth && !tabletWidth && "w-50 services",
                 (mobileWidth || tabletWidth) && "w-100 services"
               )}
             ></div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-50 p-5",
+                !mobileWidth && !tabletWidth && "w-50 p-5",
                 (mobileWidth || tabletWidth) && "w-100 pt-3"
               )}
             >

@@ -1,0 +1,14 @@
+.madina {
+  background-image: url(../../../../react-boiler-plate-for-ui/public/assets/images/madina.png);
+  background-size: 100% 100%, contain;
+  height: 600px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: fill;
+}
+
+@media screen and (max-width: 720px) {
+  .madina {
+    height: 350px;
+  }
+}

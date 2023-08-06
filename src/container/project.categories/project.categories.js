@@ -266,43 +266,43 @@ const ProjectCategories = (props) => {
     const validationResult = isValidDeatils(state);
     setState({ ...state, validationResult });
     if (validationResult?.isAllValid) {
-    try {
-      setState({
-        ...state,
-        loading: true,
-      });
-      const url = `${BASE_URL}/api/v1/auth/signup`;
-      const data = {
-        userName: state.name,
-        phoneNumber: state.phone,
-        email: state.email,
-        plan: state.project,
-        category: state.plan,
-      };
+      try {
+        setState({
+          ...state,
+          loading: true,
+        });
+        const url = `${BASE_URL}/api/v1/auth/signup`;
+        const data = {
+          userName: state.name,
+          phoneNumber: state.phone,
+          email: state.email,
+          plan: state.project,
+          category: state.plan,
+        };
 
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const responseData = await response.json();
+        onClose();
+        console.log(responseData);
+      } catch (error) {
+        console.error("Error:", error);
+        setState({
+          ...state,
+          loading: false,
+        });
       }
-
-      const responseData = await response.json();
-      onClose();
-      console.log(responseData);
-    } catch (error) {
-      console.error("Error:", error);
-      setState({
-        ...state,
-        loading: false,
-      });
     }
-  }
   };
 
   return (
@@ -346,7 +346,12 @@ const ProjectCategories = (props) => {
                 >
                   INTRODUCTION
                 </Typography>
-                <div className={clsx(!mobileWidth && "w-70", mobileWidth && "w-100")}>
+                <div
+                  className={clsx(
+                    !mobileWidth && "w-70",
+                    mobileWidth && "w-100"
+                  )}
+                >
                   <Typography className="text-center mt-3">
                     {project === "SARA_RESIDENCY" &&
                       `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
@@ -354,7 +359,7 @@ const ProjectCategories = (props) => {
                     in the essence of an ideal living place anywhere, but a
                     place where on has a convenient access to every conceivable
                     amenity has literally no metal. People with a
-                    discriminatingfaste for living compared to any other
+                    discriminating faste for living compared to any other
                     features, whatsoever. Project at an ideal location has
                     everything to offer, making life enjoyable in every respect.
                   </Typography>
@@ -458,7 +463,11 @@ const ProjectCategories = (props) => {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
-                    src={`https://maps.google.com/maps?q=${project === "ABBAS_COMFORT" ?"abbas comforts":"abbas comforts"}&t=&z=10&ie=UTF8&iwloc=&output=embed`}
+                    src={`https://maps.google.com/maps?q=${
+                      project === "ABBAS_COMFORT"
+                        ? "abbas comforts"
+                        : "abbas comforts"
+                    }&t=&z=10&ie=UTF8&iwloc=&output=embed`}
                   ></iframe>
                 </div>
                 <Button
@@ -504,6 +513,7 @@ const ProjectCategories = (props) => {
                 alt="product-img"
                 className="zoom"
                 id={index}
+                data-aos="fade-up"
               />
             ))}
           </div>
@@ -515,6 +525,7 @@ const ProjectCategories = (props) => {
                 alt="product-img"
                 className="zoom"
                 id={index}
+                data-aos="fade-up"
               />
             ))}
           </div>
@@ -526,6 +537,7 @@ const ProjectCategories = (props) => {
                 alt="product-img"
                 className="zoom"
                 id={index}
+                data-aos="fade-up"
               />
             ))}
           </div>
@@ -537,6 +549,7 @@ const ProjectCategories = (props) => {
                 alt="product-img"
                 className="zoom"
                 id={index}
+                data-aos="fade-up"
               />
             ))}
           </div>
@@ -548,6 +561,7 @@ const ProjectCategories = (props) => {
                 alt="product-img"
                 className="zoom"
                 id={index}
+                data-aos="fade-up"
               />
             ))}
           </div>
@@ -560,6 +574,7 @@ const ProjectCategories = (props) => {
                   alt="product-img"
                   className="zoom"
                   id={index}
+                  data-aos="fade-up"
                 />
               ))}
             </div>
@@ -573,6 +588,7 @@ const ProjectCategories = (props) => {
                   alt="product-img"
                   className="zoom"
                   id={index}
+                  data-aos="fade-up"
                 />
               ))}
             </div>

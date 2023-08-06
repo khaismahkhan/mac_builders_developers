@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import "./home.scss";
 import { useNavigate } from "react-router-dom";
 import ProjectsSection from "./components/projects.section/projects.section";
@@ -21,6 +21,52 @@ const Home = () => {
     history(`project/${project.replace(/\s+/g, "_")}`);
   };
 
+  const comingItems = [
+    {
+      name: "SARA BRIDGE VIEW",
+      image: "kk.jpg",
+      bg: "#684d9d",
+      color: "white",
+      soon: true,
+    },
+    {
+      name: "NK BRIDGE VIEW",
+      image: "kk.jpg",
+      bg: "#684d9d",
+      color: "white",
+      soon: true,
+    },
+    {
+      name: "SARA BLESSING",
+      image: "kk.jpg",
+      bg: "#d62196",
+      color: "white",
+      soon: true,
+    },
+  ];
+
+  const completedItems = [
+    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
+    {
+      name: "ABBAS COMFORT",
+      image: "sherwani.jpeg",
+      bg: "#e1b428",
+      color: "white",
+    },
+    {
+      name: "ZOHRA RESIDENCY",
+      image: "sherwani.jpeg",
+      bg: "#cadb3d",
+      color: "white",
+    },
+    {
+      name: "AL MUSTAFA PRIME",
+      image: "kk.jpg",
+      bg: "#542327",
+      color: "white",
+    },
+  ];
+
   return (
     <div>
       <CoverPage />
@@ -37,17 +83,24 @@ const Home = () => {
         >
           <Heading text="CURRENT" span="PROJECTS" />
           <ProjectsSection redirect={redirect} />
-
+          <Heading text="JOINT" span="VENTURE" />
+          <div
+            className="joint w-90 mb-5"
+            onClick={() => history("/joint-venture")}
+          ></div>
           <div
             className={clsx(
-              (!mobileWidth && !tabletWidth) && "d-flex p-4 hardwork paper-root w-100",
+              !mobileWidth &&
+                !tabletWidth &&
+                "d-flex p-4 hardwork paper-root w-100",
               (mobileWidth || tabletWidth) &&
                 "d-flex p-4 hardwork paper-root w-100 flex-wrap mt-5"
             )}
           >
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) &&
+                !mobileWidth &&
+                  !tabletWidth &&
                   "w-60 d-flex flex-column justify-content-center align-items-start",
                 (mobileWidth || tabletWidth) &&
                   "w-100 d-flex flex-column justify-content-center align-items-start"
@@ -81,8 +134,9 @@ const Home = () => {
             </div>
             <div
               className={clsx(
-                (!mobileWidth && !tabletWidth) && "w-40 ml-5 d-flex",
-                (mobileWidth || tabletWidth) && "w-100 d-flex justify-content-center mt-3"
+                !mobileWidth && !tabletWidth && "w-40 ml-5 d-flex",
+                (mobileWidth || tabletWidth) &&
+                  "w-100 d-flex justify-content-center mt-3"
               )}
             >
               <div className={clsx(!mobileWidth && "", mobileWidth && "m-1")}>
@@ -106,7 +160,7 @@ const Home = () => {
                     variant={mobileWidth ? "h6" : "h2"}
                     color="secondary"
                   >
-                    99<span style={{fontSize:40}}>%</span>
+                    99<span style={{ fontSize: 40 }}>%</span>
                   </Typography>
                   <Typography className="text-center">Success Rate</Typography>
                 </div>
