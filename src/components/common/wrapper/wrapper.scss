@@ -1,10 +1,13 @@
 .wrapper {
   height: 80vh;
-  // width: 100vw;
-  background-image: url(../../../../public/assets/images/desktop.png);
   background-size: 100% 100%, contain;
   background-position: center;
-  // opacity: 0.5;
+  object-fit: contain;
+}
+.m_wrapper{
+  display: none;
+  background-size: 100% 100%, contain;
+  background-position: center;
   object-fit: contain;
 }
 
@@ -15,9 +18,12 @@
 }
 
 @media screen and (max-width: 720px) {
-  .wrapper {
+  .m_wrapper {
     height: 40vh;
-    background-image: url(../../../../public/assets/images/mobile.png);
+    display: block;
+  }
+  .wrapper{
+    display: none;
   }
   .wrapperTxt {
     top: 90px;
