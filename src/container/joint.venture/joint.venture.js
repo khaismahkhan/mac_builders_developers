@@ -59,7 +59,7 @@ const JointVenture = () => {
               className="zoom"
               style={{
                 height: mobileWidth ? 110 : 160,
-                width: mobileWidth ? 130 : 220,
+                width: mobileWidth ? 130 : 220 ,
               }}
             />
           </div>
