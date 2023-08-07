@@ -127,6 +127,55 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
+        <div className="d-flex flex-column align-items-center">
+          <Heading text="ENGINEER &" span=" ARCHITECT" />
+          <div
+            className={clsx(
+              !mobileWidth &&
+                !tabletWidth &&
+                "d-flex justify-content-center flex-wrap align-items-center mt-4 w-90",
+              (mobileWidth || tabletWidth) &&
+                "d-flex justify-content-center flex-wrap align-items-center mt-4 w-100"
+            )}
+          >
+            <div
+              className={clsx(
+                !mobileWidth && !tabletWidth && "w-50 p-3 text-center",
+                (mobileWidth || tabletWidth) && "w-100 text-center"
+              )}
+            >
+              <div data-aos="fade-right" className="engineer"></div>
+              <Typography
+                variant={mobileWidth ? "subtitle1" : "h4"}
+                className="font-weight-bold pt-3"
+                color="secondary"
+              >
+                Dawood
+              </Typography>
+              <Typography variant="body3" color="">
+                Engineer
+              </Typography>
+            </div>
+            <div
+              className={clsx(
+                !mobileWidth && !tabletWidth && "w-50 p-3 text-center",
+                (mobileWidth || tabletWidth) && "w-100 text-center pt-4"
+              )}
+            >
+              <div data-aos="fade-left" className="architect"></div>
+              <Typography
+                variant={mobileWidth ? "subtitle1" : "h4"}
+                className="font-weight-bold pt-3"
+                color="secondary"
+              >
+                Nadeem
+              </Typography>
+              <Typography variant="body3" color="">
+                Architect
+              </Typography>
+            </div>
+          </div>
+        </div>
         <div className="d-flex flex-column align-items-center mt-3">
           <Heading text="OUR" span=" PASSION" />
           <div

@@ -24,13 +24,35 @@
   border-radius: 10px;
 }
 
+.architect {
+  background-image: url(../../../../../public/assets/images/architect.png);
+  background-size: 100% 100%, contain;
+  height: 500px;
+  border-radius: 10px;
+}
+.engineer {
+  background-image: url(../../../../../public/assets/images/engineer.jpeg);
+  background-size: 100% 100%, contain;
+  height: 500px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .mission {
+    height: 330px;
+  }
+  .architect {
+    height: 330px;
+  }
+  .engineer {
+    height: 330px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .offer {
     height: 60px;
     width: 80px;
-  }
-  .mission {
-    height: 300px;
   }
   .services {
     height: 250px;
