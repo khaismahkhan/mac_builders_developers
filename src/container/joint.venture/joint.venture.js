@@ -144,7 +144,7 @@ const JointVenture = () => {
           </div>
         </div>
         {/* <Wrapper/> */}
-        <div className="d-flex justify-content-center flex-wrap mt-5">
+        {/* <div className="d-flex justify-content-center flex-wrap mt-5">
           {jointVenture.map((image, index) => (
             <img
               data-aos="fade-up"
@@ -154,7 +154,7 @@ const JointVenture = () => {
               id={index}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
