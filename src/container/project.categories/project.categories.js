@@ -235,6 +235,13 @@ const ProjectCategories = (props) => {
     { img: "abbas6.jfif" },
   ];
 
+  const saraBridgeView = [
+    { img: "sarabridgeview.jpg" },
+    { img: "sbv1.jpg" },
+    { img: "sbv2.jpg" },
+    { img: "sbv3.jpg" },
+  ];
+
   const handleChange = (name, value) => {
     setState({
       ...state,
@@ -358,10 +365,10 @@ const ProjectCategories = (props) => {
                     Laying one's hands comfortably to basic necessities of life
                     in the essence of an ideal living place anywhere, but a
                     place where on has a convenient access to every conceivable
-                    amenity has literally no metal. People with a
-                    discriminating faste for living compared to any other
-                    features, whatsoever. Project at an ideal location has
-                    everything to offer, making life enjoyable in every respect.
+                    amenity has literally no metal. People with a discriminating
+                    faste for living compared to any other features, whatsoever.
+                    Project at an ideal location has everything to offer, making
+                    life enjoyable in every respect.
                   </Typography>
                   <Typography
                     variant="h6"
@@ -451,7 +458,7 @@ const ProjectCategories = (props) => {
                     ? "Address : Plot # C.11 Block 20 FB Area Gulberg Town Ancholi, Karachi"
                     : "Address : Plot # C-11, Block 20 Fader B Area, Karachi."}
                 </Typography>
-                <div className="mt-3">
+                {/* <div className="mt-3">
                   <iframe
                     style={{
                       height: "260px",
@@ -469,7 +476,7 @@ const ProjectCategories = (props) => {
                         : "abbas comforts"
                     }&t=&z=10&ie=UTF8&iwloc=&output=embed`}
                   ></iframe>
-                </div>
+                </div> */}
                 <Button
                   onClick={() => redirect("/contact-us")}
                   className="font-weight-bold mt-3"
@@ -593,8 +600,27 @@ const ProjectCategories = (props) => {
               ))}
             </div>
           </>
+        ) : project === "SARA_BRIDGE_VIEW" ? (
+          <>
+            <div className="d-flex justify-content-center flex-wrap mt-5">
+              {saraBridgeView.map((image, index) => (
+                <img
+                  src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
+                  alt="product-img"
+                  className="zoom"
+                  id={index}
+                  data-aos="fade-up"
+                />
+              ))}
+            </div>
+          </>
         ) : (
-          <Typography>No Image Available</Typography>
+          <Typography
+            className="text-center pt-3 font-weight-bold"
+            variant="body1"
+          >
+            No Images Available
+          </Typography>
         )}
       </div>
       <div data-aos="fade-up" className="mt-5">

@@ -28,6 +28,13 @@ const ComingSoonCarousel = (props) => {
       color: "white",
     },
     {
+      name: "SARA BRIDGE VIEW",
+      image: "kk.jpg",
+      bg: "#ccb9a2",
+      color: "white",
+      soon: true,
+    },
+    {
       name: "NK BRIDGE VIEW",
       image: "kk.jpg",
       bg: "#684d9d",
