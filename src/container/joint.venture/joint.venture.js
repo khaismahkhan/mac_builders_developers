@@ -46,7 +46,7 @@ const JointVenture = () => {
           <div className="w-100 d-flex justify-content-center flex-wrap">
             <Typography
               className="font-weight-bold text-center"
-              variant={mobileWidth ? "subtitle1" : "h6poppins"}
+              variant={mobileWidth ? "subtitle2" : "h6poppins"}
               color="secondary"
             >
               Mac Builders & Developers
@@ -66,7 +66,7 @@ const JointVenture = () => {
           <div className="w-100 d-flex justify-content-center flex-wrap">
             <Typography
               className="font-weight-bold text-center"
-              variant={mobileWidth ? "subtitle1" : "h6poppins"}
+              variant={mobileWidth ? "subtitle2" : "h6poppins"}
               color="secondary"
             >
               Salman Enterprises
