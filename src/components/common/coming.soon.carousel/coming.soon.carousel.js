@@ -86,6 +86,7 @@ const ComingSoonCarousel = (props) => {
           clickable: true,
         }}
         modules={[Navigation]}
+        // loop={true}
       >
         {comingItems.map((item, index) => (
           <SwiperSlide className="d-flex justify-content-center" key={index}>

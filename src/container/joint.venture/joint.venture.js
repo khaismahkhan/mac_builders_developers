@@ -15,20 +15,11 @@ const JointVenture = () => {
   const tabletWidth = IsTabletWidth();
 
   const jointVenture = [
-    { img: "nk bridge.jpeg" },
-    { img: "bridge1.jpeg" },
-    { img: "bridge2.jpeg" },
-    { img: "bridge3.jpeg" },
-    { img: "bridge4.jpeg" },
-    { img: "bridge5.jpeg" },
-    { img: "bridge6.jpeg" },
-    { img: "bridge7.jpeg" },
-    { img: "bridge8.jpeg" },
-    { img: "bridge9.jpeg" },
-    { img: "bridge10.jpeg" },
-    { img: "bridge11.jpeg" },
-    { img: "bridge12.jpeg" },
-    { img: "bridge13.jpeg" },
+    { img: "madina_map.jpg" },
+    { img: "madina_3bed.jpg" },
+    { img: "madina_2bed_l.jpg" },
+    { img: "madina_2bed_s.jpg" },
+    { img: "madina_plan.jpg" },
   ];
   return (
     <div className="w-100" style={{ overflow: "hidden" }}>
@@ -144,7 +135,7 @@ const JointVenture = () => {
           </div>
         </div>
         {/* <Wrapper/> */}
-        {/* <div className="d-flex justify-content-center flex-wrap mt-5">
+        <div className="d-flex justify-content-center flex-wrap mt-5">
           {jointVenture.map((image, index) => (
             <img
               data-aos="fade-up"
@@ -154,7 +145,7 @@ const JointVenture = () => {
               id={index}
             />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );
