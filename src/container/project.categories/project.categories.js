@@ -185,7 +185,7 @@ const ProjectCategories = (props) => {
       price: "47,000,000",
       booking: "18,800,000",
       monthly: "18,000,000",
-      halfYearly:"4,500,000",
+      halfYearly: "4,500,000",
       possession: "5,700,000",
       reverse: true,
       bg: "#ff5556",
@@ -197,7 +197,7 @@ const ProjectCategories = (props) => {
       price: "47,000,000",
       booking: "18,800,000",
       monthly: "18,000,000",
-      halfYearly:"4,500,000",
+      halfYearly: "4,500,000",
       possession: "5,700,000",
       reverse: false,
       bg: "#bcf955",
@@ -209,7 +209,7 @@ const ProjectCategories = (props) => {
       price: "46,000,000",
       booking: "18,400,000",
       monthly: "18,000,000",
-      halfYearly:"4,500,000",
+      halfYearly: "4,500,000",
       possession: "5,100,000",
       reverse: true,
       bg: "#f8bc0c",
@@ -221,7 +221,7 @@ const ProjectCategories = (props) => {
       price: "46,000,000",
       booking: "18,400,000",
       monthly: "18,000,000",
-      halfYearly:"4,500,000",
+      halfYearly: "4,500,000",
       possession: "5,100,000",
       reverse: false,
       bg: "#07ce58",
@@ -444,7 +444,9 @@ const ProjectCategories = (props) => {
                   </Typography>
                 </div>
               </>
-            ) : project === "SARA_BLESSING" || project === "NK_BRIDGE_VIEW" ? (
+            ) : project === "SARA_BLESSING" ||
+              project === "NK_BRIDGE_VIEW" ||
+              project === "SARA_BRIDGE_VIEW" ? (
               <>
                 <Heading text="COMING" span="SOON" />
                 <Typography
@@ -458,7 +460,9 @@ const ProjectCategories = (props) => {
                   {project === "SARA_BLESSING"
                     ? "Address : Plot # 320, OPP Prince Lawn Near PSO Pump Garden West, Karachi."
                     : project === "NK_BRIDGE_VIEW"
-                    ? "Address : Plot # 441, Garden West Karachi, Karachi."
+                    ? "Address : Plot # 441, Garden West, Karachi."
+                    : project === "SARA_BRIDGE_VIEW"
+                    ? "Address : PLot # ST-06 BLOCK -01, GULISTAN E JAUHAR, KARACHI"
                     : ""}
                 </Typography>
                 <Button
@@ -507,7 +511,7 @@ const ProjectCategories = (props) => {
                     ? "Address : Plot # E-166, P.E.C.H.S Society, Karachi."
                     : project === "ABBAS_COMFORT"
                     ? "Address : Plot # C.11 Block 20 FB Area Gulberg Town Ancholi, Karachi"
-                    : "Address : Plot # C-11, Block 20 Fader B Area, Karachi."}
+                    : null}
                 </Typography>
                 {/* <div className="mt-3">
                   <iframe
