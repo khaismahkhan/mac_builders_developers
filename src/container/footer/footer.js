@@ -82,7 +82,7 @@ const Footer = () => {
             Social
           </Typography>
           <Link
-            href="https://www.facebook.com/porchamstore/"
+            href="https://www.facebook.com/SOHAILLAKHANI100"
             target="_blank"
             underline="hover"
             className="pb-1 ps-1 text-white"
@@ -90,7 +90,7 @@ const Footer = () => {
             <Typography variant="body3">Facebook</Typography>
           </Link>
           <Link
-            href="https://www.instagram.com/porchamstore/"
+            href="https://www.instagram.com/SOHAILLAKHANI100"
             target="_blank"
             underline="hover"
             className="pb-1 ps-1 text-white"
@@ -98,7 +98,7 @@ const Footer = () => {
             <Typography variant="body3">Instagram</Typography>
           </Link>
           <Link
-            href="https://twitter.com/PORCHAMSTORE"
+            // href="https://twitter.com/PORCHAMSTORE"
             target="_blank"
             underline="hover"
             className="pb-1 ps-1 text-white"
