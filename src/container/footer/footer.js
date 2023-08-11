@@ -68,7 +68,7 @@ const Footer = () => {
           <Typography variant="body3">
             Mail: macbuilders.515@gmail.com
           </Typography>
-          <Typography variant="body3">Phone: +92 324-2930830</Typography>
+          <Typography variant="body3">Phone: +92 324-2930832</Typography>
         </div>
 
         <div
