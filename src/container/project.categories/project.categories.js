@@ -178,6 +178,57 @@ const ProjectCategories = (props) => {
     },
   ];
 
+  const saraResidencyCategories = [
+    {
+      type: "A1",
+      bed: "3 BED DD",
+      price: "47,000,000",
+      booking: "18,800,000",
+      monthly: "18,000,000",
+      halfYearly:"4,500,000",
+      possession: "5,700,000",
+      reverse: true,
+      bg: "#ff5556",
+      image: "sara a1.jpeg",
+    },
+    {
+      type: "A",
+      bed: "3 BED DD",
+      price: "47,000,000",
+      booking: "18,800,000",
+      monthly: "18,000,000",
+      halfYearly:"4,500,000",
+      possession: "5,700,000",
+      reverse: false,
+      bg: "#bcf955",
+      image: "sara a.jpeg",
+    },
+    {
+      type: "B",
+      bed: "2 BED DD",
+      price: "46,000,000",
+      booking: "18,400,000",
+      monthly: "18,000,000",
+      halfYearly:"4,500,000",
+      possession: "5,100,000",
+      reverse: true,
+      bg: "#f8bc0c",
+      image: "sara b.jpeg",
+    },
+    {
+      type: "C",
+      bed: "2 BED DD",
+      price: "46,000,000",
+      booking: "18,400,000",
+      monthly: "18,000,000",
+      halfYearly:"4,500,000",
+      possession: "5,100,000",
+      reverse: false,
+      bg: "#07ce58",
+      image: "sara c.jpeg",
+    },
+  ];
+
   const nkImages = [
     { img: "nkicon.jpeg" },
     { img: "nk 1.jpeg" },
@@ -503,7 +554,7 @@ const ProjectCategories = (props) => {
                     handleClick={handleClick}
                   />
                 ))
-              : saraCategories.map((category, index) => (
+              : saraResidencyCategories.map((category, index) => (
                   <Categories
                     {...category}
                     key={index}

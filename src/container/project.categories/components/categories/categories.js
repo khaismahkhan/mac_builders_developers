@@ -31,6 +31,7 @@ const Categories = (props) => {
     ya,
     ma,
     image,
+    halfYearly,
   } = props;
 
   const [state, setState] = useState({
@@ -58,7 +59,8 @@ const Categories = (props) => {
         !mobileWidth &&
           !tabletWidth &&
           (reverse ? "d-flex w-100 flex-row-reverse" : "d-flex w-100 flex-row"),
-        (mobileWidth || tabletWidth) && "d-flex w-100 flex-wrap flex-column-reverse pr-3"
+        (mobileWidth || tabletWidth) &&
+          "d-flex w-100 flex-wrap flex-column-reverse pr-3"
       )}
     >
       <ImagePreviewDialog
@@ -97,7 +99,7 @@ const Categories = (props) => {
                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                 color="secondary"
               >
-                {project === "NK_RESIDENCY"
+                {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY"
                   ? "On Booking 40%"
                   : "On Booking 10%"}
               </Typography>
@@ -146,7 +148,11 @@ const Categories = (props) => {
                 color="secondary"
               >
                 Monthly Installment
-                {project === "NK_RESIDENCY" ? " 15 X 400,000" : ` 36 X ${ma}`}
+                {project === "NK_RESIDENCY"
+                  ? " 15 x 400,000"
+                  : project === "SARA_RESIDENCY"
+                  ? " 18 x 1,000,000"
+                  : ` 36 X ${ma}`}
               </Typography>
               <Typography
                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
@@ -155,13 +161,29 @@ const Categories = (props) => {
                 Rs. {monthly}/=
               </Typography>
             </div>
+            {halfYearly && (
+              <div className="d-flex justify-content-between m-1">
+                <Typography
+                  variant={mobileWidth || tabletWidth ? "caption" : "h6"}
+                  color="secondary"
+                >
+                  Half Yearly Installment 03 x 1,500,000
+                </Typography>
+                <Typography
+                  variant={mobileWidth || tabletWidth ? "caption" : "h6"}
+                  color="secondary"
+                >
+                  Rs. {halfYearly}/=
+                </Typography>
+              </div>
+            )}
             {quarterly && (
               <div className="d-flex justify-content-between m-1">
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
-                  Quarterly Installment 05 X 500,000
+                  Quarterly Installment 05 x 500,000
                 </Typography>
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
@@ -177,7 +199,7 @@ const Categories = (props) => {
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
-                  Yearly Installment 06 X {ya}
+                  Yearly Installment 06 x {ya}
                 </Typography>
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
