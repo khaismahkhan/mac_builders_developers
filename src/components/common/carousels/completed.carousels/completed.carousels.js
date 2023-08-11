@@ -1,52 +1,31 @@
 import { Typography, Button } from "@mui/material";
 import React from "react";
-import "./coming.soon.carousel.scss";
+import "./completed.carousels.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 
-const ComingSoonCarousel = (props) => {
-  const {} = props
-  const comingItems = [
-    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#055bb8", color: "white" },
+const CompletedCarousels = (props) => {
+  const {} = props;
+  const completedItems = [
+    { name: "UROOJ ARCADE", image: "coat.jpeg", bg: "#f1cc59", color: "white" },
     {
       name: "ABBAS COMFORT",
       image: "sherwani.jpeg",
-      bg: "#e1b428",
+      bg: "#aeba8a",
       color: "white",
     },
     {
       name: "ZOHRA RESIDENCY",
       image: "sherwani.jpeg",
-      bg: "#cadb3d",
+      bg: "#94628f",
       color: "white",
     },
     {
       name: "AL MUSTAFA PRIME",
       image: "kk.jpg",
-      bg: "#542327",
+      bg: "#4cbcac",
       color: "white",
-    },
-    {
-      name: "SARA BRIDGE VIEW",
-      image: "kk.jpg",
-      bg: "#ccb9a2",
-      color: "white",
-      soon: true,
-    },
-    {
-      name: "NK BRIDGE VIEW",
-      image: "kk.jpg",
-      bg: "#684d9d",
-      color: "white",
-      soon: true,
-    },
-    {
-      name: "SARA BLESSING",
-      image: "kk.jpg",
-      bg: "#d62196",
-      color: "white",
-      soon: true,
     },
   ];
   const breakpoints = {
@@ -63,7 +42,7 @@ const ComingSoonCarousel = (props) => {
       slidesPerView: 4,
     },
     1024: {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
   };
 
@@ -77,7 +56,7 @@ const ComingSoonCarousel = (props) => {
     <div id="swiper-carousel">
       <Swiper
         className="mySwiper py-3"
-        slidesPerView={5}
+        slidesPerView={4}
         spaceBetween={10}
         breakpoints={breakpoints}
         navigation={true}
@@ -88,7 +67,7 @@ const ComingSoonCarousel = (props) => {
         modules={[Navigation]}
         // loop={true}
       >
-        {comingItems.map((item, index) => (
+        {completedItems.map((item, index) => (
           <SwiperSlide className="d-flex justify-content-center" key={index}>
             <div
               className="d-flex justify-content-center flex-column align-items-center paper-root circle cursor-pointer p-2"
@@ -123,4 +102,4 @@ const ComingSoonCarousel = (props) => {
   );
 };
 
-export default ComingSoonCarousel;
+export default CompletedCarousels;

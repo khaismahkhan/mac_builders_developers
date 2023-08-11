@@ -147,7 +147,7 @@ const Categories = (props) => {
                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                 color="secondary"
               >
-                Monthly Installment
+                Monthly {mobileWidth ? "Inst." : "Installment"}
                 {project === "NK_RESIDENCY"
                   ? " 15 x 400,000"
                   : project === "SARA_RESIDENCY"
@@ -167,7 +167,8 @@ const Categories = (props) => {
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
-                  Half Yearly Installment 03 x 1,500,000
+                  Half Yearly {mobileWidth ? "Inst." : "Installment"} 03 x
+                  1,500,000
                 </Typography>
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
@@ -183,7 +184,7 @@ const Categories = (props) => {
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
-                  Quarterly Installment 05 x 500,000
+                  Quarterly {mobileWidth ? "Inst." : "Installment"} 05 x 500,000
                 </Typography>
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
@@ -199,7 +200,7 @@ const Categories = (props) => {
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
-                  Yearly Installment 06 x {ya}
+                  Yearly {mobileWidth ? "Inst." : "Installment"} 06 x {ya}
                 </Typography>
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}

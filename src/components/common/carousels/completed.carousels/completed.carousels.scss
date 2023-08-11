@@ -1,0 +1,38 @@
+#swiper-carousel {
+    .circle {
+      height: 210px;
+      width: 210px;
+      border-radius: 100%;
+      background-position: center;
+      // &:hover{
+      //   scale: 1.1;
+      // }
+      text-align: center;
+    }
+    .txt {
+      font-size: 20px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .soon {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0c5352, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      // text-fill-color: transparent;
+    }
+    @media screen and (max-width: 760px) {
+      .circle {
+        height: 180px;
+        width: 180px;
+      }
+      .txt {
+        font-size: 18px;
+        color: #542327;
+      }
+    }
+  }
+  
