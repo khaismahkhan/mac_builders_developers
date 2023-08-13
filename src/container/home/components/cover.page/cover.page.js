@@ -26,7 +26,7 @@ const CoverPage = () => {
               className="font-weight-bold pl-1"
               style={{ color: "#bce0cb" }}
             >
-              City of Light.
+              City of Lights.
             </span>
           </Typography>
         </div>
