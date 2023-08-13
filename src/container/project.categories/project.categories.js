@@ -412,7 +412,7 @@ const ProjectCategories = (props) => {
                 >
                   <Typography className="text-center mt-3">
                     {project === "SARA_RESIDENCY" &&
-                      `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
+                      `Sara Residency is a prestigious multi-storeyed project located in the high valued area of Garden West. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
                     Laying one's hands comfortably to basic necessities of life
                     in the essence of an ideal living place anywhere, but a
                     place where on has a convenient access to every conceivable
@@ -434,7 +434,7 @@ const ProjectCategories = (props) => {
                     also play a significant role from living point of view.{" "}
                     {project === "NK_RESIDENCY"
                       ? "NK Residency is situated at the most ideal and attractive central location of Block 13-D, Gulshan-e-Iqbal,"
-                      : "Sara Blessing is situated at the most ideal and attractive central location of Garden West,"}
+                      : "Sara Residency is situated at the most ideal and attractive central location of Jauhar,"}
                     Strategically located for a peaceful living with style and
                     elegance in a crowded city like karachi, it has no parallel
                     in the area. It is facilitated with well-maintained spacious
