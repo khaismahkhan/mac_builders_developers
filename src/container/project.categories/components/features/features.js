@@ -9,7 +9,7 @@ const Features = () => {
     { name: "Imported High Speed Lift", image: "dollar.avif" },
     { name: "Car Parking", image: "dollar.avif" },
     { name: "Ideally Located In The Busiest Vicinity", image: "dollar.avif" },
-    { name: "Intercome System", image: "dollar.avif" },
+    { name: "Intercom System", image: "dollar.avif" },
     {
       name: "Modern Security Arrangements With Camera Monitoring Systems",
       image: "dollar.avif",
