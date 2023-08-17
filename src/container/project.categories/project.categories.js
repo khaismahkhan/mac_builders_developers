@@ -111,7 +111,7 @@ const ProjectCategories = (props) => {
     },
   ];
 
-  const saraCategories = [
+  const saraBlessingCategories = [
     {
       type: "A1",
       bed: "3 BED DD",
@@ -266,6 +266,7 @@ const ProjectCategories = (props) => {
 
   const saraBlessing = [
     { img: "sara blessing.jpg" },
+    { img: "sb8.jpeg" },
     { img: "sb1.jpeg" },
     { img: "sb2.jpeg" },
     { img: "sb3.jpeg" },
@@ -273,7 +274,6 @@ const ProjectCategories = (props) => {
     { img: "sb5.jpeg" },
     { img: "sb6.jpeg" },
     { img: "sb7.jpeg" },
-    { img: "sb8.jpeg" },
   ];
 
   const abbasComfort = [
@@ -288,9 +288,15 @@ const ProjectCategories = (props) => {
 
   const saraBridgeView = [
     { img: "sarabridgeview.jpg" },
-    { img: "sbv1.jpg" },
-    { img: "sbv2.jpg" },
     { img: "sbv3.jpg" },
+    { img: "sbv2.jpg" },
+    { img: "sbv1.jpg" },
+    { img: "sbv4.jpeg" },
+    { img: "sbv5.jpeg" },
+    { img: "sbv6.jpeg" },
+    { img: "sbv7.jpeg" },
+    { img: "sbv8.jpeg" },
+    { img: "sbv9.jpeg" },
   ];
 
   const handleChange = (name, value) => {
@@ -412,7 +418,7 @@ const ProjectCategories = (props) => {
                 >
                   <Typography className="text-center mt-3">
                     {project === "SARA_RESIDENCY" &&
-                      `Sara Residency is a prestigious multi-storeyed project located in the high valued area of Bahadurabad. It offers 4 & 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
+                      `Sara Residency is a prestigious multi-storeyed project located in the high valued area of Bahadurabad. It offers 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
                     Laying one's hands comfortably to basic necessities of life
                     in the essence of an ideal living place anywhere, but a
                     place where on has a convenient access to every conceivable

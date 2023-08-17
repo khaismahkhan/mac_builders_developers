@@ -7,11 +7,11 @@ const ProjectsSection = (props) => {
       name: "NK RESIDENCY",
       location: "Gulshan-e-Iqbal",
       address: "Plot # B 3/4 13-D3, Gulshan-e-Iqbal, Karachi.",
-      offers: "Luxury 3,4 & 5 Apartments and Showroom",
+      offers: "Luxury 3, 4 & 5 Rooms Apartments & Showroom",
       image: "nk.jpeg",
       contacts: [
         {
-          number: "0324-2930830",
+          number: "0324-2930832",
         },
         {
           number: "021-32293704",
@@ -23,11 +23,11 @@ const ProjectsSection = (props) => {
       location: "Bahadurabad",
       address:
         "Plot # 107, OPP Court Yard Banquet, Alamghir Road, Bahadurabad, Karachi.",
-      offers: "Luxury 4 & 5 Apartments",
+      offers: "Luxury 5 Rooms Apartments",
       image: "sara.jpeg",
       contacts: [
         {
-          number: "0324-2930830",
+          number: "0324-2930832",
         },
         {
           number: "021-32293704",
@@ -43,7 +43,7 @@ const ProjectsSection = (props) => {
       image: "nkicon.jpeg",
       contacts: [
         {
-          number: "0324-2930830",
+          number: "0324-2930832",
         },
         {
           number: "021-32293704",
