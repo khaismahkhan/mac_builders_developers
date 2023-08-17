@@ -453,7 +453,12 @@ const ProjectCategories = (props) => {
             ) : project === "SARA_BLESSING" ||
               project === "NK_BRIDGE_VIEW" ||
               project === "SARA_BRIDGE_VIEW" ? (
-              <>
+              <div
+                className={clsx(
+                  !mobileWidth && "w-70 text-center",
+                  mobileWidth && "w-100 text-center"
+                )}
+              >
                 <Heading text="COMING" span="SOON" />
                 <Typography
                   variant="h6"
@@ -479,7 +484,30 @@ const ProjectCategories = (props) => {
                 >
                   For More Details
                 </Button>
-              </>
+                <Typography
+                  variant="h6"
+                  color="secondary"
+                  className="font-weight-bold text-center mt-4"
+                >
+                  INTRODUCTION
+                </Typography>
+                <Typography className="text-center mt-3">
+                  {project === "SARA_BLESSING"
+                    ? `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden. It offers 3, 4, 5 Rooms Apartments and Showrooms embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`
+                    : project === "NK_BRIDGE_VIEW"
+                    ? `NK Bridge View is a prestigious multi-storeyed project located in the high valued area of Garden. It offers 3, 4, 5 Rooms Apartments and Showrooms embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`
+                    : project === "SARA_BRIDGE_VIEW"
+                    ? `Sara Bridge View is a prestigious multi-storeyed project located in the high valued area of Gulistan e Jauhar. It offers 3, 4, 5 Rooms Apartments and Showrooms embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`
+                    : null}
+                  Laying one's hands comfortably to basic necessities of life in
+                  the essence of an ideal living place anywhere, but a place
+                  where on has a convenient access to every conceivable amenity
+                  has literally no metal. People with a discriminating faste for
+                  living compared to any other features, whatsoever. Project at
+                  an ideal location has everything to offer, making life
+                  enjoyable in every respect.
+                </Typography>
+              </div>
             ) : project === "NK_ICON" ? (
               <>
                 <Heading text="NK ICON" />
