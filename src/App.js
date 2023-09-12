@@ -11,6 +11,7 @@ import { Button } from "@mui/material";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import JointVenture from "./container/joint.venture/joint.venture";
+import Gallery from "./container/gallery/gallery";
 // import AppNavBar from "./container/app.navbar/app.navbar"
 // import Footer from "./container/footer/footer"
 
@@ -27,7 +28,7 @@ const Login = React.lazy(() => import("./container/login/login"));
 
 const options = {
   client_id:
-    "282026411600-2jqa9druorbsru7dmbrki0dc1chll5v5.apps.googleusercontent.com", // required
+    "808523345170-l9rc90ank3gbg2ebfj7228juiqf23ncu.apps.googleusercontent.com", // required
   auto_select: false, // optional
   cancel_on_tap_outside: false, // optional
   context: "signin", // optional
@@ -43,13 +44,14 @@ function App() {
   );
 
   const BASE_URL = "https://kind-rose-shrimp-suit.cyclic.app";
+  // const BASE_URL = "http://localhost:8000";
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   useEffect(() => {
-    if (!loginData) {
+    // if (!loginData) {
       googleOneTap(options, async (response) => {
         console.log(response);
         const res = await fetch(`${BASE_URL}/api/v1/auth/google-login`, {
@@ -66,7 +68,7 @@ function App() {
         console.log(data);
         localStorage.setItem("loginData", JSON.stringify(data));
       });
-    }
+    // }
   });
 
   useEffect(() => {
@@ -101,6 +103,7 @@ function App() {
                   path="/project/:project"
                   element={<ProjectCategories />}
                 />
+                <Route path="/gallery" element={<Gallery />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </div>

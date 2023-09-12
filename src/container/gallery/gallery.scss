@@ -1,0 +1,16 @@
+.gallery-image {
+    transition: transform 0.2s; /* Animation */
+    margin: 5px;
+    height: 500px;
+    width: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    .zoom {
+      height: 400px;
+      width: 280px;
+    }
+  }

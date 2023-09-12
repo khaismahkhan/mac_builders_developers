@@ -705,7 +705,7 @@ const ProjectCategories = (props) => {
           </>
         ) : (
           <Typography
-            className="text-center pt-3 font-weight-bold"
+            className="text-center text-danger pt-3 font-weight-bold"
             variant="body1"
           >
             No Images Available

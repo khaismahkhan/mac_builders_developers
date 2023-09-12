@@ -57,7 +57,7 @@ const AppNavbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      hideDrawer()
+      hideDrawer();
     };
   }, [location.pathname]);
 
@@ -121,6 +121,21 @@ const AppNavbar = () => {
                   item
                   className="d-flex justify-content-end"
                 >
+                  {/* <Link
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    delay={500}
+                    onClick={() => navigate("/gallery")}
+                  >
+                    <Button
+                      variant="none"
+                      className="text-transform-none text-white ml-2"
+                    >
+                      Gallery
+                    </Button>
+                  </Link> */}
                   <Link
                     spy={true}
                     smooth={true}
@@ -224,6 +239,22 @@ const AppNavbar = () => {
           )}
         >
           <div className="w-100 d-flex flex-column justify-content-center align-items-center mt-2 mb-2">
+          {/* <Link
+              to="create-token"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              delay={500}
+            >
+              <Button
+                onClick={() => navigate("/gallery")}
+                variant="none"
+                className="text-transform-none text-white mt-2 mb-2"
+              >
+                Gallery
+              </Button>
+            </Link> */}
             <Link
               to="create-token"
               spy={true}
