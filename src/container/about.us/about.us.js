@@ -21,21 +21,21 @@ const AboutUs = () => {
       role: "General Manager",
       image: "sohail.jpeg",
     },
-    {
-      name: "Khaismah Bin Ilyas",
-      role: "IT Tech",
-      image: "khaismah.jpeg",
-    },
-    {
-      name: "Muhammad Talal Shaikh",
-      role: "Social Media",
-      image: "talal.jpeg",
-    },
-    {
-      name: "Bazigh Waseem",
-      role: "Marketing",
-      image: "bazigh.jpg",
-    },
+    // {
+    //   name: "Khaismah Bin Ilyas",
+    //   role: "IT Tech",
+    //   image: "khaismah.jpeg",
+    // },
+    // {
+    //   name: "Muhammad Talal Shaikh",
+    //   role: "Social Media",
+    //   image: "talal.jpeg",
+    // },
+    // {
+    //   name: "Bazigh Waseem",
+    //   role: "Marketing",
+    //   image: "bazigh.jpg",
+    // },
   ];
 
   const offers = [

@@ -34,7 +34,7 @@ const Appointments = () => {
           General Inquiries:
         </Typography>
         <Typography variant="subtitle1" className="text-theme fw-semi-bold">
-          Call +92 3352683699
+          Call +92 3242930832
         </Typography>
       </div>
       <div className="py-3">
