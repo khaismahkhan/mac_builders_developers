@@ -7,6 +7,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NotificationsSkeleton from "../../components/common/notification.skeleton/notification.skeleton";
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../../components/common/utill/utils";
 
 const Dashboard = () => {
   const history = useNavigate();
@@ -104,16 +105,19 @@ const Dashboard = () => {
               S.No
             </Typography>
           </div>
+          <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
+            <b>Date</b>
+          </div>
           <div className="w-20 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>User Name</b>
           </div>
-          <div className="w-25 d-flex justify-content-center align-items-center font-size-small text-center">
+          <div className="w-20 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Email Address</b>
           </div>
           <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Phone Number</b>
           </div>
-          <div className="w-20 d-flex justify-content-center align-items-center font-size-small text-center">
+          <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Project</b>
           </div>
           <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
@@ -136,17 +140,20 @@ const Dashboard = () => {
                 <div className="w-5 d-flex justify-content-center align-items-center border-right font-size-small">
                   {index + 1}
                 </div>
+                <div className="w-15 d-flex justify-content-center align-items-center border-right font-size-small">
+                  {user.createdAt ? formatDate(user.createdAt) : "N/A"}
+                </div>
                 <div className="w-20 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.userName ? user.userName : "N/A"}
                 </div>
-                <div className="w-25 d-flex justify-content-center align-items-center border-right font-size-small">
+                <div className="w-20 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.email ? user.email : "N/A"}
                 </div>
 
                 <div className="w-15 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.phoneNumber ? user.phoneNumber : "N/A"}
                 </div>
-                <div className="w-20 d-flex justify-content-center align-items-center border-right font-size-small">
+                <div className="w-15 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.plan ? user.plan : "N/A"}
                 </div>
                 <div className="w-15 d-flex justify-content-center align-items-center text-success font-size-small font-weight-bold">

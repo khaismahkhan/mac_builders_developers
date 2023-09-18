@@ -31,3 +31,24 @@ export const scrollToTop = () => window.scrollTo({
     left: 0,
     behavior: 'smooth'
 });
+
+export function formatDate(date) {
+    date = new Date(date);
+    let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    let day = date.getDate();
+    let monthIndex = date.getMonth();
+    let year = date.getFullYear();
+
+    return monthNames[monthIndex] + ` , ` + day + ' ' + year;
+}
+
+export function formatDateV2(date) {
+    date = new Date(date);
+    let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    let day = date.getDate();
+    let monthIndex = date.getMonth();
+    let year = date.getFullYear();
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
