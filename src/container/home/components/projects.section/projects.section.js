@@ -19,6 +19,21 @@ const ProjectsSection = (props) => {
       ],
     },
     {
+      name: "SARA BRIDGE VIEW",
+      location: "Gulistan-e-Johar",
+      address: "PLot # ST-06 Block-1, Gulistan e Jauhar, Karachi.",
+      offers: "Super 4 & 5 Rooms Apartments & Showroom",
+      image: "sarabridgeview.jpg",
+      contacts: [
+        {
+          number: "0324-2930832",
+        },
+        {
+          number: "021-32293704",
+        },
+      ],
+    },
+    {
       name: "SARA RESIDENCY",
       location: "Bahadurabad",
       address:

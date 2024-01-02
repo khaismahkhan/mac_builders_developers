@@ -1,8 +1,4 @@
-import {
-  Pagination,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Pagination, Typography, Button } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NotificationsSkeleton from "../../components/common/notification.skeleton/notification.skeleton";
@@ -72,6 +68,7 @@ const Dashboard = () => {
       token: null,
     });
   };
+
   return (
     <>
       <div className="cursor-pointer d-flex justify-content-center w-100 align-items-center p-3">
@@ -101,17 +98,15 @@ const Dashboard = () => {
       <div className="ml-5 mr-5">
         <div className="w-100 d-flex pt-3 pb-3 paper-root">
           <div className="w-5 d-flex justify-content-center align-items-center font-size-small text-center">
-            <Typography color="secondary" className="font-weight-bold">
-              S.No
-            </Typography>
+            <b>S.No</b>
           </div>
-          <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
+          <div className="w-10 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Date</b>
           </div>
           <div className="w-20 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>User Name</b>
           </div>
-          <div className="w-20 d-flex justify-content-center align-items-center font-size-small text-center">
+          <div className="w-30 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Email Address</b>
           </div>
           <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
@@ -120,7 +115,7 @@ const Dashboard = () => {
           <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Project</b>
           </div>
-          <div className="w-15 d-flex justify-content-center align-items-center font-size-small text-center">
+          <div className="w-10 d-flex justify-content-center align-items-center font-size-small text-center">
             <b>Category</b>
           </div>
         </div>
@@ -132,6 +127,14 @@ const Dashboard = () => {
             <NotificationsSkeleton />
             <NotificationsSkeleton />
           </div>
+        ) : !data || (data && data?.data?.length === 0) ? (
+          <Typography
+            color=""
+            style={{ minHeight: "25vh", color: "red" }}
+            className="d-flex justify-content-center align-items-center font-weight-bold"
+          >
+            No Data Found!
+          </Typography>
         ) : (
           data &&
           data.data?.map((user, index) => (
@@ -140,13 +143,13 @@ const Dashboard = () => {
                 <div className="w-5 d-flex justify-content-center align-items-center border-right font-size-small">
                   {index + 1}
                 </div>
-                <div className="w-15 d-flex justify-content-center align-items-center border-right font-size-small">
+                <div className="w-10 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.createdAt ? formatDate(user.createdAt) : "N/A"}
                 </div>
                 <div className="w-20 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.userName ? user.userName : "N/A"}
                 </div>
-                <div className="w-20 d-flex justify-content-center align-items-center border-right font-size-small">
+                <div className="w-30 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.email ? user.email : "N/A"}
                 </div>
 
@@ -156,7 +159,7 @@ const Dashboard = () => {
                 <div className="w-15 d-flex justify-content-center align-items-center border-right font-size-small">
                   {user.plan ? user.plan : "N/A"}
                 </div>
-                <div className="w-15 d-flex justify-content-center align-items-center text-success font-size-small font-weight-bold">
+                <div className="w-10 d-flex justify-content-center align-items-center text-success font-size-small font-weight-bold">
                   {user.category ? user.category : "N/A"}
                 </div>
               </div>

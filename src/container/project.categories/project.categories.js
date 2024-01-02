@@ -229,6 +229,93 @@ const ProjectCategories = (props) => {
     },
   ];
 
+  const saraBridgeViewCategories = [
+    {
+      type: "A",
+      bed: "3 BED DD",
+      price: "24,720,000",
+      booking: "6,180,000",
+      monthly: "10,500,000",
+      ma: "250,000",
+      halfYearly: "5,600,000",
+      hya: "800,000",
+      possession: "2,440,000",
+      reverse: true,
+      bg: "#ff5556",
+      image: "sbv4.jpeg",
+    },
+    {
+      type: "A1",
+      bed: "3 BED DD",
+      price: "23,904,000",
+      booking: "5,976,000",
+      monthly: "10,080,000",
+      ma: "240,000",
+      halfYearly: "5,600,000",
+      hya: "800,000",
+      possession: "2,248,000",
+      reverse: false,
+      bg: "#bcf955",
+      image: "sbv5.jpeg",
+    },
+    {
+      type: "B",
+      bed: "2 BED DD",
+      price: "17,824,000",
+      booking: "4,456,000",
+      monthly: "8,400,000",
+      ma: "200,000",
+      halfYearly: "3,150,000",
+      hya: "450,000",
+      possession: "1,818,000",
+      reverse: true,
+      bg: "#f8bc0c",
+      image: "sbv6.jpeg",
+    },
+    {
+      type: "B1",
+      bed: "2 BED DD",
+      price: "17,712,000",
+      booking: "4,428,000",
+      monthly: "8,400,000",
+      ma: "200,000",
+      halfYearly: "3,080,000",
+      hya: "440,000",
+      possession: "1,804,000",
+      reverse: false,
+      bg: "#07ce58",
+      image: "sbv7.jpeg",
+    },
+    {
+      type: "B2",
+      bed: "2 BED DD",
+      price: "17,600,000",
+      booking: "4,400,000",
+      monthly: "8,400,000",
+      ma: "200,000",
+      halfYearly: "3,010,000",
+      hya: "430,000",
+      possession: "1,790,000",
+      reverse: true,
+      bg: "#0252a4",
+      image: "sbv8.jpeg",
+    },
+    {
+      type: "B3",
+      bed: "2 BED DD",
+      price: "15,552,000",
+      booking: "3,888,000",
+      monthly: "7,350,000",
+      ma: "175,000",
+      halfYearly: "2,800,000",
+      hya: "400,000",
+      possession: "1,514,000",
+      reverse: false,
+      bg: "#077b8a",
+      image: "sbv9.jpeg",
+    },
+  ];
+
   const nkImages = [
     { img: "nkicon.jpeg" },
     { img: "nk 1.jpeg" },
@@ -386,7 +473,9 @@ const ProjectCategories = (props) => {
             data-aos="fade-up"
             className="d-flex flex-column align-items-center"
           >
-            {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
+            {project === "NK_RESIDENCY" ||
+            project === "SARA_RESIDENCY" ||
+            "SARA_BRIDGE_VIEW" ? (
               <>
                 {/* <Heading text="CURRENT" span="PROJECT" /> */}
                 <Typography
@@ -401,6 +490,8 @@ const ProjectCategories = (props) => {
                     ? "Address : Plot # B 3/4 13-D3, Gulshan-e-Iqbal, Karachi."
                     : project === "SARA_RESIDENCY"
                     ? "Address : Plot # 107,OPP Court Yard Banquet, Alamghir Road, Bahadurabad, Karachi."
+                    : project === "SARA_BRIDGE_VIEW"
+                    ? "Address : PLot # ST-06 Block-1, Gulistan e Jauhar, Karachi"
                     : ""}
                 </Typography>
                 <Typography
@@ -419,6 +510,12 @@ const ProjectCategories = (props) => {
                   <Typography className="text-center mt-3">
                     {project === "SARA_RESIDENCY" &&
                       `Sara Residency is a prestigious multi-storeyed project located in the high valued area of Bahadurabad. It offers 5 rooms deluxe executive  apartments embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`}
+                    {project === "SARA_BRIDGE_VIEW" &&
+                      `Sara Bridge View is a Prestigious multi-storyed Project
+                      located in the High value Area of Gulistan-e-jauhar.
+                      It Offer 4 & 5 Rooms deluxe executive Apartments &
+                      Showrooms Embedded with almost every Modern
+                      amenity of Life.`}
                     Laying one's hands comfortably to basic necessities of life
                     in the essence of an ideal living place anywhere, but a
                     place where on has a convenient access to every conceivable
@@ -440,6 +537,8 @@ const ProjectCategories = (props) => {
                     also play a significant role from living point of view.{" "}
                     {project === "NK_RESIDENCY"
                       ? "NK Residency is situated at the most ideal and attractive central location of Block 13-D, Gulshan-e-Iqbal,"
+                      : project === "SARA_BRIDGE_VIEW"
+                      ? "Sara Bridge View is situated at the most ideal and attractive central location of Gulistan-e-Jauhar,"
                       : "Sara Residency is situated at the most ideal and attractive central location of Bahadurabad, "}
                     Strategically located for a peaceful living with style and
                     elegance in a crowded city like karachi, it has no parallel
@@ -450,9 +549,7 @@ const ProjectCategories = (props) => {
                   </Typography>
                 </div>
               </>
-            ) : project === "SARA_BLESSING" ||
-              project === "NK_BRIDGE_VIEW" ||
-              project === "SARA_BRIDGE_VIEW" ? (
+            ) : project === "SARA_BLESSING" || project === "NK_BRIDGE_VIEW" ? (
               <div
                 className={clsx(
                   !mobileWidth && "w-70 text-center",
@@ -472,8 +569,6 @@ const ProjectCategories = (props) => {
                     ? "Address : Plot # 320, OPP Prince Lawn Near PSO Pump Garden West, Karachi."
                     : project === "NK_BRIDGE_VIEW"
                     ? "Address : Plot # 441, Garden West, Karachi."
-                    : project === "SARA_BRIDGE_VIEW"
-                    ? "Address : PLot # ST-06 Block-1, Gulistan e Jauhar, Karachi"
                     : ""}
                 </Typography>
                 <Button
@@ -496,8 +591,6 @@ const ProjectCategories = (props) => {
                     ? `Sara Blessing is a prestigious multi-storeyed project located in the high valued area of Garden. It offers 3, 4, 5 Rooms Apartments and Showrooms embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`
                     : project === "NK_BRIDGE_VIEW"
                     ? `NK Bridge View is a prestigious multi-storeyed project located in the high valued area of Garden. It offers 3, 4, 5 Rooms Apartments and Showrooms embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`
-                    : project === "SARA_BRIDGE_VIEW"
-                    ? `Sara Bridge View is a prestigious multi-storeyed project located in the high valued area of Gulistan e Jauhar. It offers 3, 4, 5 Rooms Apartments and Showrooms embedded with almost every modern amenity of life. Buil on most modern planning, the project would be an absolutely seismic-proof one, incorporating the HI-TECH Construction technology and the finest building material.`
                     : null}
                   Laying one's hands comfortably to basic necessities of life in
                   the essence of an ideal living place anywhere, but a place
@@ -579,12 +672,23 @@ const ProjectCategories = (props) => {
           </div>
         </div>
 
-        {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY" ? (
+        {project === "NK_RESIDENCY" ||
+        project === "SARA_RESIDENCY" ||
+        project === "SARA_BRIDGE_VIEW" ? (
           <>
             <Heading text="CATEGORIES AVAILABLE" />
 
             {project === "NK_RESIDENCY"
               ? nkCategories.map((category, index) => (
+                  <Categories
+                    {...category}
+                    key={index}
+                    {...state}
+                    handleClick={handleClick}
+                  />
+                ))
+              : project === "SARA_BRIDGE_VIEW"
+              ? saraBridgeViewCategories.map((category, index) => (
                   <Categories
                     {...category}
                     key={index}
@@ -679,20 +783,6 @@ const ProjectCategories = (props) => {
           <>
             <div className="d-flex justify-content-center flex-wrap mt-5">
               {abbasComfort.map((image, index) => (
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
-                  alt="product-img"
-                  className="zoom"
-                  id={index}
-                  data-aos="fade-up"
-                />
-              ))}
-            </div>
-          </>
-        ) : project === "SARA_BRIDGE_VIEW" ? (
-          <>
-            <div className="d-flex justify-content-center flex-wrap mt-5">
-              {saraBridgeView.map((image, index) => (
                 <img
                   src={`${process.env.PUBLIC_URL}/assets/images/${image.img}`}
                   alt="product-img"

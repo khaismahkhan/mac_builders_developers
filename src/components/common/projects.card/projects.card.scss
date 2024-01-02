@@ -6,6 +6,7 @@
   overflow: hidden;
   color: white;
   // color: #033044;
+  height: 480px;
 }
 .projectImage {
   // background-image: url(../../../../public/assets/images/nk.jpeg);
@@ -20,6 +21,7 @@
 @media screen and (max-width: 700px) {
   .projectContainer {
     width: 100%;
+    height: 100%;
   }
   .mac {
     height: 50px;

@@ -11,13 +11,13 @@ const ComingSoonCarousel = (props) => {
   const tabletWidth = IsTabletWidth();
   const {} = props;
   const comingItems = [
-    {
-      name: "SARA BRIDGE VIEW",
-      image: "kk.jpg",
-      bg: "#4ea5cb",
-      color: "white",
-      soon: true,
-    },
+    // {
+    //   name: "SARA BRIDGE VIEW",
+    //   image: "kk.jpg",
+    //   bg: "#4ea5cb",
+    //   color: "white",
+    //   soon: true,
+    // },
     {
       name: "NK BRIDGE VIEW",
       image: "kk.jpg",
@@ -42,13 +42,13 @@ const ComingSoonCarousel = (props) => {
       slidesPerView: 1.8,
     },
     640: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     868: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
   };
 

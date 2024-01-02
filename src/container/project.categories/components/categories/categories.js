@@ -9,7 +9,6 @@ import {
   IsTabletWidth,
 } from "../../../../components/common/utill/utils";
 
-
 const Categories = (props) => {
   const { project } = useParams();
   const mobileWidth = IsMobileWidth();
@@ -32,6 +31,7 @@ const Categories = (props) => {
     ma,
     image,
     halfYearly,
+    hya
   } = props;
 
   const [state, setState] = useState({
@@ -101,7 +101,7 @@ const Categories = (props) => {
               >
                 {project === "NK_RESIDENCY" || project === "SARA_RESIDENCY"
                   ? "On Booking 40%"
-                  : "On Booking 10%"}
+                  : "On Booking 25%"}
               </Typography>
               <Typography
                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
@@ -152,7 +152,7 @@ const Categories = (props) => {
                   ? " 15 x 400,000"
                   : project === "SARA_RESIDENCY"
                   ? " 18 x 1,000,000"
-                  : ` 36 X ${ma}`}
+                  : ` 42 x ${ma}`}
               </Typography>
               <Typography
                 variant={mobileWidth || tabletWidth ? "caption" : "h6"}
@@ -167,8 +167,10 @@ const Categories = (props) => {
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
                   color="secondary"
                 >
-                  Half Yearly {mobileWidth ? "Inst." : "Installment"} 03 x
-                  1,500,000
+                  Half Yearly {mobileWidth ? "Inst." : "Installment"}
+                  {project === "SARA_BRIDGE_VIEW"
+                    ? ` 07 x ${hya}`
+                    : " 03 x 1,500,000"}
                 </Typography>
                 <Typography
                   variant={mobileWidth || tabletWidth ? "caption" : "h6"}
